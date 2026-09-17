@@ -52,6 +52,29 @@ npm run sync          # crawl, then rebuild src/content + public/media
 Stop `next dev` first: the crawler writes into `tools/scraper/storage/`, and
 the dev server's file watcher reloads the browser on every write.
 
+## Deploying
+
+Any host that runs a Node server takes `npm run build` as-is. On Vercel the
+repo needs no configuration - import it and the defaults are right.
+
+GitHub Pages is a file host, so it gets its own target:
+
+```bash
+npm run build:pages     # writes out/, ready to upload
+```
+
+`.github/workflows/pages.yml` runs exactly that on every push to `main`.
+The differences from the server build live in `next.config.ts` behind
+`GITHUB_PAGES=1`: no redirects, a subdirectory base path, and a custom image
+loader, because `basePath` does not reach an image `src` when there is no
+optimiser to route it through. `tools/pages/build.mjs` then adds the three
+things a file host cannot work out for itself - the root redirect to `/en`,
+`.nojekyll`, and a flat copy of each router prefetch payload, which the export
+writes as a directory path but the router asks for as a dotted filename.
+
+Verified against a `next start` build: same routes, same images, no failed
+requests on either.
+
 ## Before this goes live
 
 - **Neither form has a backend** — the contact form and the newsletter band

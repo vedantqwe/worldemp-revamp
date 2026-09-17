@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "build:pages": "node tools/pages/build.mjs"
   },
   "dependencies": {
     "framer-motion": "^13.4.0",

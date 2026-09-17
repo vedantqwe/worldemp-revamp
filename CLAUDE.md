@@ -175,6 +175,7 @@ Borrowed deliberately, and why:
 npm run dev       # http://localhost:3000
 npm run build     # all routes should prerender static (277 pages)
 npx eslint src tools   # next lint is gone in Next 16
+npm run build:pages    # static export for GitHub Pages -> out/
 
 cd tools/scraper && npm run sync        # re-migrate content from the live site
 cd tools/brand   && npm run build-logo  # re-vectorise the logo

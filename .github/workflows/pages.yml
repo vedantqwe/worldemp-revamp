@@ -1,0 +1,60 @@
+# Publishes the static export to GitHub Pages.
+#
+# The site prerenders every route already, so Pages is a fair host for it; the
+# differences from `npm run build` (no redirects, no image optimiser, a
+# subdirectory base path) live in next.config.ts behind GITHUB_PAGES=1, and
+# `npm run build:pages` is the same command CI and a laptop both run.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  # So a deploy can be re-run without an empty commit.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# A queued deploy should wait for the running one rather than cancel it, or
+# Pages can be left serving a half-finished upload.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build the static export
+        run: npm run build:pages
+        env:
+          # Derived from the repo so a fork or a rename does not silently ship
+          # a site whose asset URLs all point at the wrong subdirectory.
+          PAGES_BASE_PATH: /${{ github.event.repository.name }}
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
