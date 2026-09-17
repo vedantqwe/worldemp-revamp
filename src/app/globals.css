@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   WorldEmp brand tokens.
+   Every value below is lifted verbatim from the live worldemp.com
+   theme (the CMS injects these as --BackgroundColor/--Color inline).
+   The revamp changes layout, type and motion - never the palette.
+   ------------------------------------------------------------------ */
+@theme {
+  /* Core brand */
+  --color-we-indigo: #150958;   /* BrandColor1 - primary, footer bg */
+  --color-we-magenta: #9e1c50;  /* accent */
+  --color-we-blue: #2962b2;     /* secondary / footer text */
+  --color-we-crimson: #bd2230;  /* tag accent */
+
+  /* Gradient ramp stops, all sampled from the live theme */
+  --color-we-violet: #3c0069;
+  --color-we-plum: #631453;
+  --color-we-purple: #4a1055;
+  --color-we-rose: #b21f5a;
+  --color-we-berry: #9e1d4f;
+  --color-we-wine: #761741;
+  --color-we-navy: #1d467f;
+  --color-we-void: #060219;
+
+  /* Neutrals */
+  --color-we-ink: #14191f;
+  --color-we-paper: #f9fafb;
+  --color-we-line: #e4e4e3;
+  --color-we-muted: #6a6a6a;
+
+  --font-display: var(--font-poppins);
+  --font-sans: var(--font-maven);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: var(--color-we-ink);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans), system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: var(--color-we-magenta);
+    color: #fff;
+  }
+}
+
+@layer utilities {
+  /* The signature indigo -> violet -> magenta sweep. */
+  .we-gradient {
+    background-image: linear-gradient(
+      120deg,
+      var(--color-we-indigo) 0%,
+      var(--color-we-violet) 45%,
+      var(--color-we-magenta) 100%
+    );
+  }
+
+  .we-gradient-text {
+    background-image: linear-gradient(
+      100deg,
+      var(--color-we-indigo) 0%,
+      var(--color-we-plum) 50%,
+      var(--color-we-magenta) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Soft radial glows used behind dark sections. */
+  .we-mesh {
+    background-image:
+      radial-gradient(60% 55% at 12% 8%, rgba(41, 98, 178, 0.38) 0%, transparent 60%),
+      radial-gradient(55% 50% at 88% 22%, rgba(158, 28, 80, 0.34) 0%, transparent 62%),
+      radial-gradient(70% 60% at 50% 100%, rgba(60, 0, 105, 0.45) 0%, transparent 65%);
+  }
+
+  .we-grid-lines {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+}
+
+/* Marquee for the client logo rail. */
+@keyframes we-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.we-marquee-track {
+  animation: we-marquee 38s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .we-marquee-track { animation: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
