@@ -2,10 +2,9 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { useContent } from "@/lib/content-context";
 
 type Status = "idle" | "submitting" | "done";
-
-const roles = ["IT", "Data", "Finance", "Engineering", "Something else"];
 
 /**
  * NOTE: this form has no backend yet. It validates and shows the success
@@ -13,6 +12,8 @@ const roles = ["IT", "Data", "Finance", "Engineering", "Something else"];
  * a form service, or the existing CRM before this goes live.
  */
 export function ContactForm() {
+  const { c } = useContent();
+  const f = c.pages.form;
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
 
@@ -21,11 +22,11 @@ export function ContactForm() {
     const data = new FormData(e.currentTarget);
     const next: Record<string, string> = {};
 
-    if (!String(data.get("name") ?? "").trim()) next.name = "Please tell us your name.";
+    if (!String(data.get("name") ?? "").trim()) next.name = f.errors.name;
     const email = String(data.get("email") ?? "").trim();
-    if (!email) next.email = "We need an email address to reply to.";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.email = "That address looks incomplete.";
-    if (!String(data.get("message") ?? "").trim()) next.message = "A sentence or two is plenty.";
+    if (!email) next.email = f.errors.emailMissing;
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) next.email = f.errors.emailInvalid;
+    if (!String(data.get("message") ?? "").trim()) next.message = f.errors.message;
 
     setErrors(next);
     if (Object.keys(next).length > 0) return;
@@ -54,10 +55,9 @@ export function ContactForm() {
           >
             &#10003;
           </span>
-          <h2 className="mt-5 font-display text-2xl text-we-ink">Thank you</h2>
+          <h2 className="mt-5 font-display text-2xl text-we-ink">{f.successHeading}</h2>
           <p className="mx-auto mt-2 max-w-sm text-sm leading-relaxed text-we-muted">
-            We will come back to you within one working day with a market analysis for
-            the role you described.
+            {f.successBody}
           </p>
         </motion.div>
       ) : (
@@ -72,25 +72,25 @@ export function ContactForm() {
           <div className="grid gap-5 sm:grid-cols-2">
             <div>
               <label htmlFor="name" className="mb-2 block text-sm font-medium text-we-ink">
-                Name
+                {f.name}
               </label>
-              <input id="name" name="name" className={field} placeholder="Your name" />
+              <input id="name" name="name" className={field} placeholder={f.namePlaceholder} />
               {errors.name ? (
                 <p className="mt-1.5 text-xs text-we-crimson">{errors.name}</p>
               ) : null}
             </div>
             <div>
               <label htmlFor="company" className="mb-2 block text-sm font-medium text-we-ink">
-                Company
+                {f.company}
               </label>
-              <input id="company" name="company" className={field} placeholder="Company name" />
+              <input id="company" name="company" className={field} placeholder={f.companyPlaceholder} />
             </div>
           </div>
 
           <div className="grid gap-5 sm:grid-cols-2">
             <div>
               <label htmlFor="email" className="mb-2 block text-sm font-medium text-we-ink">
-                Email
+                {f.email}
               </label>
               <input
                 id="email"
@@ -105,10 +105,15 @@ export function ContactForm() {
             </div>
             <div>
               <label htmlFor="discipline" className="mb-2 block text-sm font-medium text-we-ink">
-                Discipline
+                {f.discipline}
               </label>
-              <select id="discipline" name="discipline" className={field} defaultValue={roles[0]}>
-                {roles.map((r) => (
+              <select
+                id="discipline"
+                name="discipline"
+                className={field}
+                defaultValue={f.disciplines[0]}
+              >
+                {f.disciplines.map((r) => (
                   <option key={r}>{r}</option>
                 ))}
               </select>
@@ -117,14 +122,14 @@ export function ContactForm() {
 
           <div>
             <label htmlFor="message" className="mb-2 block text-sm font-medium text-we-ink">
-              Which role are you looking to fill?
+              {f.legend}
             </label>
             <textarea
               id="message"
               name="message"
               rows={5}
               className={`${field} resize-none`}
-              placeholder="Tell us about the role, the team and the timeline."
+              placeholder={f.messagePlaceholder}
             />
             {errors.message ? (
               <p className="mt-1.5 text-xs text-we-crimson">{errors.message}</p>
@@ -137,7 +142,7 @@ export function ContactForm() {
             className="group relative w-full overflow-hidden rounded-full bg-we-indigo px-8 py-4 text-sm font-semibold text-white transition-transform duration-300 hover:-translate-y-0.5 disabled:cursor-wait disabled:opacity-70 sm:w-auto"
           >
             <span className="relative z-10">
-              {status === "submitting" ? "Sending..." : "Send request"}
+              {status === "submitting" ? f.submitting : f.submit}
             </span>
             <span className="we-gradient absolute inset-0 origin-left scale-x-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-x-100" />
           </button>

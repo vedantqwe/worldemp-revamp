@@ -1,0 +1,14 @@
+{
+  "name": "worldemp-brand",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Vectorises the WorldEmp logo master into SVG assets and path data.",
+  "scripts": {
+    "build-logo": "node build-logo.mjs"
+  },
+  "dependencies": {
+    "potrace": "^2.1.8",
+    "sharp": "^0.34.0"
+  }
+}

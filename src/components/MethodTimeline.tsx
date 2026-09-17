@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
-import { timeline } from "@/lib/content";
+import { useContent } from "@/lib/content-context";
 
 /**
  * The 2-6 week promise, drawn as a rail that fills as you scroll.
@@ -15,6 +15,8 @@ import { timeline } from "@/lib/content";
  * the rail is simply drawn full and the steps sit still.
  */
 export function MethodTimeline() {
+  const { c, href } = useContent();
+  const { timeline } = c;
   const ref = useRef<HTMLDivElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({
@@ -34,7 +36,7 @@ export function MethodTimeline() {
         <div className="max-w-2xl">
           <Reveal>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-we-magenta">
-              The method
+              {c.mastheads.method.eyebrow}
             </p>
             <h2 className="mt-4 text-balance font-display text-[clamp(1.9rem,4vw,3.25rem)] leading-[1.08]">
               {timeline.heading}
@@ -98,7 +100,7 @@ export function MethodTimeline() {
 
         <Reveal className="mt-4 flex flex-wrap gap-4">
           <Link
-            href={timeline.ctas[0].href}
+            href={href(timeline.ctas[0].href)}
             className="group relative overflow-hidden rounded-full bg-white px-7 py-4 text-sm font-semibold text-we-indigo transition-transform duration-300 hover:-translate-y-0.5"
           >
             <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
@@ -107,7 +109,7 @@ export function MethodTimeline() {
             <span className="we-gradient absolute inset-0 origin-left scale-x-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-x-100" />
           </Link>
           <Link
-            href={timeline.ctas[1].href}
+            href={href(timeline.ctas[1].href)}
             className="group inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-4 text-sm font-semibold text-white transition-colors duration-300 hover:border-white/60 hover:bg-white/5"
           >
             {timeline.ctas[1].label}

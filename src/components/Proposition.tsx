@@ -3,10 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
-import { allInRate, comparison, costs, founderQuote } from "@/lib/content";
+import { useContent } from "@/lib/content-context";
 
 /** Oversized pull quote. The mark is decorative and hidden from the a11y tree. */
 export function FounderQuote() {
+  const { c } = useContent();
+  const { founderQuote } = c;
+
   return (
     <section className="bg-we-paper py-24 sm:py-32">
       <div className="mx-auto max-w-4xl px-5 text-center sm:px-8">
@@ -37,6 +40,9 @@ export function FounderQuote() {
  * would read as a gimmick.
  */
 export function CostAndRate() {
+  const { c } = useContent();
+  const { allInRate, costs } = c;
+
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   const reduce = useReducedMotion();
@@ -47,7 +53,7 @@ export function CostAndRate() {
         <div ref={ref}>
           <Reveal>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-we-magenta">
-              Cost
+              {c.labels.propositionEyebrow}
             </p>
             <h2 className="mt-4 text-balance font-display text-[clamp(1.9rem,4vw,3.25rem)] leading-[1.08]">
               {costs.heading}
@@ -153,6 +159,9 @@ function CountUp({ from, to, active }: { from: number; to: number; active: boole
  * readers. Rows stagger in as the table enters the viewport.
  */
 export function Comparison() {
+  const { c } = useContent();
+  const { comparison } = c;
+
   return (
     <section className="bg-we-paper py-24 sm:py-32">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
@@ -164,19 +173,17 @@ export function Comparison() {
 
         <div className="mt-12 overflow-x-auto">
           <table className="w-full min-w-[34rem] border-collapse text-left">
-            <caption className="sr-only">
-              How the WorldEmp model compares with traditional hiring
-            </caption>
+            <caption className="sr-only">{comparison.heading}</caption>
             <thead>
               <tr className="border-b border-we-line">
                 <th scope="col" className="py-4 pr-4 text-xs font-semibold uppercase tracking-[0.16em] text-we-muted">
                   &nbsp;
                 </th>
                 <th scope="col" className="py-4 pr-4 text-xs font-semibold uppercase tracking-[0.16em] text-we-indigo">
-                  WorldEmp
+                  {comparison.columns.worldemp}
                 </th>
                 <th scope="col" className="py-4 text-xs font-semibold uppercase tracking-[0.16em] text-we-muted">
-                  Traditional hiring
+                  {comparison.columns.traditional}
                 </th>
               </tr>
             </thead>

@@ -1,0 +1,17 @@
+{
+  "name": "worldemp-scraper",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Crawls the public worldemp.com site and writes the revamp's content dataset.",
+  "scripts": {
+    "crawl": "node main.mjs",
+    "build-content": "node build-content.mjs",
+    "sync": "node main.mjs && node build-content.mjs"
+  },
+  "dependencies": {
+    "crawlee": "^3.13.0",
+    "playwright": "^1.50.0",
+    "sharp": "^0.35.4"
+  }
+}

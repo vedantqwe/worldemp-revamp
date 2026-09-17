@@ -1,0 +1,20 @@
+/* Opens a mega-menu at the top of the page and screenshots it. */
+import { chromium } from 'playwright';
+const OUT = 'C:/Users/VEDANT~1/AppData/Local/Temp/claude/c--Users-VedantRai-WorldEmp-Revamp/2b6ae314-4b8e-4bfb-afe1-8eb32deb557a/scratchpad/shots/';
+const b = await chromium.launch();
+const p = await b.newPage({ viewport: { width: 1366, height: 700 } });
+await p.goto('http://localhost:3222/en', { waitUntil: 'load' });
+await p.waitForTimeout(1500);
+await p.locator('header nav a', { hasText: 'About' }).first().hover();
+await p.waitForTimeout(900);
+await p.screenshot({ path: OUT + 's_megamenu.png' });
+console.log('megamenu shot');
+const m = await b.newPage({ viewport: { width: 390, height: 780 }, isMobile: true, hasTouch: true });
+await m.goto('http://localhost:3222/en', { waitUntil: 'load' });
+await m.waitForTimeout(1500);
+await m.screenshot({ path: OUT + 's_mobile_home.png' });
+await m.locator('header button[aria-expanded]').first().click();
+await m.waitForTimeout(800);
+await m.screenshot({ path: OUT + 's_mobile_menu.png' });
+console.log('mobile shots');
+await b.close();

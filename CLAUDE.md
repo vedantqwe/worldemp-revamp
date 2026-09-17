@@ -5,6 +5,9 @@
 A visual and interaction rebuild of the public **worldemp.com** marketing site.
 Next.js 16 (App Router) + React 19 + Tailwind v4 + framer-motion.
 
+Bilingual (`/en`, `/nl`), and carrying the live site's full public content -
+125 migrated pages, crawled rather than retyped.
+
 ## The one hard rule: do not change the palette
 
 The brief is to change how the site *looks and feels*, keeping the existing
@@ -29,11 +32,100 @@ here.
 
 ## Where things live
 
-- `src/lib/content.ts` — every string on the site, transcribed from the live
-  English edition (`worldemp.com/en/homepage`). Edit copy here, not in JSX.
-- `src/components/` — one file per section. `ui/Reveal.tsx` holds the two
-  motion primitives (`Reveal`, `RevealWords`) that everything else uses.
-- `src/app/` — routes. All static, all prerendered.
+Two kinds of copy, kept apart on purpose:
+
+- `src/lib/content.ts` — **hand-authored** copy for the designed sections: the
+  homepage, the section mastheads, the navigation, the form. Keyed by locale
+  (`en` from the live English edition, `nl` from the Dutch one, which is the
+  live site's primary language). Edit copy here, not in JSX.
+- `src/content/pages.json` — **generated**. Every long-form page migrated from
+  the live site, one entry per route with an `en` and an `nl` side. Never edit
+  by hand; re-run the scraper. Read it only through `src/lib/pages.ts`, which
+  is server-only - the file is ~2.7 MB and would otherwise ship to the browser.
+- `src/content/site.json` — **generated**. The client logo rail and the
+  testimonial cards: site-wide assets that belong to the designed homepage
+  rather than to any one page. Read through `src/lib/site.ts`. Small enough to
+  import into a client component, which the marquee and the carousel are.
+
+Everything else:
+
+- `src/lib/i18n.ts` — locales, interface strings, `localeHref`,
+  `switchLocalePath`.
+- `src/lib/content-context.tsx` — carries the active locale's copy to the
+  client sections, which would otherwise need two objects threaded through a
+  dozen components as props.
+- `src/components/` — one file per designed section. `ui/Reveal.tsx` holds the
+  two motion primitives (`Reveal`, `RevealWords`) that everything else uses.
+- `src/components/content/` — the templates the migrated pages render through:
+  `ContentPage` (the shell), `ContentBlocks` (the block renderer), `CardGrid`,
+  `SectionRail`.
+- `src/components/brand/` — the logo. `logo-paths.ts` is generated.
+- `src/app/[locale]/` — routes. All static, all prerendered (277 pages). `/`
+  redirects to `/en` via `next.config.ts`.
+- `tools/scraper/` — the Crawlee + Playwright crawler and the content build.
+- `tools/brand/` — vectorises the logo master.
+
+## The logo is drawn, not loaded
+
+The only master the CMS holds is a 298x137 PNG, which was being scaled down to
+a 34px header logo - soft on any screen, obviously so on a retina one. It is
+traced once into outlines by `tools/brand/build-logo.mjs`
+(alpha → upscale → blur → threshold → potrace), giving ~97% pixel agreement
+with the original and identical shapes by eye.
+
+`<Logo>` renders those paths inline, so the tone can flip between the
+transparent-on-hero header and the solid one with no second request and no
+swap flicker. The gradient runs `--color-we-indigo` → `--color-we-crimson`,
+which is what the master's own gradient was sampled as, so the palette rule
+holds. The one deliberate change from the master: the wordmark is nudged 5px
+up, to sit optically centred on the monogram's bowl rather than on the
+diagonal stroke, which overshoots the letterforms.
+
+Regenerate with `npm install && npm run build-logo` in `tools/brand`.
+
+## Content is crawled, not retyped
+
+`tools/scraper` runs a `PlaywrightCrawler`, so Crawlee owns link discovery,
+the queue, retries and concurrency, and the only bespoke part is
+`extract.mjs`. Playwright rather than plain HTTP because the Dynamicweb
+templates lazy-load images and build parts of the navigation client-side.
+
+```bash
+cd tools/scraper
+npm install && npx playwright install chromium
+npm run sync            # crawl, then rebuild src/content + public/media
+```
+
+**Stop `next dev` before crawling.** The crawler writes into
+`tools/scraper/storage/`, inside the project, and the dev server's watcher
+turns every write into a browser reload.
+
+Things worth knowing about the migration:
+
+- The live site translates its slugs (`/nl/over-ons` vs `/en/about-us`). The
+  revamp keeps **one English slug per page behind a locale prefix**, so a page
+  is one route with two content sources and the language switcher is a segment
+  swap rather than a lookup table someone has to keep in step. The two
+  editions are paired through the `hreflang` alternates the CMS emits.
+- Images are pulled from the CMS *originals*, not the resizer thumbnails the
+  pages reference, then re-encoded to webp at max 1600px into `public/media/`.
+- Two sector pages are published but linked from nowhere on the live site, so
+  they are seeded by hand in `main.mjs`.
+- 25 image references on the live site are dead (the file 404s through both
+  the resizer and its original path). They are dropped, and reported.
+- Three things on the page are not prose and are captured separately: the
+  **client logo rail** (`.we-logoslider-greyscale`), the **testimonial cards**
+  (`section.cta-paragraph.carousel-cell`), and the **category labels**. The
+  labels only ever appear on the listing pages, never on the article itself,
+  so they are collected against the link they point at and stitched together
+  across pages by the content build.
+- The case pages set their figures as heading/paragraph pairs ("Start" /
+  "Samenwerking gestart in 2019"). A run of three or more is folded into one
+  `stats` block, so they render as a figure row rather than as stray
+  subheadings.
+- Attribution lines come out of the CMS shouted ("BARRY TEMPELAAR, CEO
+  BLUEDESK"). They are re-cased, with a short list of brand spellings
+  (`myShop`, `Data2Performance`, `KUBO`) that a generic title-caser destroys.
 
 ## Design decisions worth keeping
 
@@ -66,20 +158,24 @@ Borrowed deliberately, and why:
 
 ## Known gaps (not yet done)
 
-- **The contact form has no backend.** `src/components/ContactForm.tsx`
-  validates and fakes a 700ms submit. Wire it to a real endpoint before launch.
+- **Neither form has a backend.** `ContactForm.tsx` and `Newsletter.tsx` both
+  validate and fake a submit. Wire them to real endpoints before launch.
 - **`/privacy` is a placeholder.** The approved statement still needs migrating
   from `worldemp.com/nl/privacy-cookiestatement`.
-- **English only.** The live site is Dutch-primary with an English edition; no
-  locale routing here yet.
-- **Client logos are set as wordmarks**, not images — the CMS originals are
-  low-resolution thumbnails.
+- **Some knowledge-base articles are Dutch under `/en`.** That is the live
+  site's own state: the English edition of those pages exists but was never
+  translated, so the crawl faithfully carries Dutch text. Pages missing an
+  edition entirely fall back to the other language with a visible note; these
+  cannot be detected that way.
 - Social URLs in `Footer.tsx` are guesses and need checking.
 
 ## Commands
 
 ```bash
-npm run dev     # http://localhost:3000
-npm run build   # all routes should prerender static
-npx eslint src  # next lint is gone in Next 16
+npm run dev       # http://localhost:3000
+npm run build     # all routes should prerender static (277 pages)
+npx eslint src tools   # next lint is gone in Next 16
+
+cd tools/scraper && npm run sync        # re-migrate content from the live site
+cd tools/brand   && npm run build-logo  # re-vectorise the logo
 ```

@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Crawlee request queue / dataset output (regenerate with tools/scraper)
+tools/scraper/storage/
+tools/scraper/node_modules/
+tools/brand/node_modules/

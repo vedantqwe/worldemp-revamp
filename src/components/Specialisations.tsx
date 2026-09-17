@@ -1,9 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
-import { specialisations } from "@/lib/content";
+import { useContent } from "@/lib/content-context";
 
 /**
  * Four disciplines as expanding rows, after Accenture's toggle-card pattern:
@@ -11,8 +12,19 @@ import { specialisations } from "@/lib/content";
  * place. One row is open at a time so the section never becomes a wall of
  * job titles. Rows are real buttons, so keyboard and screen-reader users get
  * the same behaviour as a pointer.
+ *
+ * Layout: the row and the panel below it share one grid, so the index, the
+ * discipline name and the body copy all sit on the same three vertical
+ * lines. Aligning the panel to the container instead left the body copy
+ * hanging under the index number rather than under the name it describes.
  */
+
+/** Index column, discipline, then the roles column. Shared by row and panel. */
+const GRID = "grid grid-cols-[2.5rem_minmax(0,1fr)] gap-x-4 md:grid-cols-[3.5rem_minmax(0,22rem)_minmax(0,1fr)] md:gap-x-10";
+
 export function Specialisations() {
+  const { c, t, href } = useContent();
+  const { specialisations, specialisationsIntro } = c;
   const [openId, setOpenId] = useState<string>(specialisations[0].id);
   const reduce = useReducedMotion();
 
@@ -21,16 +33,20 @@ export function Specialisations() {
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-we-magenta">
-            Solutions
+            {specialisationsIntro.eyebrow}
           </p>
           <h2 className="mt-4 max-w-2xl text-balance font-display text-[clamp(1.9rem,4vw,3.25rem)] leading-[1.08]">
-            Which specialization is relevant for my company?
+            {specialisationsIntro.heading}
           </h2>
         </Reveal>
 
         <div className="mt-14 divide-y divide-we-line border-y border-we-line">
           {specialisations.map((spec, i) => {
             const isOpen = openId === spec.id;
+            const roleCount = `${spec.roles.length} ${
+              spec.roles.length === 1 ? t.rolesOne : t.roles
+            }`;
+
             return (
               <Reveal key={spec.id} delay={i * 0.05} y={16}>
                 <div id={spec.id} className="scroll-mt-28">
@@ -40,24 +56,24 @@ export function Specialisations() {
                       onClick={() => setOpenId(isOpen ? "" : spec.id)}
                       aria-expanded={isOpen}
                       aria-controls={`panel-${spec.id}`}
-                      className="group flex w-full items-center justify-between gap-6 py-7 text-left"
+                      className={`group w-full py-7 text-left ${GRID} items-center`}
                     >
-                      <span className="flex items-baseline gap-5">
-                        <span className="font-display text-xs font-semibold text-we-muted">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                        <span
-                          className={`font-display text-[clamp(1.5rem,3.2vw,2.5rem)] leading-none transition-colors duration-300 ${
-                            isOpen ? "we-gradient-text" : "text-we-ink group-hover:text-we-indigo"
-                          }`}
-                        >
-                          {spec.name}
-                        </span>
+                      <span className="font-display text-xs font-semibold text-we-muted">
+                        {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="flex items-center gap-4">
-                        <span className="hidden text-xs font-medium text-we-muted sm:block">
-                          {spec.roles.length} roles
-                        </span>
+                      <span
+                        className={`font-display text-[clamp(1.5rem,3.2vw,2.5rem)] leading-none transition-colors duration-300 ${
+                          isOpen
+                            ? "we-gradient-text"
+                            : "text-we-ink group-hover:text-we-indigo"
+                        }`}
+                      >
+                        {spec.name}
+                      </span>
+                      {/* Sits in the roles column on desktop, so the count and
+                          the toggle line up with the chips they control. */}
+                      <span className="col-start-2 row-start-2 mt-3 flex items-center gap-4 md:col-start-3 md:row-start-1 md:mt-0 md:justify-end">
+                        <span className="text-xs font-medium text-we-muted">{roleCount}</span>
                         <span
                           aria-hidden
                           className={`relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full border transition-all duration-400 ${
@@ -91,11 +107,26 @@ export function Specialisations() {
                         }}
                         className="overflow-hidden"
                       >
-                        <div className="grid gap-8 pb-10 md:grid-cols-[minmax(0,1fr)_1.25fr]">
-                          <p className="max-w-md text-sm leading-relaxed text-we-muted">
-                            {spec.body}
-                          </p>
-                          <ul className="flex flex-wrap gap-2 self-start">
+                        <div className={`${GRID} pb-10`}>
+                          {/* Empty index cell keeps the body copy under the
+                              discipline name, not under the number. */}
+                          <div aria-hidden className="hidden md:block" />
+                          <div className="col-start-2 md:col-start-2">
+                            <p className="text-sm leading-relaxed text-we-muted">{spec.body}</p>
+                            <Link
+                              href={href(`/solutions/${spec.id}`)}
+                              className="group mt-5 inline-flex items-center gap-2 text-sm font-semibold text-we-indigo"
+                            >
+                              {t.overview}
+                              <span
+                                aria-hidden
+                                className="transition-transform duration-300 group-hover:translate-x-1"
+                              >
+                                &rarr;
+                              </span>
+                            </Link>
+                          </div>
+                          <ul className="col-start-2 mt-8 flex flex-wrap gap-2 self-start md:col-start-3 md:mt-0">
                             {spec.roles.map((role, r) => (
                               <motion.li
                                 key={role}

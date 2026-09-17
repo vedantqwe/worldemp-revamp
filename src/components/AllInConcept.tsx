@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
-import { allInConcept } from "@/lib/content";
+import { useContent } from "@/lib/content-context";
 
 /**
  * The five pillars as an asymmetric bento grid rather than five identical
@@ -21,13 +21,16 @@ const spans = [
 ];
 
 export function AllInConcept() {
+  const { c, href } = useContent();
+  const { allInConcept } = c;
+
   return (
     <section id="concept" className="bg-we-paper py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <Reveal>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-we-magenta">
-              The all-in concept
+              {c.labels.allInConceptEyebrow}
             </p>
             <h2 className="mt-4 max-w-2xl text-balance font-display text-[clamp(1.9rem,4vw,3.25rem)] leading-[1.08]">
               {allInConcept.heading}
@@ -35,7 +38,7 @@ export function AllInConcept() {
           </Reveal>
           <Reveal delay={0.1}>
             <Link
-              href={allInConcept.cta.href}
+              href={href(allInConcept.cta.href)}
               className="group inline-flex shrink-0 items-center gap-2 rounded-full border border-we-indigo/25 px-6 py-3 text-sm font-semibold text-we-indigo transition-colors duration-300 hover:bg-we-indigo hover:text-white"
             >
               {allInConcept.cta.label}

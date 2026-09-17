@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { RevealWords } from "@/components/ui/Reveal";
-import { hero } from "@/lib/content";
+import { useContent } from "@/lib/content-context";
 
 /**
  * Text-forward hero, after Accenture: no stock photograph competing with the
@@ -12,6 +12,8 @@ import { hero } from "@/lib/content";
  * drift, so the type stays the loudest thing on the screen.
  */
 export function Hero() {
+  const { c, href } = useContent();
+  const { hero } = c;
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({
@@ -76,7 +78,7 @@ export function Hero() {
           className="mt-10 flex flex-wrap items-center gap-4"
         >
           <Link
-            href={hero.primaryCta.href}
+            href={href(hero.primaryCta.href)}
             className="group relative overflow-hidden rounded-full bg-white px-7 py-4 text-sm font-semibold text-we-indigo transition-transform duration-300 hover:-translate-y-0.5"
           >
             <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
@@ -85,7 +87,7 @@ export function Hero() {
             <span className="we-gradient absolute inset-0 origin-left scale-x-0 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-x-100" />
           </Link>
           <Link
-            href={hero.secondaryCta.href}
+            href={href(hero.secondaryCta.href)}
             className="group inline-flex items-center gap-2 rounded-full border border-white/25 px-7 py-4 text-sm font-semibold text-white transition-colors duration-300 hover:border-white/60 hover:bg-white/5"
           >
             {hero.secondaryCta.label}

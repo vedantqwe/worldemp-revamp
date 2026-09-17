@@ -1,0 +1,240 @@
+{
+ "clients": [
+  {
+   "name": "multi metaal",
+   "src": "/media/logo-slider-worldemp-multimetaal-12dde6d3e3.webp",
+   "width": 208,
+   "height": 80
+  },
+  {
+   "name": "Data 2 Performance",
+   "src": "/media/logo-slider-worldemp-data2performance-b331d59541.webp",
+   "width": 208,
+   "height": 80
+  },
+  {
+   "name": "Bluedesk",
+   "src": "/media/bluedesk-logo-208x80-transparant-f1b85e5a33.webp",
+   "width": 208,
+   "height": 80
+  },
+  {
+   "name": "PincVision",
+   "src": "/media/logo-slider-worldemp-pincvision-ea606c1f56.webp",
+   "width": 208,
+   "height": 80
+  },
+  {
+   "name": "TNW Group",
+   "src": "/media/logo-slider-worldemp-ff835a547f.webp",
+   "width": 208,
+   "height": 80
+  },
+  {
+   "name": "DILAX",
+   "src": "/media/logo-slider-worldemp-dilax-6a2b8bbfb2.webp",
+   "width": 208,
+   "height": 80
+  },
+  {
+   "name": "Bluetrace",
+   "src": "/media/logo-slider-worldemp-bluetrace-9ed6e8e4e0.webp",
+   "width": 208,
+   "height": 80
+  },
+  {
+   "name": "Muntz",
+   "src": "/media/logo-slider-worldemp-muntz-beee9bb29d.webp",
+   "width": 208,
+   "height": 80
+  },
+  {
+   "name": "KUBO",
+   "src": "/media/logo-slider-worldemp-kubo-7609499c0b.webp",
+   "width": 208,
+   "height": 80
+  },
+  {
+   "name": "my shop",
+   "src": "/media/logo-slider-worldemp-myshop-b116f6fe65.webp",
+   "width": 208,
+   "height": 80
+  },
+  {
+   "name": "Techno berg",
+   "src": "/media/logo-slider-worldemp-technoberg-fc5fcd087b.webp",
+   "width": 208,
+   "height": 80
+  },
+  {
+   "name": "Tata Steel",
+   "src": "/media/logo-slider-worldemp-tatasteel-ef54c6cfe5.webp",
+   "width": 208,
+   "height": 80
+  },
+  {
+   "name": "Q",
+   "src": "/media/logo-slider-worldemp-q3-5c19c57dda.webp",
+   "width": 52,
+   "height": 80
+  },
+  {
+   "name": "Royal Van Lent shipyard",
+   "src": "/media/logo-slider-worldemp-royalvanlent-6ef1400098.webp",
+   "width": 208,
+   "height": 80
+  },
+  {
+   "name": "van Lent Systems",
+   "src": "/media/logo-slider-worldemp-vanlent-cfaa1daae4.webp",
+   "width": 208,
+   "height": 80
+  },
+  {
+   "name": "basis online.nl",
+   "src": "/media/logo-slider-worldemp-basisonline-nl-af48385343.webp",
+   "width": 208,
+   "height": 80
+  },
+  {
+   "name": "Bloomy pro",
+   "src": "/media/logo-slider-worldemp-bloomypro-3c3310464f.webp",
+   "width": 208,
+   "height": 80
+  },
+  {
+   "name": "Thunderbite",
+   "src": "/media/thunder-kleur-logo-313e45e23f.webp",
+   "width": 151,
+   "height": 34
+  },
+  {
+   "name": "Royal Dirkzwager",
+   "src": "/media/logo-slider-worldemp-royaldirkzwager-43e1fac1bb.webp",
+   "width": 208,
+   "height": 80
+  },
+  {
+   "name": "HI Systems logo healthcare",
+   "src": "/media/logo-slider-worldemp-hisystems-59be7f9b72.webp",
+   "width": 208,
+   "height": 80
+  },
+  {
+   "name": "Tideland tmt",
+   "src": "/media/logo-slider-worldemp-tideland1-faa40258c4.webp",
+   "width": 97,
+   "height": 80
+  },
+  {
+   "name": "Intures",
+   "src": "/media/logo-slider-worldemp-intures-0e2e3f0c70.webp",
+   "width": 208,
+   "height": 80
+  },
+  {
+   "name": "IT synergie",
+   "src": "/media/logo-slider-worldemp-it-synergy-90423f3a46.webp",
+   "width": 208,
+   "height": 80
+  },
+  {
+   "name": "KVSA",
+   "src": "/media/logo-slider-worldemp-kvsa-0c1df7d3a2.webp",
+   "width": 208,
+   "height": 80
+  },
+  {
+   "name": "",
+   "src": "/media/logo-saman-groep-69dbd5e22b.webp",
+   "width": 208,
+   "height": 80
+  }
+ ],
+ "testimonials": {
+  "en": [
+   {
+    "quote": "The collaboration with WorldEmp has been positively surprising for Bluedesk. We were looking for an experienced .Net developer who could be quickly deployed. The transparent and effective recruitment process of WorldEmp ensured that we quickly received CVs of developers who truly fit our company. In addition to the candidate's talent, attention is also paid to whether there is a \"match\" with colleagues in the Netherlands!",
+    "name": "Barry Tempelaar",
+    "role": "CEO Bluedesk",
+    "portrait": {
+     "src": "/media/screenshot-2024-02-02-163156-50b2402f11.webp",
+     "width": 190,
+     "height": 190
+    }
+   },
+   {
+    "quote": "WorldEmp has a very thorough selection process, aimed at bridging cultural differences. Employees receive intensive guidance when they begin.",
+    "name": "Steven Hummel",
+    "role": "Manager Engineering Innovatec",
+    "portrait": {
+     "src": "/media/1564686153476-e2ce4def49.webp",
+     "width": 500,
+     "height": 500
+    }
+   },
+   {
+    "quote": "As your company grows, it's beneficial for the workforce to be able to flexibly grow along with it. WorldEmp has made that possible by quickly providing the right, skilled disciplines.",
+    "name": "Angelique van Grinsven",
+    "role": "CEO Bluetrace",
+    "portrait": {
+     "src": "/media/1699899924589-7d3cbf2d5b.webp",
+     "width": 200,
+     "height": 200
+    }
+   },
+   {
+    "quote": "As a highly technological IT company specialized in e-commerce, myShop is always on the lookout for well-educated professionals. Through WorldEmp, we have found such professionals. WorldEmp provides excellent support, and we are extremely satisfied with the collaboration.",
+    "name": "John Zanoni",
+    "role": "CTO myShop",
+    "portrait": {
+     "src": "/media/1517655124779-cef2badbfe.webp",
+     "width": 200,
+     "height": 200
+    }
+   },
+   {
+    "quote": "As a high-tech company focused on utilizing big data and analytics to assist businesses with their agile transformation, we rely on talent that masters their craft and is dedicated to our strategic goals, capable of delivering crucial results autonomously. In WorldEmp, we have found a partner that provides us with excellent professionals whom we trust to fill strategic roles. Together with our WorldEmp team, we are Data2Performance.",
+    "name": "Peter Storm",
+    "role": "CEO Data2Performance",
+    "portrait": {
+     "src": "/media/sill-21a648088e.webp",
+     "width": 600,
+     "height": 568
+    }
+   }
+  ],
+  "nl": [
+   {
+    "quote": "De samenwerking met WorldEmp is voor bluedesk positief verassend geweest. Wij zochten een ervaren .Net developer die snel ingezet kon worden. Het transparante en effectieve recruitmentproces van WorldEmp heeft ervoor gezorgd dat wij al snel de CV’s kregen aangeboden van developers die ook echt bij ons bedrijf passen. Naast het talent van de kandidaat wordt ook gelet of er een “match” is met de collega’s in Nederland!",
+    "name": "Barry Tempelaar",
+    "role": "CEO Bluedesk",
+    "portrait": {
+     "src": "/media/screenshot-2024-02-02-163156-50b2402f11.webp",
+     "width": 190,
+     "height": 190
+    }
+   },
+   {
+    "quote": "Als je als bedrijf groeit dan is het fijn als het personeelsbestand flexibel mee kan groeien. WorldEmp heeft dat mogelijk gemaakt door snel de juiste, vakbekwame disciplines te faciliteren.",
+    "name": "Angelique van Grinsven",
+    "role": "CEO Bluetrace",
+    "portrait": {
+     "src": "/media/1699899924589-7d3cbf2d5b.webp",
+     "width": 200,
+     "height": 200
+    }
+   },
+   {
+    "quote": "Als hoog technologisch IT bedrijf gespecialiseerd in e-commerce is myShop altijd op zoek naar goed opgeleide professionals. Via WorldEmp hebben we zulke professionals gevonden. WorldEmp zorgt voor uitstekende begeleiding, wij zijn enorm tevreden over de samenwerking.",
+    "name": "John Zanoni",
+    "role": "CTO myShop",
+    "portrait": {
+     "src": "/media/1517655124779-cef2badbfe.webp",
+     "width": 200,
+     "height": 200
+    }
+   }
+  ]
+ }
+}
