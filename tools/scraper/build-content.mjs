@@ -27,7 +27,7 @@ const MEDIA_DIR = path.join(ROOT, 'public/media');
 const SKIP = [
   /\/(test-author|tabs-page|product-compare|webwinkel|demo-werkwijze|werkwijze-1)/,
   /\/nieuws\//,          // duplicated knowledge-base entries under an old path
-  /\/(sitemap-2|privacy-cookiestatement|schedule-an-appointment|demo|advice)$/,
+  /\/(sitemap-2|schedule-an-appointment|demo|advice)$/,
   /\/(homepage|contact-us|contact)$/,
 ];
 
@@ -35,6 +35,8 @@ const SKIP = [
 function toRoute(enPath) {
   const parts = enPath.split('/').filter(Boolean).slice(1); // drop the locale
   const [a, b, c] = parts;
+
+  if (a === 'privacy-cookiestatement') return { route: '/privacy', kind: 'page' };
 
   if (a === 'about-us' && b === 'knowledge-base' && c) return { route: `/insights/${c}`, kind: 'article' };
   if (a === 'about-us' && b === 'cases' && c) return { route: `/cases/${c}`, kind: 'case' };
@@ -48,6 +50,23 @@ function toRoute(enPath) {
   // The sector pages' English alternates kept the Dutch slug in the CMS, so
   // normalise them to the English one the revamp routes on.
   if (a === 'sectors' && b) return { route: `/sectors/${SECTOR_SLUGS[b] ?? b}`, kind: 'sector' };
+  return null;
+}
+
+/**
+ * Pages published in Dutch only, whose path the English rules cannot read.
+ *
+ * The knowledge base is the case that matters: six articles - one of them
+ * 99 blocks long - exist under /nl/over-ons/kennisbank with no English
+ * edition and no English alternate, so nothing mapped them and they were
+ * dropped from the migration entirely. They keep their Dutch slug, because
+ * inventing an English one for a page that has no English edition helps
+ * nobody, and the page itself carries the "Dutch only" note.
+ */
+function toRouteNl(nlPath) {
+  const [a, b, c] = nlPath.split('/').filter(Boolean).slice(1);
+  if (a === 'over-ons' && b === 'kennisbank' && c) return { route: `/insights/${c}`, kind: 'article' };
+  if (a === 'over-ons' && b === 'cases' && c) return { route: `/cases/${c}`, kind: 'case' };
   return null;
 }
 
@@ -65,6 +84,32 @@ const NL_ONLY_SECTORS = {
   '/nl/sectoren/energietransitie': '/sectors/energy-transition',
   '/nl/sectoren/semiconductor-industrie': '/sectors/semiconductor-industry',
 };
+
+/* -------------------------------------------------------------------- art */
+
+/**
+ * The drawing that stands in for the role pages' photographs.
+ *
+ * The live site illustrates all 33 roles with the same eleven stock photos of
+ * WorldEmp staff, so most role pages show the same stranger at the same desk,
+ * whatever the role. tools/brand/build-role-art.mjs draws one scene per role
+ * instead; this points the page at it and drops the photographs.
+ *
+ * Only the lead image is kept. The rest of a role page's pictures are those
+ * same few photos again further down, and one illustration per page is the
+ * point - repeating it three times would be the old mistake in a new style.
+ */
+const ART_DIR = path.join(ROOT, 'public/roles');
+
+const ILLUSTRATED = new Set(['role', 'discipline']);
+
+function sectionArt(kind, route) {
+  if (!ILLUSTRATED.has(kind)) return null;
+  const [, , discipline, slug] = route.split('/');
+  const name = kind === 'role' ? `${discipline}-${slug}.webp` : `${discipline}.webp`;
+  if (!existsSync(path.join(ART_DIR, name))) return null;
+  return { src: `/roles/${name}`, width: 1200, height: 750 };
+}
 
 /* ------------------------------------------------------------------ media */
 
@@ -157,18 +202,27 @@ function foldStats(blocks) {
   for (let i = 0; i < blocks.length; i++) {
     const run = [];
     let j = i;
-    while (
-      j + 1 < blocks.length &&
-      blocks[j].type === 'heading' &&
-      blocks[j + 1].type === 'text' &&
-      (blocks[j].text?.length ?? 0) <= STAT_LABEL_MAX &&
-      (blocks[j + 1].text?.length ?? 0) <= STAT_VALUE_MAX
-    ) {
-      run.push({ label: blocks[j].text, value: blocks[j + 1].text });
-      j += 2;
+    let withValue = 0;
+    while (j < blocks.length && blocks[j].type === 'heading') {
+      const label = blocks[j].text ?? '';
+      if (label.length > STAT_LABEL_MAX) break;
+
+      // The figure under the label, when the editor filled it in. Some are
+      // left empty - Saman Groep's "Start" has no year against it - and a
+      // blank cell in the row is a truer rendering than dropping the whole
+      // row back into the page as three stray subheadings.
+      const next = blocks[j + 1];
+      const hasValue =
+        next?.type === 'text' && (next.text?.length ?? 0) <= STAT_VALUE_MAX;
+
+      run.push({ label, value: hasValue ? next.text : '' });
+      if (hasValue) withValue += 1;
+      j += hasValue ? 2 : 1;
     }
-    // Two is a coincidence in prose; three in a row is a figure row.
-    if (run.length >= 3) {
+
+    // Two is a coincidence in prose; three in a row is a figure row. At least
+    // two of them have to carry a figure, or this is just a run of headings.
+    if (run.length >= 3 && withValue >= 2) {
       out.push({ type: 'stats', items: run });
       i = j - 1;
       continue;
@@ -217,8 +271,17 @@ async function main() {
 
     // Canonical EN path: a page's own if it is the English edition, the
     // hreflang alternate otherwise.
-    const enPath = record.locale === 'en' ? record.path : record.alternates?.en;
-    const mapped = enPath ? toRoute(enPath) : null;
+    // A handful of pages omit the English alternate from their hreflang -
+    // the privacy statement is one, which is why it was missing in Dutch.
+    // Where the Dutch slug is the same word, the English rule still resolves
+    // it; where it is not, toRoute simply returns null as before.
+    const enPath =
+      record.locale === 'en'
+        ? record.path
+        : (record.alternates?.en ?? `/en/${record.path.split('/').slice(2).join('/')}`);
+    const mapped =
+      (enPath ? toRoute(enPath) : null) ??
+      (record.locale === 'nl' ? toRouteNl(record.path) : null);
     const route = mapped?.route ?? NL_ONLY_SECTORS[record.path] ?? null;
     if (!route) continue;
 
@@ -243,6 +306,9 @@ async function main() {
   // Download every image once, then rewrite the blocks to point at /media.
   const sources = new Set();
   for (const entry of pages.values()) {
+    // Role pages are illustrated instead, so their photographs are not worth
+    // fetching - any that another page also uses is added by that page.
+    if (ILLUSTRATED.has(entry.kind)) continue;
     for (const side of ['en', 'nl']) {
       for (const block of entry[side]?.blocks ?? []) {
         if (block.type === 'image') sources.add(block.src);
@@ -258,13 +324,27 @@ async function main() {
 
   let rewritten = 0;
   let dropped = 0;
+  let illustrated = 0;
+  let photosReplaced = 0;
+  const artMissing = new Set();
   for (const entry of pages.values()) {
+    const art = sectionArt(entry.kind, entry.route);
+    if (ILLUSTRATED.has(entry.kind) && !art) artMissing.add(entry.route);
     for (const side of ['en', 'nl']) {
       if (!entry[side]) continue;
       const blocks = [];
+      let illustratedHere = false;
       for (const block of entry[side].blocks) {
         if (block.type !== 'image') {
           blocks.push(block);
+          continue;
+        }
+        if (ILLUSTRATED.has(entry.kind)) {
+          photosReplaced++;
+          if (!art || illustratedHere) continue;
+          blocks.push({ type: 'image', ...art, alt: '' });
+          illustratedHere = true;
+          illustrated++;
           continue;
         }
         const media = downloaded.get(block.src);
@@ -280,6 +360,79 @@ async function main() {
       delete entry[side].images;
     }
   }
+
+  /*
+   * Card grids.
+   *
+   * The CMS's "related pages" grids are a <ul> of links; the crawl records the
+   * hrefs and this turns them into routes, so the page can render the same
+   * cards the rest of the site uses. Anything pointing at a page the revamp
+   * does not carry is dropped rather than linked into a 404 - which is the
+   * whole reason these are resolved here, where every route is known, instead
+   * of being rewritten one at a time during extraction.
+   */
+  const routeBySource = new Map();
+  for (const entry of pages.values()) {
+    for (const side of ['en', 'nl']) {
+      const source = entry[side]?.sourcePath;
+      if (source) routeBySource.set(source.replace(/\/$/, ''), entry.route);
+    }
+  }
+
+  let cardGrids = 0;
+  let cardsResolved = 0;
+  let cardsUnknown = 0;
+  let cardGridsAsLists = 0;
+  for (const entry of pages.values()) {
+    for (const side of ['en', 'nl']) {
+      if (!entry[side]) continue;
+      entry[side].blocks = entry[side].blocks.flatMap((block) => {
+        if (block.type === 'list') {
+          // Safety net. Most of these lists are card grids and become cards
+          // above, but the CMS has a second layout whose links sit a level
+          // deeper, and its items still end in the word the card's button
+          // used to be. Nothing reads "Lees meer" as prose, so it goes.
+          return [{
+            ...block,
+            items: block.items.map((item) =>
+              item.replace(/\s*(read more|lees meer|meer lezen|lees verder)\s*$/i, '').trim(),
+            ).filter(Boolean),
+          }];
+        }
+        if (block.type !== 'cardlinks') return [block];
+        const routes = [];
+        for (const href of block.hrefs) {
+          const source = href
+            .replace(/^https?:\/\/[^/]+/, '')
+            .replace(/\/$/, '');
+          const route = routeBySource.get(source);
+          if (!route) {
+            cardsUnknown += 1;
+            continue;
+          }
+          // A grid on a page often includes that page; a card linking to
+          // where you already are is the dead "Read more" all over again.
+          if (route === entry.route || routes.includes(route)) continue;
+          routes.push(route);
+        }
+        if (!routes.length) {
+          // None of the links survived the migration, so this was not a
+          // grid of pages we have - render what it says instead of nothing.
+          cardGridsAsLists += 1;
+          return block.items?.length
+            ? [{ type: 'list', ordered: false, items: block.items }]
+            : [];
+        }
+        cardGrids += 1;
+        cardsResolved += routes.length;
+        return [{ type: 'cards', routes }];
+      });
+    }
+  }
+  console.log(
+    `card grids: ${cardGrids} kept (${cardsResolved} cards), ${cardGridsAsLists} left as lists, ` +
+      `${cardsUnknown} links off-site or unmigrated`,
+  );
 
   const sorted = [...pages.values()].sort((a, b) => a.route.localeCompare(b.route));
   await fs.writeFile(
@@ -331,6 +484,16 @@ async function main() {
 
   const byKind = sorted.reduce((acc, p) => ({ ...acc, [p.kind]: (acc[p.kind] ?? 0) + 1 }), {});
   console.log('images:', rewritten, 'rewritten,', dropped, 'dropped');
+  console.log(
+    `role art: ${illustrated} pages illustrated, ${photosReplaced} stock photos removed`,
+  );
+  if (artMissing.size) {
+    console.warn(
+      `  ! no illustration for ${artMissing.size} page(s) - run` +
+        ` \`npm run build-role-art\` in tools/brand:\n    ` +
+        [...artMissing].join('\n    '),
+    );
+  }
   console.log('routes by kind:', byKind);
   console.log('missing nl:', sorted.filter((p) => !p.nl).length,
     '| missing en:', sorted.filter((p) => !p.en).length);

@@ -5,7 +5,8 @@
   "type": "module",
   "description": "Vectorises the WorldEmp logo master into SVG assets and path data.",
   "scripts": {
-    "build-logo": "node build-logo.mjs"
+    "build-logo": "node build-logo.mjs",
+    "build-role-art": "node build-role-art.mjs"
   },
   "dependencies": {
     "potrace": "^2.1.8",

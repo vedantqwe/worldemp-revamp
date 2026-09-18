@@ -16,13 +16,10 @@ export function CardGrid({
   locale,
   cards,
   columns = 3,
-  /** Compact cards drop the excerpt: used for dense role listings. */
-  compact = false,
 }: {
   locale: Locale;
   cards: CardSummary[];
   columns?: 2 | 3 | 4;
-  compact?: boolean;
 }) {
   const t = ui[locale];
   const cols =
@@ -96,7 +93,7 @@ export function CardGrid({
                   {card.title}
                 </span>
 
-                {!compact && card.excerpt ? (
+                {card.excerpt ? (
                   <span className="mt-2.5 line-clamp-3 text-sm leading-relaxed text-we-muted">
                     {card.excerpt}
                   </span>

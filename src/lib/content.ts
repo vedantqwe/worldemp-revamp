@@ -120,6 +120,7 @@ export type SiteContent = {
       submitting: string;
       successHeading: string;
       successBody: string;
+      successFallback: string;
       errors: { name: string; emailMissing: string; emailInvalid: string; message: string };
       optional: string;
     };
@@ -569,8 +570,9 @@ const en: SiteContent = {
       messagePlaceholder: "Tell us about the role, the team and the timeline.",
       submit: "Send request",
       submitting: "Sending...",
-      successHeading: "Thank you - we have your request.",
-      successBody: "We reply within one working day, usually with a first read on how quickly the role can be filled.",
+      successHeading: "Your message is ready to send",
+      successBody: "We have opened it in your email app, addressed to WorldEmp. Send it and you have a reply within one working day, usually with a first read on how quickly the role can be filled.",
+      successFallback: "Nothing opened? Send it to us directly:",
       errors: {
         name: "Please tell us your name.",
         emailMissing: "We need an email address to reply to.",
@@ -1080,8 +1082,9 @@ const nl: SiteContent = {
       messagePlaceholder: "Vertel over de rol, het team en de planning.",
       submit: "Verstuur aanvraag",
       submitting: "Versturen...",
-      successHeading: "Dank je - we hebben je aanvraag.",
-      successBody: "We reageren binnen één werkdag, meestal met een eerste inschatting van hoe snel de rol in te vullen is.",
+      successHeading: "Je bericht staat klaar om te versturen",
+      successBody: "We hebben het geopend in je mailprogramma, geadresseerd aan WorldEmp. Verstuur het en je hebt binnen één werkdag antwoord, meestal met een eerste inschatting van hoe snel de rol in te vullen is.",
+      successFallback: "Niets geopend? Stuur het rechtstreeks naar ons:",
       errors: {
         name: "Vul je naam in.",
         emailMissing: "We hebben een e-mailadres nodig om te kunnen reageren.",

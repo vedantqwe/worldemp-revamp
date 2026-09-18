@@ -83,6 +83,27 @@ diagonal stroke, which overshoots the letterforms.
 
 Regenerate with `npm install && npm run build-logo` in `tools/brand`.
 
+## The role pages are drawn, not photographed
+
+The live site illustrates all 33 role pages with the same eleven stock
+photographs of WorldEmp staff, so a Data Engineer and a Compliance Specialist
+are introduced by the same man at the same desk. They are pictures of
+identifiable people used as decoration, which is a poor fit for a role page and
+a consent question nobody needs to have.
+
+`tools/brand/build-role-art.mjs` draws one flat workspace scene per role and
+per discipline instead - the diagram on the wall chosen by discipline, the rest
+varied by a hash of the slug, so no two are the same - and writes them to
+`public/roles/`. Palette tokens only, and no text in the artwork: the card and
+the masthead already name the role, and a drawing that has to be redrawn to be
+translated will go stale in one language or the other.
+
+Only the lead image is kept; the rest of a role page's photographs were the
+same few again further down. Anything in `public/roles/` that the script did
+not write is left alone, so real illustrations can be dropped in per role.
+
+    cd tools/brand && npm run build-role-art
+
 ## Content is crawled, not retyped
 
 `tools/scraper` runs a `PlaywrightCrawler`, so Crawlee owns link discovery,
@@ -122,7 +143,18 @@ Things worth knowing about the migration:
 - The case pages set their figures as heading/paragraph pairs ("Start" /
   "Samenwerking gestart in 2019"). A run of three or more is folded into one
   `stats` block, so they render as a figure row rather than as stray
-  subheadings.
+  subheadings. A label whose figure the editor left blank still counts - Saman
+  Groep's "Start" has no year against it - as long as two in the run carry one,
+  because an empty cell in the row beats three stray subheadings back in the
+  prose.
+- The CMS builds its "related pages" grids as a `<ul>` whose every `<li>` is
+  one big link - image, title, summary and a "Read more" label, all inside a
+  single `<a>`. Read as text, that became a bullet point naming the brand
+  twice and ending in the dead words "Read more": 598 of them across 103
+  pages. Such a list is captured as its links instead (`cardlinks`), and the
+  content build resolves them to routes (`cards`) so the page renders the
+  site's own cards. A grid whose links all point outside the migration falls
+  back to the plain list, so nothing is lost to the rewrite.
 - Attribution lines come out of the CMS shouted ("BARRY TEMPELAAR, CEO
   BLUEDESK"). They are re-cased, with a short list of brand spellings
   (`myShop`, `Data2Performance`, `KUBO`) that a generic title-caser destroys.
@@ -144,6 +176,16 @@ Borrowed deliberately, and why:
   its own must be stoppable. It also pauses on hover and focus.
 - **Asymmetric bento grid** for the five pillars — unequal cells give the eye a
   reading order that five identical cards do not.
+- **Pictures set beside their text, alternating sides** (the house style of the
+  large consultancies) — the CMS emits an image as a sibling of the paragraphs
+  around it, which renders as a column of text interrupted by full-width
+  slabs. `ContentBlocks` runs a grouping pass first (`layout()`): a picture
+  takes up to three of the paragraphs it belongs to into a two-column split and
+  the side flips each time, pictures the CMS put back to back become a pair,
+  and one with no prose to sit beside keeps the full measure. Nothing is
+  cropped to a house ratio - a diagram survives letterboxing far worse than a
+  photograph survives being its own shape - so what is shared is the frame, the
+  radius, the entrance and the slow lift on hover.
 
 ## Motion rules
 
@@ -156,18 +198,30 @@ Borrowed deliberately, and why:
 - Only one number counts up on the page (the 40-70% claim). Used twice it reads
   as a gimmick.
 
-## Known gaps (not yet done)
+## Every control does something
 
-- **Neither form has a backend.** `ContactForm.tsx` and `Newsletter.tsx` both
-  validate and fake a submit. Wire them to real endpoints before launch.
-- **`/privacy` is a placeholder.** The approved statement still needs migrating
-  from `worldemp.com/nl/privacy-cookiestatement`.
-- **Some knowledge-base articles are Dutch under `/en`.** That is the live
-  site's own state: the English edition of those pages exists but was never
-  translated, so the crawl faithfully carries Dutch text. Pages missing an
-  edition entirely fall back to the other language with a visible note; these
-  cannot be detected that way.
-- Social URLs in `Footer.tsx` are guesses and need checking.
+A button that validates and then silently drops the input, a "Read more" that
+is not a link, a nav item to a placeholder - each of those is worse than not
+being there, because the visitor spends a click finding out. So:
+
+- **Neither form has a backend, and neither pretends to.** `ContactForm.tsx`
+  and `Newsletter.tsx` compose the submission as an email and hand it to the
+  visitor's mail client, and the confirmation says so rather than claiming the
+  message was received. The success panel carries the address and the phone
+  number as well, because a mail client is not a given. Replace `submit()`
+  with a POST when there is an endpoint.
+- **`/privacy` carries the real statement**, migrated like any other page.
+- **The footer's social links** are the four the live site's own footer uses -
+  two of them are not what you would guess from the brand name.
+- **`node tools/pages/check-links.mjs`** walks the built export and fails if
+  any internal link or asset does not resolve. 18k links across 278 pages, so
+  the claim that nothing is dead is checked rather than asserted.
+
+Still open: **some knowledge-base articles are Dutch under `/en`.** That is the
+live site's own state - the English edition of those pages exists but was never
+translated, so the crawl faithfully carries Dutch text. Pages missing an edition
+entirely fall back to the other language with a visible note; these cannot be
+detected that way.
 
 ## Commands
 
@@ -176,7 +230,9 @@ npm run dev       # http://localhost:3000
 npm run build     # all routes should prerender static (277 pages)
 npx eslint src tools   # next lint is gone in Next 16
 npm run build:pages    # static export for GitHub Pages -> out/
+node tools/pages/check-links.mjs   # every internal link in out/ resolves
 
 cd tools/scraper && npm run sync        # re-migrate content from the live site
-cd tools/brand   && npm run build-logo  # re-vectorise the logo
+cd tools/brand   && npm run build-logo      # re-vectorise the logo
+cd tools/brand   && npm run build-role-art  # redraw the role illustrations
 ```

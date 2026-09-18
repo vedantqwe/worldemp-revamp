@@ -79,7 +79,7 @@ export function ContentPage({
           </p>
         ) : null}
 
-        <ContentBlocks blocks={edition.blocks} />
+        <ContentBlocks blocks={edition.blocks} locale={locale} />
       </article>
 
       {related?.length ? (

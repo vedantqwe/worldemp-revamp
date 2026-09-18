@@ -47,7 +47,7 @@ export default async function DisciplinePage({
       />
 
       <section className="bg-white py-20 sm:py-28">
-        <ContentBlocks blocks={page.edition.blocks} />
+        <ContentBlocks blocks={page.edition.blocks} locale={locale} />
       </section>
 
       {roles.length ? (
@@ -57,7 +57,7 @@ export default async function DisciplinePage({
               {roles.length} {roles.length === 1 ? t.rolesOne : t.roles}
             </h2>
             <div className="mt-10">
-              <CardGrid locale={locale} cards={roles} columns={3} compact />
+              <CardGrid locale={locale} cards={roles} columns={3} />
             </div>
           </div>
         </section>

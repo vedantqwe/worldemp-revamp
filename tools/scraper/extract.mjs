@@ -173,11 +173,47 @@ export function extractPage($, url) {
       return;
     }
     if (tag === 'ul' || tag === 'ol') {
+      /*
+       * The CMS builds its "related pages" card grids out of a <ul> whose
+       * every <li> is one big link: image, title, summary and a "Read more"
+       * label, all inside a single <a>. Read as text - which is what this used
+       * to do - a grid of six cards became six bullet points that each said
+       * the brand name twice and ended in the words "Read more", with no link
+       * under them. 598 dead "Read more"s across 103 pages.
+       *
+       * So a list whose items are all card links is captured as the links it
+       * is. The content build resolves them to routes and the page renders
+       * real cards, which is what they were before they were flattened.
+       */
       const items = $n
         .children('li')
         .map((_, li) => clean($(li).text()))
         .get()
         .filter(Boolean);
+
+      /*
+       * A card grid is a list whose every item is one whole link. Two or more,
+       * because a single-item list is a list, and real hrefs only - some of
+       * these lists are menus wired to `javascript:void(0)`.
+       *
+       * The item text rides along, so the content build can fall back to
+       * rendering this as the list it looks like when none of the links point
+       * at a page the revamp carries. Dropping the block would be worse than
+       * the dead "Read more" this is here to remove.
+       */
+      const $items = $n.children('li');
+      const hrefs = $items
+        .map((_, li) => {
+          const href = $(li).children('a[href]').first().attr('href');
+          return href && !/^javascript:/i.test(href) ? href.split('#')[0] : null;
+        })
+        .get()
+        .filter(Boolean);
+      if (hrefs.length > 1 && hrefs.length === $items.length) {
+        push({ type: 'cardlinks', hrefs, items });
+        return;
+      }
+
       if (items.length) push({ type: 'list', ordered: tag === 'ol', items });
       return;
     }

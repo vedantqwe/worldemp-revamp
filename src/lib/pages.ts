@@ -18,7 +18,13 @@ export type Block =
   | { type: "image"; src: string; width: number; height: number; alt: string }
   | { type: "table"; rows: string[][] }
   /** A row of figures the CMS set as heading/paragraph pairs. */
-  | { type: "stats"; items: { label: string; value: string }[] };
+  | { type: "stats"; items: { label: string; value: string }[] }
+  /**
+   * A "related pages" grid, as routes rather than as copied teasers: the CMS
+   * builds these out of links, and rendering the live cards keeps them in step
+   * with the pages they point at instead of freezing a summary at crawl time.
+   */
+  | { type: "cards"; routes: string[] };
 
 export type Edition = {
   title: string;
@@ -147,6 +153,30 @@ export function summaries(kind: PageKind, locale: Locale): CardSummary[] {
       if (b.published) return 1;
       return a.title.localeCompare(b.title);
     });
+}
+
+/**
+ * Cards for an explicit list of routes, in the order given.
+ *
+ * Used by the `cards` block: the CMS decided what belongs in that grid and in
+ * what order, so this keeps the order and only drops what does not resolve.
+ */
+export function cardsFor(routes: string[], locale: Locale): CardSummary[] {
+  return routes
+    .map((route) => {
+      const resolved = resolvePage(route, locale);
+      if (!resolved) return null;
+      return {
+        route,
+        title: resolved.edition.title,
+        excerpt: excerpt(resolved.edition, 140),
+        image: leadImage(resolved.edition),
+        published: resolved.edition.published,
+        categories: resolved.edition.categories ?? [],
+        translated: Boolean(resolved.fallbackFrom),
+      } satisfies CardSummary;
+    })
+    .filter((card): card is CardSummary => card !== null);
 }
 
 /** Everything under a route prefix, for "more in this section" rails. */

@@ -5,14 +5,16 @@ import { Logo } from "@/components/brand/Logo";
 import { useContent } from "@/lib/content-context";
 
 /**
- * Social destinations. Taken from the links on the live site's footer; the
- * account handles should be confirmed before launch.
+ * Social destinations, read off the live site's own footer rather than guessed
+ * from the brand name - two of the four are not what you would guess. The
+ * Facebook page is WorldEmpIndia, and YouTube is a channel id, not a handle.
+ * All four were checked to resolve.
  */
 const social = [
-  { label: "LinkedIn", href: "https://www.linkedin.com/company/worldemp" },
-  { label: "YouTube", href: "https://www.youtube.com/@worldemp" },
-  { label: "Facebook", href: "https://www.facebook.com/worldemp" },
-  { label: "X", href: "https://x.com/worldemp" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/worldemp/" },
+  { label: "YouTube", href: "https://www.youtube.com/channel/UCAoRcGoPd-gQj-LMAEnETMQ" },
+  { label: "Facebook", href: "https://www.facebook.com/WorldEmpIndia/" },
+  { label: "X", href: "https://twitter.com/worldemp" },
 ];
 
 export function Footer() {

@@ -37,6 +37,7 @@ npx eslint src   # `next lint` was removed in Next 16
 | `src/components/` | One file per designed section; `ui/Reveal.tsx` has the shared motion primitives. |
 | `src/components/content/` | The templates every migrated page renders through. |
 | `src/components/brand/` | The logo, drawn as vectors. |
+| `public/roles/` | Generated. One illustration per role and per discipline, in place of the live site's stock photography. |
 | `src/app/[locale]/` | All routes. `/` redirects to `/en`. |
 | `tools/scraper/` | Crawlee + Playwright crawler and the content build. |
 | `tools/brand/` | Vectorises the logo master into `public/brand/*.svg` and path data. |
@@ -77,9 +78,12 @@ requests on either.
 
 ## Before this goes live
 
-- **Neither form has a backend** — the contact form and the newsletter band
-  both validate and fake a submit.
-- **`/privacy` is a placeholder** — migrate the approved statement.
+- **Neither form has a backend.** Both compose the submission as an email and
+  hand it to the visitor's mail client, which works but is not a pipeline —
+  wire `submit()` in `ContactForm.tsx` and `Newsletter.tsx` to a real endpoint.
 - **Some knowledge-base articles are Dutch under `/en`** — that is how the live
   site publishes them; the English edition exists but was never translated.
-- Footer social URLs are guesses and need checking.
+- **The role illustrations are generated**, not commissioned. They are drawn
+  from the brand palette by `tools/brand/build-role-art.mjs`; drop a file into
+  `public/roles/` to replace any of them with real artwork and the build will
+  leave it alone.

@@ -7,16 +7,16 @@ import { useContent } from "@/lib/content-context";
 /**
  * Newsletter sign-up band, as the live site carries above its footer.
  *
- * NOTE: like the contact form, this has no backend. It validates the address
- * and shows the confirmed state, but nothing is sent - wire `submit()` to the
- * mailing list before launch.
+ * Like the contact form, there is no list to POST to, so the sign-up is
+ * composed as an email to WorldEmp rather than swallowed. Wire `submit()` to
+ * the mailing list when there is one.
  */
 export function Newsletter() {
-  const { t } = useContent();
+  const { c, t } = useContent();
   const [state, setState] = useState<"idle" | "sending" | "done">("idle");
   const [error, setError] = useState<string | null>(null);
 
-  async function submit(event: React.FormEvent<HTMLFormElement>) {
+  function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const email = String(new FormData(event.currentTarget).get("email") ?? "").trim();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -25,8 +25,9 @@ export function Newsletter() {
     }
     setError(null);
     setState("sending");
-    // TODO: replace with a real POST once the endpoint exists.
-    await new Promise((resolve) => setTimeout(resolve, 600));
+    window.location.href =
+      `mailto:${c.site.email}?subject=${encodeURIComponent(t.newsletterSubmit)}` +
+      `&body=${encodeURIComponent(`${t.newsletterPlaceholder}: ${email}`)}`;
     setState("done");
   }
 

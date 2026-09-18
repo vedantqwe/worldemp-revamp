@@ -7,9 +7,16 @@ import { useContent } from "@/lib/content-context";
 type Status = "idle" | "submitting" | "done";
 
 /**
- * NOTE: this form has no backend yet. It validates and shows the success
- * state, but nothing is sent anywhere - wire `submit()` to an API route,
- * a form service, or the existing CRM before this goes live.
+ * The enquiry form.
+ *
+ * There is no backend to POST to, so rather than validate the form and then
+ * quietly drop it - a button that pretends - it composes the enquiry as an
+ * email and hands it to the visitor's mail client. The message really does
+ * reach WorldEmp, and the confirmation says what actually happened instead of
+ * claiming a request was received.
+ *
+ * Replace `submit()` with a POST when an endpoint exists; the success panel's
+ * fallback line can go at the same time.
  */
 export function ContactForm() {
   const { c } = useContent();
@@ -17,7 +24,7 @@ export function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  async function submit(e: React.FormEvent<HTMLFormElement>) {
+  function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
     const next: Record<string, string> = {};
@@ -32,8 +39,22 @@ export function ContactForm() {
     if (Object.keys(next).length > 0) return;
 
     setStatus("submitting");
-    // TODO: replace with a real POST once the endpoint exists.
-    await new Promise((r) => setTimeout(r, 700));
+
+    // Long labels rather than bare values, because this arrives as an email a
+    // person reads, not as a payload something parses.
+    const lines = [
+      `${f.name}: ${String(data.get("name") ?? "").trim()}`,
+      `${f.company}: ${String(data.get("company") ?? "").trim() || "-"}`,
+      `${f.email}: ${email}`,
+      `${f.discipline}: ${String(data.get("discipline") ?? "").trim()}`,
+      "",
+      String(data.get("message") ?? "").trim(),
+    ];
+    const subject = `${f.submit} - ${String(data.get("discipline") ?? "").trim()}`;
+    window.location.href =
+      `mailto:${c.site.email}?subject=${encodeURIComponent(subject)}` +
+      `&body=${encodeURIComponent(lines.join("\r\n"))}`;
+
     setStatus("done");
   }
 
@@ -58,6 +79,25 @@ export function ContactForm() {
           <h2 className="mt-5 font-display text-2xl text-we-ink">{f.successHeading}</h2>
           <p className="mx-auto mt-2 max-w-sm text-sm leading-relaxed text-we-muted">
             {f.successBody}
+          </p>
+          {/* A mail client is not a given - on a shared machine or a locked-down
+              browser nothing opens at all, and the visitor is left holding a
+              message they cannot send. */}
+          <p className="mx-auto mt-5 max-w-sm text-sm leading-relaxed text-we-muted">
+            {f.successFallback}{" "}
+            <a
+              href={`mailto:${c.site.email}`}
+              className="font-semibold text-we-indigo underline underline-offset-4"
+            >
+              {c.site.email}
+            </a>{" "}
+            &middot;{" "}
+            <a
+              href={c.site.phoneHref}
+              className="font-semibold text-we-indigo underline underline-offset-4"
+            >
+              {c.site.phone}
+            </a>
           </p>
         </motion.div>
       ) : (
