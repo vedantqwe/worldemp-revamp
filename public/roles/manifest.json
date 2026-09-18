@@ -25,7 +25,6 @@
   "finance-financial-planning-expert.webp",
   "finance-insurance-expert.webp",
   "finance-risk-management-expert.webp",
-  "finance-tax-specialist.webp",
   "it-ai-specialist.webp",
   "it-application-developer.webp",
   "it-application-manager.webp",
@@ -34,11 +33,12 @@
   "it-database-administrator.webp",
   "it-ui-ux-designer.webp",
   "finance.webp",
-  "finance-bookkeeper-accountant.webp",
   "finance-cryptocurrency-blockchain-expert.webp",
   "finance-fintech-expert.webp",
   "it-test-engineer.webp",
-  "engineering-projectmanager.webp"
+  "engineering-projectmanager.webp",
+  "finance-bookkeeper-accountant.webp",
+  "finance-tax-specialist.webp"
  ],
  "sources": {
   "data.webp": {
@@ -252,14 +252,14 @@
    "query": "steel structure"
   },
   "finance-bookkeeper-accountant.webp": {
-   "id": "f3394359-e4c3-49c8-b073-f214195fe825",
-   "url": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTExL3Nta2trczE5ODAtMTAxXzMyLWltYWdlLmpwZw.jpg",
-   "title": "Financial Accounting",
-   "creator": null,
+   "id": "d5499ada-5c48-4eff-979d-e1a3e070b6e9",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/GIDMT5TDUF.jpg",
+   "title": "Calculator Numbers",
+   "creator": "Negative Space",
    "license": "cc0 1.0",
-   "source": "rawpixel",
-   "page": "https://www.rawpixel.com/image/8769332/financial-accounting",
-   "query": "accounting"
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/calculator-numbers-GIDMT5TDUF",
+   "query": "calculator numbers"
   },
   "finance-compliance-specialist.webp": {
    "id": "c2f6e232-c5cd-4868-9f21-74b40f619d55",
@@ -322,14 +322,14 @@
    "query": "balance scales"
   },
   "finance-tax-specialist.webp": {
-   "id": "1a11f465-1a0d-4f20-ab35-5beac297bc8e",
-   "url": "https://cdn.stocksnap.io/img-thumbs/960w/Y2GUBQIPXD.jpg",
-   "title": "Calculator Numbers",
-   "creator": "Negative Space",
+   "id": "4164f712-0382-45e2-a9af-f7b91c003555",
+   "url": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL2ZydGF4X3JldHVybl9jb250cm9sX3RheC1pbWFnZS1reWJha2g2ci5qcGc.jpg",
+   "title": "German tax document",
+   "creator": null,
    "license": "cc0 1.0",
-   "source": "stocksnap",
-   "page": "https://stocksnap.io/photo/calculator-numbers-Y2GUBQIPXD",
-   "query": "calculator"
+   "source": "rawpixel",
+   "page": "https://www.rawpixel.com/image/6017838/photo-image-paper-public-domain-office",
+   "query": "tax"
   },
   "it-ai-specialist.webp": {
    "id": "d8481036-84c7-4766-9672-15ecb18f8c37",

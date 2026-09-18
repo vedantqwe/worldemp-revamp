@@ -47,14 +47,14 @@ export const ROLE_QUERIES = {
   "structural-engineer": { query: "steel structure", pick: 0 },
 
   // Finance
-  "bookkeeper-accountant": { query: "accounting", pick: 3 },
+  "bookkeeper-accountant": { query: "calculator numbers", pick: 2 },
   "compliance-specialist": { query: "contract", pick: 2 },
   "cryptocurrency-blockchain-expert": { query: "bitcoin", pick: 5 },
   "financial-planning-expert": { query: "piggy bank", pick: 0 },
   "fintech-expert": { query: "credit card payment", pick: 4 },
   "insurance-expert": { query: "umbrella rain", pick: 0 },
   "risk-management-expert": { query: "balance scales", pick: 0 },
-  "tax-specialist": { query: "calculator", pick: 0 },
+  "tax-specialist": { query: "tax", pick: 0 },
 
   // IT
   "ai-specialist": { query: "circuit board", pick: 0 },
