@@ -1801,8 +1801,7 @@
     },
     {
      "type": "text",
-     "text": "Accountmanager",
-     "html": "Accountmanager"
+     "text": "Account manager"
     },
     {
      "type": "text",
@@ -3608,7 +3607,7 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "Klantcase:"
+     "text": "Client case:"
     },
     {
      "type": "heading",
@@ -3643,7 +3642,7 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "Vakmensen"
+     "text": "Skilled people"
     },
     {
      "type": "heading",
@@ -3656,8 +3655,7 @@
     },
     {
      "type": "text",
-     "text": "“Dat moest echt wel bij ons team passen,” zei De Koning.",
-     "html": "“Dat moest echt wel bij ons team passen,” zei De Koning."
+     "text": "“They really had to fit our team,” said De Koning."
     },
     {
      "type": "text",
@@ -5063,8 +5061,7 @@
     },
     {
      "type": "text",
-     "text": "In deze blog ga ik in op de vervolgstappen binnen hetzelfde traject: engineering en quality assurance, operational excellence en training, en guardrails en datagovernance.",
-     "html": "In deze blog ga ik in op de vervolgstappen binnen hetzelfde traject: engineering en quality assurance, operational excellence en training, en guardrails en datagovernance."
+     "text": "In this blog I look at the next steps within that same programme: engineering and quality assurance, operational excellence and training, and guardrails and data governance."
     },
     {
      "type": "image",
@@ -6380,8 +6377,7 @@
     },
     {
      "type": "text",
-     "text": "“Dat moest echt wel bij ons team passen,” zei De Koning.",
-     "html": "“Dat moest echt wel bij ons team passen,” zei De Koning."
+     "text": "“They really had to fit our team,” said De Koning."
     },
     {
      "type": "text",
@@ -6673,8 +6669,7 @@
     },
     {
      "type": "text",
-     "text": "Hoe het digitale kennismigrant-model van WorldEmp écht werkt",
-     "html": "<strong><em>Hoe het digitale kennismigrant-model van WorldEmp écht werkt</em></strong>"
+     "text": "How WorldEmp's digital knowledge migrant model actually works"
     },
     {
      "type": "text",
@@ -6700,9 +6695,9 @@
      "type": "list",
      "ordered": false,
      "items": [
-      "Focus op één opdrachtgever: professionals werken uitsluitend voor uw organisatie, waardoor contextwisselingen en IP-risico's worden beperkt.",
-      "Kennis blijft behouden: documentatie, broncode en praktijkkennis blijven binnen uw team.",
-      "Directe aansturing: doelstellingen, feedback en werkwijzen blijven volledig onder uw regie."
+      "Focus on one client: professionals work exclusively for your organisation, which limits context switching and IP risk.",
+      "Knowledge is retained: documentation, source code and practical know-how stay within your team.",
+      "Direct supervision: objectives, feedback and ways of working stay entirely under your direction."
      ]
     },
     {
@@ -6712,8 +6707,7 @@
     },
     {
      "type": "text",
-     "text": "Remote hiring, outsourcing en het DKM-model lijken op elkaar, maar de verantwoordelijkheden zijn anders verdeeld.",
-     "html": "Remote hiring, outsourcing en het DKM-model lijken op elkaar, maar de verantwoordelijkheden zijn anders verdeeld."
+     "text": "Remote hiring, outsourcing and the DKM model look alike, but the responsibilities are divided differently."
     },
     {
      "type": "list",
@@ -6737,9 +6731,9 @@
      "type": "list",
      "ordered": false,
      "items": [
-      "Recruitmentproces: functieprofiel, assessments, shortlist en planning.",
-      "Communicatie: vaste contactpersonen, communicatielijnen en escalatieprocedures.",
-      "Onboarding: afspraken over HR, apparatuur, IT-voorzieningen en medewerkersbegeleiding."
+      "Recruitment process: role profile, assessments, shortlist and planning.",
+      "Communication: fixed points of contact, communication lines and escalation procedures.",
+      "Onboarding: agreements on HR, equipment, IT provision and support for the employee."
      ]
     },
     {
@@ -6749,22 +6743,21 @@
     },
     {
      "type": "text",
-     "text": "Met de juiste planning vormen tijdsverschillen geen belemmering. Vaste overlapuren maken stand-ups, reviews en overleggen mogelijk, terwijl de overige uren ruimte bieden voor geconcentreerd werk.",
-     "html": "Met de juiste planning vormen tijdsverschillen geen belemmering. Vaste overlapuren maken stand-ups, reviews en overleggen mogelijk, terwijl de overige uren ruimte bieden voor geconcentreerd werk."
+     "text": "With the right planning, time differences are no obstacle. Fixed overlapping hours make stand-ups, reviews and meetings possible, while the remaining hours leave room for focused work."
     },
     {
      "type": "list",
      "ordered": false,
      "items": [
-      "Werkuren afgestemd op het ritme van uw team.",
-      "Live samenwerking tijdens overlapuren, focuswerk daarbuiten.",
-      "Heldere escalatieprocedures voor urgente situaties."
+      "Working hours aligned with your team's rhythm.",
+      "Live collaboration during the overlapping hours, focused work outside them.",
+      "Clear escalation procedures for urgent situations."
      ]
     },
     {
      "type": "heading",
      "level": 2,
-     "text": "Compliance en risicobeheersing: informatiebeveiliging, AI-governance en intellectueel eigendom"
+     "text": "Compliance and risk control: information security, AI governance and intellectual property"
     },
     {
      "type": "text",
@@ -6823,16 +6816,15 @@
     },
     {
      "type": "text",
-     "text": "Dedicated professionals ondersteunen kennisintensieve functies waarbij continuïteit essentieel is.",
-     "html": "Dedicated professionals ondersteunen kennisintensieve functies waarbij continuïteit essentieel is."
+     "text": "Dedicated professionals support knowledge-intensive roles where continuity is essential."
     },
     {
      "type": "list",
      "ordered": false,
      "items": [
-      "Software & Cloud: softwareontwikkelaars, DevOps Engineers, Cloud Engineers, Data Engineers en AI-specialisten.",
-      "Engineering: mechanical, electrical, embedded, CAD- en industrial automation-specialisten.",
-      "Business Functions: projectmanagers en specialistische functies binnen manufacturing, semiconductor, energie, healthcare, logistiek, finance en zakelijke dienstverlening."
+      "Software & Cloud: software developers, DevOps Engineers, Cloud Engineers, Data Engineers and AI specialists.",
+      "Engineering: mechanical, electrical, embedded, CAD and industrial automation specialists.",
+      "Business Functions: project managers and specialist roles within manufacturing, semiconductor, energy, healthcare, logistics, finance and professional services."
      ]
     },
     {
@@ -6848,9 +6840,9 @@
      "type": "list",
      "ordered": false,
      "items": [
-      "Functiegerichte programmeeropdrachten of engineeringcases.",
-      "Beoordeling van probleemoplossend vermogen en analytisch inzicht.",
-      "Evaluatie van communicatie, documentatie en samenwerking op afstand."
+      "Role-specific programming tasks or engineering cases.",
+      "An assessment of problem-solving ability and analytical insight.",
+      "An evaluation of communication, documentation and remote collaboration."
      ]
     },
     {
@@ -6860,16 +6852,15 @@
     },
     {
      "type": "text",
-     "text": "Duurzame prestaties beginnen met duurzame arbeidsvoorwaarden. Een aantrekkelijke werkomgeving helpt professionals betrokken en gemotiveerd te blijven.",
-     "html": "Duurzame prestaties beginnen met duurzame arbeidsvoorwaarden. Een aantrekkelijke werkomgeving helpt professionals betrokken en gemotiveerd te blijven."
+     "text": "Lasting performance starts with lasting employment conditions. An attractive working environment helps professionals stay engaged and motivated."
     },
     {
      "type": "list",
      "ordered": false,
      "items": [
-      "Hybride werken met geplande overlapuren waar nodig.",
-      "Competitieve salarissen volgens de Indiase markt, gecombineerd met internationale carrièremogelijkheden.",
-      "Uitgebreide verlofregelingen, maaltijdvergoedingen, waarderingsprogramma's en professionele apparatuur."
+      "Hybrid working with scheduled overlapping hours where needed.",
+      "Competitive salaries by Indian market standards, combined with international career opportunities.",
+      "Generous leave arrangements, meal allowances, recognition programmes and professional equipment."
      ]
     },
     {
@@ -6889,7 +6880,7 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "Afweging ten opzichte van eigen werving of zelfstandige professionals"
+     "text": "Weighed against recruiting yourself or hiring freelancers"
     },
     {
      "type": "text",
@@ -6906,7 +6897,7 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "Conclusie"
+     "text": "Conclusion"
     },
     {
      "type": "text",
@@ -7242,7 +7233,7 @@
      "type": "list",
      "ordered": false,
      "items": [
-      "Kostenefficiëntie: In landen als Sri Lanka en India liggen de lonen beduidend lager, waardoor dit voor Nederlandse werkgevers financieel aantrekkelijk is."
+      "Cost efficiency: in countries such as Sri Lanka and India, wages are considerably lower, which makes this financially attractive for Dutch employers."
      ]
     },
     {
@@ -9227,8 +9218,7 @@
     },
     {
      "type": "text",
-     "text": "Frank Korf eigenaar WorldEmp",
-     "html": "<strong>Frank Korf eigenaar WorldEmp</strong>"
+     "text": "Frank Korf, owner of WorldEmp"
     },
     {
      "type": "text",
@@ -11005,8 +10995,7 @@
     },
     {
      "type": "text",
-     "text": "Boek een demo",
-     "html": "<b>Boek een demo</b>"
+     "text": "Book a demo"
     },
     {
      "type": "text",
@@ -11146,8 +11135,7 @@
     },
     {
      "type": "text",
-     "text": "Een actieve dag vol verbinding",
-     "html": "<strong data-end=\"1047\" data-start=\"1013\">Een actieve dag vol verbinding</strong>"
+     "text": "An active day full of connection"
     },
     {
      "type": "text",
@@ -11159,8 +11147,7 @@
     },
     {
      "type": "text",
-     "text": "Samenwerken over grenzen heen",
-     "html": "<strong data-end=\"1485\" data-start=\"1452\">Samenwerken over grenzen heen</strong>"
+     "text": "Working together across borders"
     },
     {
      "type": "text",
@@ -12803,8 +12790,7 @@
     },
     {
      "type": "text",
-     "text": "Plan een gesprek, ik denk graag met je mee",
-     "html": "<strong>Plan een gesprek, ik denk graag met je mee</strong>"
+     "text": "Book a call, I am glad to think it through with you"
     },
     {
      "type": "text",
@@ -13484,8 +13470,7 @@
     },
     {
      "type": "text",
-     "text": "Een remote engineer is betrokken bij uiteenlopende werkzaamheden, zoals:",
-     "html": "Een remote engineer is betrokken bij uiteenlopende werkzaamheden, zoals:"
+     "text": "A remote engineer is involved in a range of work, such as:"
     },
     {
      "type": "list",
@@ -13545,8 +13530,7 @@
     },
     {
      "type": "text",
-     "text": "Onze unieke aanpak",
-     "html": "<strong>Onze unieke aanpak</strong>"
+     "text": "Our distinctive approach"
     },
     {
      "type": "text",
@@ -13554,8 +13538,7 @@
     },
     {
      "type": "text",
-     "text": "Samenwerken met engineers op afstand in de praktijk",
-     "html": "<strong>Samenwerken met engineers op afstand in de praktijk</strong>"
+     "text": "Working with remote engineers in practice"
     },
     {
      "type": "text",
@@ -13587,13 +13570,11 @@
     },
     {
      "type": "text",
-     "text": "Samenwerken met een remote engineer via WorldEmp is eenvoudig en persoonlijk.",
-     "html": "Samenwerken met een remote engineer via WorldEmp is eenvoudig en persoonlijk."
+     "text": "Working with a remote engineer through WorldEmp is simple and personal."
     },
     {
      "type": "text",
-     "text": "Eenvoudig proces en persoonlijke begeleiding",
-     "html": "<strong>Eenvoudig proces en persoonlijke begeleiding</strong>"
+     "text": "A simple process and personal support"
     },
     {
      "type": "list",
@@ -15657,8 +15638,7 @@
     },
     {
      "type": "text",
-     "text": "“Dat moest echt wel bij ons team passen,” zei De Koning.",
-     "html": "“Dat moest echt wel bij ons team passen,” zei De Koning."
+     "text": "“They really had to fit our team,” said De Koning."
     },
     {
      "type": "text",
@@ -15984,8 +15964,7 @@
     },
     {
      "type": "text",
-     "text": "“Dat moest echt wel bij ons team passen,” zei De Koning.",
-     "html": "“Dat moest echt wel bij ons team passen,” zei De Koning."
+     "text": "“They really had to fit our team,” said De Koning."
     },
     {
      "type": "text",
@@ -16270,7 +16249,7 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "Taalvaardigheid"
+     "text": "Language skills"
     },
     {
      "type": "text",
@@ -16290,7 +16269,7 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "Sportief, serieus en allesbehalve vrijblijvend."
+     "text": "Competitive, serious and anything but casual."
     },
     {
      "type": "text",
@@ -17863,8 +17842,7 @@
    "blocks": [
     {
      "type": "text",
-     "text": "Door: Shubham Walwadkar, GEO Specialist, WorldEmp",
-     "html": "<em>Door:&nbsp;Shubham Walwadkar, GEO Specialist, WorldEmp</em>"
+     "text": "By: Shubham Walwadkar, GEO Specialist, WorldEmp"
     },
     {
      "type": "text",
@@ -17872,8 +17850,7 @@
     },
     {
      "type": "text",
-     "text": "Vier jaar geleden lag de focus vooral op topposities in Google. Bedrijven wilden gevonden worden op relevante zoekwoorden en stuurden op rankings, verkeer en autoriteit.",
-     "html": "Vier jaar geleden lag de focus vooral op topposities in Google. Bedrijven wilden gevonden worden op relevante zoekwoorden en stuurden op rankings, verkeer en autoriteit."
+     "text": "Four years ago the focus was mainly on top positions in Google. Companies wanted to be found on relevant keywords and steered on rankings, traffic and authority."
     },
     {
      "type": "text",
@@ -18206,7 +18183,7 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "Financiële Telegraaf WorldEmp"
+     "text": "WorldEmp in the Financieele Telegraaf"
     },
     {
      "type": "image",
@@ -22156,13 +22133,12 @@
    "blocks": [
     {
      "type": "text",
-     "text": "Door: Jan Joosten, Business Partner WorldEmp",
-     "html": "<em>Door:&nbsp;Jan Joosten, Business Partner WorldEmp</em>"
+     "text": "By: Jan Joosten, Business Partner WorldEmp"
     },
     {
      "type": "heading",
      "level": 2,
-     "text": "Iedereen wil vooruit"
+     "text": "Everyone wants to move forward"
     },
     {
      "type": "text",
@@ -22174,8 +22150,7 @@
     },
     {
      "type": "text",
-     "text": "De ambitie is duidelijk. De uitvoering staat onder druk.",
-     "html": "De ambitie is duidelijk. De uitvoering staat onder druk."
+     "text": "The ambition is clear. Delivering on it is under pressure."
     },
     {
      "type": "image",
@@ -22393,13 +22368,11 @@
     },
     {
      "type": "text",
-     "text": "Plan een gesprek, ik denk graag met je mee",
-     "html": "<strong>Plan een gesprek, ik denk graag met je mee</strong>"
+     "text": "Book a call, I am glad to think it through with you"
     },
     {
      "type": "text",
-     "text": "Ik ben Jan Joosten, Business Partner bij WorldEmp en ondernemer in de solar- en energietransitiesector.",
-     "html": "Ik ben Jan Joosten, Business Partner bij WorldEmp en ondernemer in de solar- en energietransitiesector."
+     "text": "I am Jan Joosten, Business Partner at WorldEmp and an entrepreneur in the solar and energy transition sector."
     },
     {
      "type": "text",
@@ -23058,8 +23031,7 @@
     },
     {
      "type": "text",
-     "text": "Sindsdien hebben we in datzelfde traject opnieuw concrete stappen gezet.",
-     "html": "Sindsdien hebben we in datzelfde traject opnieuw concrete stappen gezet."
+     "text": "Since then we have taken further concrete steps in that same programme."
     },
     {
      "type": "image",
@@ -23275,8 +23247,7 @@
     },
     {
      "type": "text",
-     "text": "Sindsdien hebben we in datzelfde traject opnieuw concrete stappen gezet.",
-     "html": "Sindsdien hebben we in datzelfde traject opnieuw concrete stappen gezet."
+     "text": "Since then we have taken further concrete steps in that same programme."
     },
     {
      "type": "image",
@@ -24737,8 +24708,7 @@
    "blocks": [
     {
      "type": "text",
-     "text": "Luister het hele interview hier terug.",
-     "html": "Luister het hele interview hier terug."
+     "text": "Listen back to the full interview here."
     },
     {
      "type": "cards",
@@ -26524,7 +26494,7 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "Vaardigheden"
+     "text": "Skills"
     },
     {
      "type": "text",
@@ -29987,7 +29957,7 @@
      "items": [
       "Data",
       "Engineering",
-      "ICT",
+      "IT",
       "Finance"
      ]
     },
@@ -30471,7 +30441,7 @@
      "items": [
       "Data",
       "Engineering",
-      "ICT",
+      "IT",
       "Finance"
      ]
     },
@@ -30945,7 +30915,7 @@
      "items": [
       "Data",
       "Engineering",
-      "ICT",
+      "IT",
       "Finance"
      ]
     },
@@ -31560,7 +31530,7 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "WorldEmp nieuws & blogs"
+     "text": "WorldEmp news & blogs"
     },
     {
      "type": "cards",
@@ -31825,8 +31795,7 @@
     },
     {
      "type": "text",
-     "text": "Datagedreven werken biedt kansen, maar legt ook druk op interne teams. Uitbesteding biedt uitkomst bij:",
-     "html": "Datagedreven werken biedt kansen, maar legt ook druk op interne teams. Uitbesteding biedt uitkomst bij:"
+     "text": "Working with data offers opportunities, but it also puts pressure on internal teams. Outsourcing helps with:"
     },
     {
      "type": "list",
@@ -31848,8 +31817,7 @@
     },
     {
      "type": "text",
-     "text": "WorldEmp combineert snelheid, kwaliteit en betrouwbaarheid. Zo maken wij uitbesteding écht waardevol:",
-     "html": "WorldEmp combineert snelheid, kwaliteit en betrouwbaarheid. Zo maken wij uitbesteding écht waardevol:"
+     "text": "WorldEmp combines speed, quality and reliability. This is how we make outsourcing genuinely worthwhile:"
     },
     {
      "type": "list",
@@ -32942,63 +32910,59 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "Engineeringdisciplines & rollen"
+     "text": "Engineering disciplines & roles"
     },
     {
      "type": "text",
-     "text": "Technisch ontwerp & uitvoering",
-     "html": "<strong>Technisch ontwerp &amp; uitvoering</strong>"
+     "text": "Technical design & delivery"
     },
     {
      "type": "list",
      "ordered": false,
      "items": [
-      "Werktuigbouwkundig ingenieur",
-      "Elektrotechnisch ingenieur",
-      "Civiel ingenieur",
-      "BIM-modelleur",
-      "Constructief ingenieur"
+      "Mechanical engineer",
+      "Electrical engineer",
+      "Civil engineer",
+      "BIM modeller",
+      "Structural engineer"
      ]
     },
     {
      "type": "text",
-     "text": "Industrie & procesautomatisering",
-     "html": "<strong>Industrie &amp; procesautomatisering</strong>"
+     "text": "Industry & process automation"
     },
     {
      "type": "list",
      "ordered": false,
      "items": [
       "Automation engineer",
-      "Procesingenieur",
-      "Chemisch ingenieur"
+      "Process engineer",
+      "Chemical engineer"
      ]
     },
     {
      "type": "text",
-     "text": "Specialistische sectoren",
-     "html": "<strong>Specialistische sectoren</strong>"
+     "text": "Specialist sectors"
     },
     {
      "type": "list",
      "ordered": false,
      "items": [
-      "Maritiem ingenieur",
-      "Scheepsarchitect",
-      "Brandveiligheid ingenieur"
+      "Maritime engineer",
+      "Naval architect",
+      "Fire safety engineer"
      ]
     },
     {
      "type": "text",
-     "text": "Projectondersteuning & management",
-     "html": "<strong>Projectondersteuning &amp; management</strong>"
+     "text": "Project support & management"
     },
     {
      "type": "list",
      "ordered": false,
      "items": [
       "Document controller",
-      "Projectmanager"
+      "Project manager"
      ]
     },
     {
@@ -33042,8 +33006,7 @@
     },
     {
      "type": "text",
-     "text": "Technische organisaties in Nederland staan onder druk. Uitbesteden biedt uitkomst bij:",
-     "html": "Technische organisaties in Nederland staan onder druk. Uitbesteden biedt uitkomst bij:"
+     "text": "Technical organisations in the Netherlands are under pressure. Outsourcing helps with:"
     },
     {
      "type": "list",
@@ -33061,8 +33024,7 @@
     },
     {
      "type": "text",
-     "text": "WorldEmp combineert snelheid, kwaliteit en betrouwbaarheid. Zo maken wij uitbesteding écht waardevol:",
-     "html": "WorldEmp combineert snelheid, kwaliteit en betrouwbaarheid. Zo maken wij uitbesteding écht waardevol:"
+     "text": "WorldEmp combines speed, quality and reliability. This is how we make outsourcing genuinely worthwhile:"
     },
     {
      "type": "list",
@@ -35699,7 +35661,7 @@
   "route": "/solutions/engineering/projectmanager",
   "kind": "role",
   "en": {
-   "title": "Projectmanager",
+   "title": "Project manager",
    "description": "Strengthen your team with experienced engineering project managers through WorldEmp. ✔️ Save up to 70% on labor costs and scale your business flexibly. ✔️ More than 20 years of experience in international job placement. ✔️ Find the right specialist within 2 to 6 weeks without mediation costs.",
    "sourcePath": "/en/solutions/engineering/projectmanager",
    "published": null,
@@ -36174,51 +36136,47 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "Finance disciplines & rollen"
+     "text": "Finance disciplines & roles"
     },
     {
      "type": "text",
-     "text": "Financiële administratie & rapportage",
-     "html": "<strong>Financiële administratie &amp; rapportage</strong>"
+     "text": "Financial administration & reporting"
     },
     {
      "type": "list",
      "ordered": false,
      "items": [
-      "Belastingspecialist",
-      "Boekhouder / accountant"
+      "Tax specialist",
+      "Bookkeeper / accountant"
      ]
     },
     {
      "type": "text",
-     "text": "Strategie & financiële planning",
-     "html": "<strong>Strategie &amp; financiële planning</strong>"
+     "text": "Strategy & financial planning"
     },
     {
      "type": "list",
      "ordered": false,
      "items": [
-      "Risicomangement expert",
-      "Financiële planning"
+      "Risk management expert",
+      "Financial planning"
      ]
     },
     {
      "type": "text",
-     "text": "Regelgeving & compliance",
-     "html": "<b>Regelgeving &amp; compliance</b>"
+     "text": "Regulation & compliance"
     },
     {
      "type": "list",
      "ordered": false,
      "items": [
       "Compliance specialist",
-      "Verzekeringsdeskundige"
+      "Insurance expert"
      ]
     },
     {
      "type": "text",
-     "text": "Innovatie & technologie",
-     "html": "<b>Innovatie &amp; technologie</b>"
+     "text": "Innovation & technology"
     },
     {
      "type": "list",
@@ -36269,8 +36227,7 @@
     },
     {
      "type": "text",
-     "text": "Financiële afdelingen staan onder druk door veranderende regelgeving, digitalisering en personeelsschaarste. Uitbesteden biedt uitkomst bij:",
-     "html": "Financiële afdelingen staan onder druk door veranderende regelgeving, digitalisering en personeelsschaarste. Uitbesteden biedt uitkomst bij:"
+     "text": "Finance departments are under pressure from changing regulation, digitalisation and a shortage of staff. Outsourcing helps with:"
     },
     {
      "type": "list",
@@ -36292,8 +36249,7 @@
     },
     {
      "type": "text",
-     "text": "WorldEmp combineert snelheid, kwaliteit en betrouwbaarheid. Zo maken wij uitbesteding écht waardevol:",
-     "html": "WorldEmp combineert snelheid, kwaliteit en betrouwbaarheid. Zo maken wij uitbesteding écht waardevol:"
+     "text": "WorldEmp combines speed, quality and reliability. This is how we make outsourcing genuinely worthwhile:"
     },
     {
      "type": "list",
@@ -38312,26 +38268,24 @@
     {
      "type": "heading",
      "level": 2,
-     "text": "IT-disciplines & rollen"
+     "text": "IT disciplines & roles"
     },
     {
      "type": "text",
-     "text": "Infrastructuur & beheer",
-     "html": "<b>Infrastructuur &amp; beheer</b>"
+     "text": "Infrastructure & administration"
     },
     {
      "type": "list",
      "ordered": false,
      "items": [
-      "Applicatiebeheerder",
+      "Application manager",
       "Database administrator",
       "Cloud & DevOps engineer"
      ]
     },
     {
      "type": "text",
-     "text": "Beveiliging & innovatie",
-     "html": "<b>Beveiliging &amp; innovatie</b>"
+     "text": "Security & innovation"
     },
     {
      "type": "list",
@@ -38343,8 +38297,7 @@
     },
     {
      "type": "text",
-     "text": "Ontwerp & ervaring",
-     "html": "<b>Ontwerp &amp; ervaring</b>"
+     "text": "Design & experience"
     },
     {
      "type": "list",
@@ -38356,14 +38309,13 @@
     },
     {
      "type": "text",
-     "text": "Ontwikkeling & beheer",
-     "html": "<b>Ontwikkeling &amp; beheer</b>"
+     "text": "Development & maintenance"
     },
     {
      "type": "list",
      "ordered": false,
      "items": [
-      "Applicatieontwikkelaar",
+      "Application developer",
       "Test engineer"
      ]
     },
@@ -38408,8 +38360,7 @@
     },
     {
      "type": "text",
-     "text": "IT-teams in Nederland staan onder hoge druk. Uitbesteding biedt een krachtige oplossing bij:",
-     "html": "IT-teams in Nederland staan onder hoge druk. Uitbesteding biedt een krachtige oplossing bij:"
+     "text": "IT teams in the Netherlands are under heavy pressure. Outsourcing offers a powerful answer to:"
     },
     {
      "type": "list",
@@ -38431,8 +38382,7 @@
     },
     {
      "type": "text",
-     "text": "WorldEmp combineert snelheid, kwaliteit en betrouwbaarheid. Zo maken wij uitbesteding écht waardevol:",
-     "html": "WorldEmp combineert snelheid, kwaliteit en betrouwbaarheid. Zo maken wij uitbesteding écht waardevol:"
+     "text": "WorldEmp combines speed, quality and reliability. This is how we make outsourcing genuinely worthwhile:"
     },
     {
      "type": "list",

@@ -273,9 +273,17 @@ edition by translation where one is absent - flagged `translated: true`, which
 the page says out loud, because a translation made here is not the same thing
 as copy the company wrote and approved.
 
-`node tools/scraper/check-language.mjs` votes on stop words per paragraph and
-fails if any edition carries the other language. 288 built pages, 287 in their
-own language.
+`node tools/scraper/check-language.mjs` runs two tests. The first votes on
+stop words, per paragraph and, at a much lower bar, per heading. The second
+catches what the vote cannot: "Infrastructuur & beheer" has no function words
+in it at all, so nothing is countable - but the English page and the Dutch page
+carry that string identically, and since the two editions are separate pages on
+the live site, a sentence appearing byte for byte in both was either never
+translated or is language-neutral. Around fifty legitimately are - names, phone
+numbers, job titles Dutch uses unchanged - so that test reports rather than
+fails. Read it after a crawl.
+
+288 built pages, 287 in their own language.
 
 The one exception is **`/en/privacy`**, deliberately. Publishing our own
 English rendering of a privacy and cookie statement as the company's own is not

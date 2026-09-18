@@ -2,8 +2,10 @@
 /**
  * Finds text that is in the wrong language for the edition it sits in.
  *
- *     node tools/scraper/check-language.mjs           a summary
- *     node tools/scraper/check-language.mjs --blocks  every offending block
+ *     node tools/scraper/check-language.mjs             a summary
+ *     node tools/scraper/check-language.mjs --blocks    every offending block
+ *     node tools/scraper/check-language.mjs --identical strings the two
+ *                                                      editions share verbatim
  *
  * The live site publishes an English edition of most pages, but a good number
  * of them were never actually translated: the English URL exists, the English
@@ -94,6 +96,7 @@ const pages = JSON.parse(
 );
 
 const showBlocks = process.argv.includes('--blocks');
+const showIdentical = process.argv.includes('--identical');
 const offenders = [];
 let checked = 0;
 
@@ -142,6 +145,51 @@ if (showBlocks) {
     console.log(`\n=== ${o.locale} ${o.route}`);
     for (const w of o.wrong) console.log(`  [${w.i}] ${w.type} (${w.found}) ${w.text.slice(0, 110)}`);
   }
+}
+
+/*
+ * The second test, and the one that caught what the vote could not.
+ *
+ * "Infrastructuur & beheer" has no function words in it at all, so the vote
+ * has nothing to count and calls it neither language. What gives it away is
+ * that the English page and the Dutch page carry that string identically: the
+ * two editions are separate pages on the live site, so a sentence that appears
+ * byte for byte in both was either never translated or is language-neutral.
+ *
+ * Plenty is legitimately language-neutral - names, phone numbers, and job
+ * titles like "Database administrator" that Dutch uses unchanged - so this
+ * reports rather than fails. Read it after a crawl and translate what is
+ * actually Dutch.
+ */
+const textOf = (edition) => {
+  const out = [];
+  for (const block of edition.blocks) {
+    if (block.type === 'text' || block.type === 'heading' || block.type === 'quote') {
+      out.push(block.text);
+    } else if (block.type === 'list') {
+      out.push(...block.items);
+    }
+  }
+  return out;
+};
+
+const identical = new Map();
+for (const entry of pages) {
+  // A translated edition is identical to its source by construction wherever a
+  // string needed no translating, which is not news.
+  if (!entry.en || !entry.nl || entry.en.translated || entry.nl.translated) continue;
+  const dutch = new Set(textOf(entry.nl));
+  for (const text of textOf(entry.en)) {
+    if (dutch.has(text) && !identical.has(text)) identical.set(text, entry.route);
+  }
+}
+
+console.log(
+  `${identical.size} strings appear verbatim in both editions ` +
+    '(names and shared job titles, mostly - run with --identical to read them)',
+);
+if (showIdentical) {
+  for (const [text, route] of identical) console.log(`  ${route}  ${text.slice(0, 100)}`);
 }
 
 process.exit(offenders.length ? 1 : 0);
