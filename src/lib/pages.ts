@@ -185,6 +185,31 @@ export function cardsFor(routes: string[], locale: Locale): CardSummary[] {
     .filter((card): card is CardSummary => card !== null);
 }
 
+/**
+ * The one sentence on a page worth setting in the margin.
+ *
+ * A blockquote if the page has one; otherwise the longest thing in curly
+ * quotes, which on these pages is nearly always a client or a colleague being
+ * quoted inside a paragraph rather than in a quote block. Bounded at both ends
+ * - under sixty characters it is a fragment, over two hundred and forty it is
+ * a paragraph and stops working as a pull quote.
+ */
+export function pullQuote(edition: Edition): string | null {
+  const block = edition.blocks.find(
+    (b) => b.type === "quote" && b.text.length >= 60 && b.text.length <= 240,
+  ) as Extract<Block, { type: "quote" }> | undefined;
+  if (block) return block.text;
+
+  const quoted = /“([^”]{60,240})”/;
+  let best: string | null = null;
+  for (const b of edition.blocks) {
+    if (b.type !== "text") continue;
+    const found = b.text.match(quoted);
+    if (found && (!best || found[1].length > best.length)) best = found[1];
+  }
+  return best;
+}
+
 /** Everything under a route prefix, for "more in this section" rails. */
 export function childrenOf(prefix: string, locale: Locale): CardSummary[] {
   return pages

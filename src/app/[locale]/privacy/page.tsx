@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
-import { ContentBlocks } from "@/components/content/ContentBlocks";
+import { ContentBlocks, headingsOf } from "@/components/content/ContentBlocks";
+import { PageAside } from "@/components/content/PageAside";
 import { getContent } from "@/lib/content";
 import { isLocale } from "@/lib/i18n";
 import { resolvePage } from "@/lib/pages";
@@ -41,7 +42,7 @@ export default async function PrivacyPage({ params }: PageProps<"/[locale]/priva
         title={page?.edition.title ?? privacy.title}
         intro={page?.edition.description || undefined}
       />
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white py-14 sm:py-20">
         {/* The rest of the site's Dutch-only pages are translated. This one is
             not: publishing our own English rendering of a privacy and cookie
             statement as the company's own is not a build step's call to make,
@@ -55,7 +56,16 @@ export default async function PrivacyPage({ params }: PageProps<"/[locale]/priva
           </p>
         ) : null}
         {page ? (
-          <ContentBlocks blocks={page.edition.blocks} locale={locale} />
+          <div className="mx-auto max-w-6xl px-5 sm:px-8">
+            <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_13rem] lg:gap-x-12">
+              <ContentBlocks blocks={page.edition.blocks} locale={locale} className="" />
+              <PageAside
+                locale={locale}
+                headings={headingsOf(page.edition.blocks)}
+                route="/privacy"
+              />
+            </div>
+          </div>
         ) : (
           <div className="mx-auto max-w-2xl px-5 sm:px-8">
             <p className="rounded-2xl border border-we-line bg-we-paper p-6 text-sm leading-relaxed text-we-muted">

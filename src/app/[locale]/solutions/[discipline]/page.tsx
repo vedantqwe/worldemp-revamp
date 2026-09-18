@@ -4,11 +4,12 @@ import { notFound } from "next/navigation";
 import { PageHero } from "@/components/PageHero";
 import { CardGrid } from "@/components/content/CardGrid";
 import { CtaBand } from "@/components/CtaBand";
-import { ContentBlocks } from "@/components/content/ContentBlocks";
+import { ContentBlocks, headingsOf } from "@/components/content/ContentBlocks";
+import { PageAside } from "@/components/content/PageAside";
 import { Reveal, RevealFigure } from "@/components/ui/Reveal";
 import { getContent } from "@/lib/content";
 import { isLocale, locales, ui } from "@/lib/i18n";
-import { childrenOf, leadImage, resolvePage, slugsOfKind } from "@/lib/pages";
+import { childrenOf, leadImage, pullQuote, resolvePage, slugsOfKind } from "@/lib/pages";
 
 export function generateStaticParams() {
   return locales.flatMap((locale) =>
@@ -133,8 +134,18 @@ export default async function DisciplinePage({
         </section>
       ) : null}
 
-      <section className="bg-white py-20 sm:py-28">
-        <ContentBlocks blocks={body} locale={locale} />
+      <section className="bg-white py-14 sm:py-20">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_13rem] lg:gap-x-12">
+            <ContentBlocks blocks={body} locale={locale} className="" />
+            <PageAside
+              locale={locale}
+              headings={headingsOf(body)}
+              quote={pullQuote(page.edition)}
+              route={route}
+            />
+          </div>
+        </div>
       </section>
 
       {roles.length ? (

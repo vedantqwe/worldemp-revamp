@@ -2,9 +2,9 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { CtaBand } from "@/components/CtaBand";
 import { ContentBlocks, headingsOf } from "@/components/content/ContentBlocks";
-import { PageContents } from "@/components/content/PageContents";
+import { PageAside } from "@/components/content/PageAside";
 import { CardGrid } from "@/components/content/CardGrid";
-import type { CardSummary, ResolvedPage } from "@/lib/pages";
+import { pullQuote, type CardSummary, type ResolvedPage } from "@/lib/pages";
 import { localeHref, ui, type Locale } from "@/lib/i18n";
 
 /**
@@ -34,10 +34,11 @@ export function ContentPage({
   const t = ui[locale];
   const { edition, fallbackFrom } = page;
   const headings = headingsOf(edition.blocks);
-  // The rail earns its column on a long page and gets in the way on a short
-  // one, so the layout follows it: with a rail the prose sits left of it, and
-  // without one the prose is centred rather than pinned against a void.
-  const hasRail = headings.length >= 4;
+  const quote = pullQuote(edition);
+  // The aside earns its column when it has something in it, and gets in the
+  // way when it does not: with one the prose sits left of it, and without one
+  // the prose is centred rather than pinned against a void.
+  const hasRail = headings.length >= 4 || Boolean(quote);
   const note = fallbackFrom
     ? fallbackFrom === "en"
       ? "Dit artikel is alleen in het Engels gepubliceerd."
@@ -105,11 +106,12 @@ export function ContentPage({
             </div>
 
             {hasRail ? (
-              <aside className="hidden lg:block">
-                <div className="sticky top-28 max-h-[calc(100vh-9rem)] overflow-y-auto pr-1">
-                  <PageContents headings={headings} label={t.onThisPage} />
-                </div>
-              </aside>
+              <PageAside
+                locale={locale}
+                headings={headings}
+                quote={quote}
+                route={page.entry.route}
+              />
             ) : null}
           </div>
         </div>

@@ -5,13 +5,21 @@ import { motion, useInView, useReducedMotion } from "framer-motion";
 import { Reveal } from "@/components/ui/Reveal";
 import { useContent } from "@/lib/content-context";
 
-/** Oversized pull quote. The mark is decorative and hidden from the a11y tree. */
+/**
+ * Oversized pull quote, closed as well as opened.
+ *
+ * Both marks are decorative and hidden from the accessibility tree - the
+ * blockquote already carries the semantics, and a screen reader announcing
+ * two stray quotation marks around it helps nobody. The closing one is the
+ * same size, weight and gradient as the opening one, set on the trailing edge
+ * so the quote reads as a closed shape rather than something left open.
+ */
 export function FounderQuote() {
   const { c } = useContent();
   const { founderQuote } = c;
 
   return (
-    <section className="bg-we-paper py-24 sm:py-32">
+    <section className="bg-we-paper py-20 sm:py-24">
       <div className="mx-auto max-w-4xl px-5 text-center sm:px-8">
         <Reveal>
           <span
@@ -23,7 +31,13 @@ export function FounderQuote() {
           <blockquote className="mt-2 text-balance font-display text-[clamp(1.5rem,3.6vw,2.75rem)] leading-[1.18] text-we-ink">
             {founderQuote.quote}
           </blockquote>
-          <figcaption className="mt-8 text-sm text-we-muted">
+          <span
+            aria-hidden
+            className="we-gradient-text mt-3 block font-display text-7xl leading-none"
+          >
+            &rdquo;
+          </span>
+          <figcaption className="mt-5 text-sm text-we-muted">
             <span className="font-semibold text-we-ink">{founderQuote.name}</span>
             <span className="mx-2 text-we-line">|</span>
             {founderQuote.role}

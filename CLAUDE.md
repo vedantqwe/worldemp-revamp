@@ -219,14 +219,26 @@ Borrowed deliberately, and why:
   extremes and the pairs: a portrait or a panorama is cropped to the frame the
   layout needs, and in a two-up band every tile is cropped regardless, because
   an even row is the whole reason for putting them side by side.
-- **A contents rail in the right margin** on any page with four headings or
-  more. The measure is set for reading and the masthead pins it to the left
-  gutter, which on a wide screen left the right half of the page empty - a
-  column of white as tall as the article. Stretching the text across it would
-  be worse: a 120-character line is harder to read than the gap. So the room
-  goes to the page's own headings, which a twenty-section migrated article
-  needed anyway. Below four headings there is no rail and the prose centres
-  instead of sitting against a void.
+- **A margin column on every long page** - articles, cases, roles, services,
+  disciplines, sectors and the privacy statement. The measure is set for
+  reading and the masthead pins it to the left gutter, which on a wide screen
+  left the right half empty: a column of white as tall as the article.
+  Stretching the text across it would be worse - a 120-character line is harder
+  to read than the gap - so the room goes to three things, in the order a
+  reader wants them. Where am I: the page's own headings, with a marker that
+  follows what you are reading. What does someone say about this: a sentence
+  lifted out of the page when it has a quotable one, and a client quote with
+  their portrait when it does not, picked by a hash of the route so the same
+  page always shows the same person. Who do I talk to: the phone number and
+  the address, live links, not a repeat of the CTA band already at the foot of
+  the page. Each part is skipped when it has nothing to show, and a page with
+  none of them gets no column at all - the prose centres instead of sitting
+  against a void.
+- **The pillar grid varies width, not height.** A double-height cell is the
+  obvious way to build a bento and the wrong one here: all five pillars carry
+  two lines of copy, so the tall card spent half its height empty with its
+  title stranded at the bottom. Two wide cards over three narrow ones give the
+  same reading order out of rows that end where the words do.
 - **A picture is not paired with a heading that introduces what follows it.**
   A heading immediately before an image opens the section the image belongs
   to; dragging it into the column beside the image stranded it at the bottom

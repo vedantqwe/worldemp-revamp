@@ -7,17 +7,23 @@ import { useContent } from "@/lib/content-context";
 
 /**
  * The five pillars as an asymmetric bento grid rather than five identical
- * cards. Unequal cells give the eye an order to read in, which a uniform
- * row of five does not. Each card lifts and reveals a hairline gradient
- * edge on hover - the only decoration it gets.
+ * cards. Unequal cells give the eye an order to read in, which a uniform row
+ * of five does not. Each card lifts and reveals a hairline gradient edge on
+ * hover - the only decoration it gets.
+ *
+ * The asymmetry is in the width and not the height. A double-height cell was
+ * the obvious way to build a bento and the wrong one here: all five pillars
+ * carry two lines of copy, so the tall card spent half its height empty with
+ * its title stranded at the bottom. Two wide cards over three narrow ones
+ * gives the same reading order out of rows that end where the words do.
  */
 
 const spans = [
-  "md:col-span-3 lg:col-span-2 lg:row-span-2",
-  "md:col-span-3 lg:col-span-2",
-  "md:col-span-2 lg:col-span-2",
-  "md:col-span-2 lg:col-span-2",
-  "md:col-span-2 lg:col-span-4",
+  "md:col-span-3",
+  "md:col-span-3",
+  "md:col-span-2",
+  "md:col-span-2",
+  "md:col-span-2",
 ];
 
 export function AllInConcept() {
@@ -49,7 +55,9 @@ export function AllInConcept() {
           </Reveal>
         </div>
 
-        <div className="mt-14 grid auto-rows-[minmax(11rem,auto)] grid-cols-1 gap-4 md:grid-cols-6 lg:grid-cols-8">
+        {/* auto-rows-fr so the cards in a row match each other, rather than
+            every row matching the tallest card on the page. */}
+        <div className="mt-14 grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-6">
           {allInConcept.pillars.map((pillar, i) => (
             <motion.article
               key={pillar.title}
@@ -57,7 +65,7 @@ export function AllInConcept() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.65, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
-              className={`group relative flex flex-col justify-between overflow-hidden rounded-3xl border border-we-line bg-white p-7 transition-all duration-500 hover:-translate-y-1 hover:border-transparent hover:shadow-[0_20px_60px_-24px_rgba(21,9,88,0.35)] ${spans[i] ?? ""}`}
+              className={`group relative flex flex-col overflow-hidden rounded-3xl border border-we-line bg-white p-7 transition-all duration-500 hover:-translate-y-1 hover:border-transparent hover:shadow-[0_20px_60px_-24px_rgba(21,9,88,0.35)] ${spans[i] ?? ""}`}
             >
               <span
                 aria-hidden
@@ -66,7 +74,7 @@ export function AllInConcept() {
               <span className="font-display text-sm font-semibold text-we-magenta">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <div className="mt-8">
+              <div className="mt-6">
                 <h3 className="font-display text-xl leading-snug text-we-ink">{pillar.title}</h3>
                 <p className="mt-2.5 max-w-sm text-sm leading-relaxed text-we-muted">
                   {pillar.body}
