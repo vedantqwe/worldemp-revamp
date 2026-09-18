@@ -40,6 +40,12 @@ export type Edition = {
   published: string | null;
   /** Labels the listing pages tag this page with ("Blog", "Kennisartikel"). */
   categories: string[];
+  /**
+   * The picture the live index shows for this article. An article's first
+   * in-body image is as often a logo or a chart as a photograph, so where the
+   * index has chosen one, that is the card.
+   */
+  card?: { src: string; width: number; height: number };
   blocks: Block[];
 };
 
@@ -103,6 +109,7 @@ export function slugsOfKind(kind: PageKind, prefix: string): string[] {
 
 /** First image in a page, used as the card and social image. */
 export function leadImage(edition: Edition): Extract<Block, { type: "image" }> | null {
+  if (edition.card) return { type: "image", ...edition.card, alt: "" };
   return (
     (edition.blocks.find((b) => b.type === "image") as
       | Extract<Block, { type: "image" }>

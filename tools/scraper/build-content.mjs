@@ -148,6 +148,37 @@ function translateBlocks(blocks, into) {
   return { blocks: out, applied };
 }
 
+/** Brands a word-by-word capitaliser would otherwise flatten. */
+const BRAND_CASE = {
+  worldemp: 'WorldEmp', kubo: 'KUBO', iso: 'ISO', ai: 'AI', it: 'IT', eu: 'EU',
+  hr: 'HR', dkm: 'DKM', asml: 'ASML', seo: 'SEO', geo: 'GEO', bot: 'BOT',
+};
+
+/* ------------------------------------------------------------ knowledge -- */
+
+/**
+ * What the live knowledge-base index actually lists.
+ *
+ * The crawl finds articles by following links, which turns up every address
+ * the CMS will serve, copies included. The index is paginated and lists each
+ * article once, with the card image the editors chose for it - so it is the
+ * authority on which articles exist and what picture belongs to each.
+ *
+ * Written by tools/scraper/kennisbank.mjs; missing is not fatal, it just means
+ * the card images fall back to the first picture in the article.
+ */
+const KENNISBANK = existsSync(path.join(ROOT, 'src/content/kennisbank.json'))
+  ? JSON.parse(await fs.readFile(path.join(ROOT, 'src/content/kennisbank.json'), 'utf8'))
+  : { nl: [], en: [] };
+
+/** source path -> the card the index shows for it */
+const INDEX_CARDS = new Map();
+for (const locale of ['nl', 'en']) {
+  for (const article of KENNISBANK[locale] ?? []) {
+    INDEX_CARDS.set(article.path, article);
+  }
+}
+
 /* -------------------------------------------------------------------- art */
 
 /**
@@ -581,6 +612,171 @@ async function main() {
   }
 
   console.log(`translations: ${translationsApplied} strings swapped into the thinner edition`);
+
+  /*
+   * Three things the live site does that a faithful copy should not inherit.
+   *
+   * First, it gives several different articles the same <title>. Seven of them
+   * are called "Digitale kennismigranten: buitenlandse accountants duurzaam
+   * inzetten", which on an index page is seven identical cards with seven
+   * different photographs. Where a title is not unique, the article's own
+   * first heading is the better name for it.
+   */
+  for (const locale of ['en', 'nl']) {
+    const byTitle = new Map();
+    for (const entry of pages.values()) {
+      if (entry.kind !== 'article' || !entry[locale]) continue;
+      const list = byTitle.get(entry[locale].title) ?? [];
+      list.push(entry);
+      byTitle.set(entry[locale].title, list);
+    }
+    for (const [title, entries] of byTitle) {
+      if (entries.length < 2) continue;
+      const used = new Set();
+      for (const entry of entries) {
+        const own = entry[locale].blocks.find(
+          (b) => b.type === 'heading' && looksLikeATitle(b.text),
+        )?.text;
+        // Three of these articles share their opening heading as well as their
+        // <title>, so the last resort is the slug - the one name the CMS gives
+        // each page that is unique by construction.
+        const next = own && own !== title && !used.has(own) ? own : titleFromSlug(entry.route);
+        used.add(next);
+        entry[locale].title = next;
+      }
+    }
+  }
+
+  for (const locale of ['en', 'nl']) {
+    const byTitle = new Map();
+    for (const entry of pages.values()) {
+      if (entry.kind !== 'article' || !entry[locale]) continue;
+      const list = byTitle.get(entry[locale].title) ?? [];
+      list.push(entry);
+      byTitle.set(entry[locale].title, list);
+    }
+    for (const entries of byTitle.values()) {
+      if (entries.length < 2) continue;
+      // Keep the first and move the rest to their slug, so one of them still
+      // carries the name the editors gave it.
+      for (const entry of entries.slice(1)) entry[locale].title = titleFromSlug(entry.route);
+    }
+  }
+
+  /*
+   * Second, it publishes the same article at more than one address - a CMS
+   * copy (`-1`, `-3`), or the same piece a second time in the other language
+   * under its own slug. Either way the index shows it twice.
+   *
+   * Exact copies are found by hashing the text. The language twins are found
+   * by their signature: one route whose English was translated here paired
+   * with another whose Dutch was, carrying near-identical titles. The route
+   * that keeps both of its own editions wins; the copy is dropped.
+   */
+  /*
+   * Not every heading can stand in for a title. The articles open with a
+   * byline as often as with a headline - "By: Peter van Londen, COO WorldEmp"
+   * became the name of two different pieces the first time this ran - and a
+   * one-word section label is no better.
+   */
+  function titleFromSlug(route) {
+    const words = route
+      .split('/')
+      .pop()
+      .split('-')
+      // A leading number is the CMS's ordering prefix, not part of the title.
+      .filter((w, i) => w && !(i === 0 && /^\d+$/.test(w)));
+    const text = words
+      .map((w) => BRAND_CASE[w.toLowerCase()] ?? w)
+      .join(' ');
+    return text.charAt(0).toUpperCase() + text.slice(1);
+  }
+
+  function looksLikeATitle(text) {
+    const t = String(text ?? '').trim();
+    if (t.length < 15 || t.length > 110) return false;
+    if (/^(by|door|bron|source|blog|auteur)\b/i.test(t)) return false;
+    if (t.endsWith(':')) return false;
+    return t.split(/\s+/).length >= 3;
+  }
+
+  const bodyKey = (edition) =>
+    edition
+      ? crypto
+          .createHash('sha1')
+          .update(
+            edition.blocks
+              .map((b) => b.text ?? (b.items ?? []).join(' '))
+              .join(' ')
+              .replace(/\s+/g, ' ')
+              .trim()
+              .toLowerCase(),
+          )
+          .digest('hex')
+      : null;
+
+  const words = (t) => new Set(String(t).toLowerCase().match(/[a-z]{4,}/g) ?? []);
+  const overlap = (a, b) => {
+    const A = words(a);
+    const B = words(b);
+    if (!A.size || !B.size) return 0;
+    let shared = 0;
+    for (const w of A) if (B.has(w)) shared += 1;
+    return shared / new Set([...A, ...B]).size;
+  };
+  /** Native editions beat translated ones; a page with both beats a page with one. */
+  const richness = (entry) =>
+    ['en', 'nl'].reduce((n, l) => n + (entry[l] ? (entry[l].translated ? 1 : 2) : 0), 0);
+
+  const articles = [...pages.values()].filter((p) => p.kind === 'article');
+  const duplicates = new Set();
+
+  for (let i = 0; i < articles.length; i += 1) {
+    if (duplicates.has(articles[i].route)) continue;
+    for (let j = i + 1; j < articles.length; j += 1) {
+      if (duplicates.has(articles[j].route)) continue;
+      const a = articles[i];
+      const b = articles[j];
+
+      const sameBody = ['en', 'nl'].some((l) => {
+        const ka = bodyKey(a[l]);
+        return ka && ka === bodyKey(b[l]);
+      });
+      const twins =
+        (a.en?.translated && b.nl?.translated) || (a.nl?.translated && b.en?.translated);
+      const sameTitle = overlap(a.en?.title ?? a.nl?.title, b.en?.title ?? b.nl?.title) >= 0.7;
+
+      if (!sameBody && !(twins && sameTitle)) continue;
+
+      const loser = richness(a) >= richness(b) ? b : a;
+      duplicates.add(loser.route);
+    }
+  }
+
+  for (const route of duplicates) pages.delete(route);
+  if (duplicates.size) {
+    console.log(`duplicate articles dropped: ${duplicates.size}`);
+  }
+
+  /*
+   * Third, the picture. An article's first in-body image is often a logo or a
+   * chart, while the index card carries the photograph the editors chose, so
+   * the card image comes from the index where the index has one.
+   */
+  let carded = 0;
+  for (const entry of pages.values()) {
+    if (entry.kind !== 'article') continue;
+    for (const locale of ['en', 'nl']) {
+      const edition = entry[locale];
+      const listing = edition && INDEX_CARDS.get(edition.sourcePath);
+      if (!listing?.image) continue;
+      const media = await fetchImage(listing.image);
+      if (!media) continue;
+      edition.card = media;
+      carded += 1;
+    }
+  }
+  console.log(`index card images: ${carded} editions`);
 
   const sorted = [...pages.values()].sort((a, b) => a.route.localeCompare(b.route));
   await fs.writeFile(

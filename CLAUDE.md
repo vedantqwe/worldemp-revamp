@@ -165,6 +165,28 @@ Things worth knowing about the migration:
   labels only ever appear on the listing pages, never on the article itself,
   so they are collected against the link they point at and stitched together
   across pages by the content build.
+- **The knowledge-base index is the authority on which articles exist.** The
+  crawl follows links, so it finds every address the CMS will serve, copies
+  included: worldemp.com publishes the same article at `/vervolg-op-ons-iso-42001-traject`
+  and `-traject-1`, at `/kubo-80` and `/kubo-80-jaar`, and publishes some a
+  second time in the other language under their own slug. That is why the index
+  showed the same piece three times with three different photographs.
+  `tools/scraper/kennisbank.mjs` reads the paginated index (65 nl, 57 en) and
+  `src/content/kennisbank.json` becomes the record of what is listed and which
+  card image belongs to each. Four duplicate routes are dropped by the content
+  build: exact body matches by hash, and language twins by their signature -
+  one route whose English was translated here paired with another whose Dutch
+  was, under near-identical titles.
+- **Several articles share a `<title>`** - seven were called "Digitale
+  kennismigranten: buitenlandse accountants duurzaam inzetten", which on an
+  index is seven identical cards. Where a title is not unique the article's own
+  first heading is used, skipping bylines ("Door: Peter van Londen, COO
+  WorldEmp" became the name of two pieces on the first attempt), and where that
+  still collides, the slug - the one name the CMS gives each page that is unique
+  by construction. Index titles are *not* used: the live English index shows
+  every title shifted a row, which is the same metadata mess by another route.
+- **The card image comes from the index**, not from the article. An article's
+  first in-body picture is as often a logo or a chart as a photograph.
 - The case pages set their figures as heading/paragraph pairs ("Start" /
   "Samenwerking gestart in 2019"). A run of three or more is folded into one
   `stats` block, so they render as a figure row rather than as stray

@@ -4266,7 +4266,7 @@
   "route": "/insights/1-de-onzichtbare-dreiging-onder-de-energietransitie",
   "kind": "article",
   "en": {
-   "title": "Digitale kennismigranten: buitenlandse accountants duurzaam inzetten",
+   "title": "De onzichtbare dreiging onder de energietransitie",
    "description": "A smart and sustainable way to bring in international accountants: lower costs, quick to deploy and lasting team integration. A perfect fit for your expertise.",
    "sourcePath": "/en/about-us/knowledge-base/1-de-onzichtbare-dreiging-onder-de-energietransitie",
    "published": null,
@@ -4347,10 +4347,15 @@
       "/insights/recruitment-trends-in-2025"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/offshore-maritime-13-bcc1718d4a.webp",
+    "width": 764,
+    "height": 509
+   }
   },
   "nl": {
-   "title": "Digitale kennismigranten: buitenlandse accountants duurzaam inzetten",
+   "title": "De onzichtbare dreiging onder de energietransitie",
    "description": "Slimme en duurzame manier om internationale accountants in te zetten: kostenbesparing, snelle inzetbaarheid en blijvende teamintegratie. Perfect passend bij jullie expertise.",
    "sourcePath": "/nl/over-ons/kennisbank/1-de-onzichtbare-dreiging-onder-de-energietransitie",
    "published": null,
@@ -4433,7 +4438,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/offshore-maritime-13-bcc1718d4a.webp",
+    "width": 764,
+    "height": 509
+   }
   }
  },
  {
@@ -4516,7 +4526,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/worldemp-adobe-2d1cfdbb7c.webp",
+    "width": 800,
+    "height": 418
+   }
   },
   "nl": {
    "title": "Adobe benoemt nieuwe India-leider",
@@ -4590,7 +4605,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/worldemp-adobe-2d1cfdbb7c.webp",
+    "width": 800,
+    "height": 418
+   }
   }
  },
  {
@@ -4660,7 +4680,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/brainport-lr-1-5bc251e1f3.webp",
+    "width": 750,
+    "height": 499
+   }
   },
   "nl": {
    "title": "ASML groeit, maar kan Brainport dat aan?",
@@ -4749,14 +4774,19 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/brainport-lr-1-5bc251e1f3.webp",
+    "width": 750,
+    "height": 499
+   }
   }
  },
  {
   "route": "/insights/blind-voor-de-oplossing-terwijl-de-vacatures-zich-opstapelen",
   "kind": "article",
   "en": {
-   "title": "Digitale kennismigranten: buitenlandse accountants duurzaam inzetten",
+   "title": "A Sustainable Alternative: Digital Knowledge Migrants",
    "description": "A smart and sustainable way to bring in international accountants: lower costs, quick to deploy and lasting team integration. A perfect fit for your expertise.",
    "sourcePath": "/en/about-us/knowledge-base/blind-voor-de-oplossing-terwijl-de-vacatures-zich-opstapelen",
    "published": null,
@@ -4829,10 +4859,15 @@
       "/insights/recruitment-trends-in-2025"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/blinddoek-2-702525d716.webp",
+    "width": 750,
+    "height": 500
+   }
   },
   "nl": {
-   "title": "Digitale kennismigranten: buitenlandse accountants duurzaam inzetten",
+   "title": "Waarom we blijven kijken naar dezelfde oplossing",
    "description": "Slimme en duurzame manier om internationale accountants in te zetten: kostenbesparing, snelle inzetbaarheid en blijvende teamintegratie. Perfect passend bij jullie expertise.",
    "sourcePath": "/nl/over-ons/kennisbank/blind-voor-de-oplossing-terwijl-de-vacatures-zich-opstapelen",
    "published": null,
@@ -5037,7 +5072,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/blinddoek-2-702525d716.webp",
+    "width": 750,
+    "height": 500
+   }
   }
  },
  {
@@ -5171,7 +5211,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/worldemp-lowres-12-7aa4c961e2.webp",
+    "width": 1200,
+    "height": 800
+   }
   },
   "nl": {
    "title": "ISO 42001 in de praktijk bij WorldEmp: engineering en AI",
@@ -5330,7 +5375,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/worldemp-lowres-12-7aa4c961e2.webp",
+    "width": 1200,
+    "height": 800
+   }
   }
  },
  {
@@ -5496,10 +5546,15 @@
       "/insights/recruitment-trends-in-2025"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-6045-edited-c5ad629f4b.webp",
+    "width": 1600,
+    "height": 1068
+   }
   },
   "nl": {
-   "title": "Digitale kennismigranten: buitenlandse accountants duurzaam inzetten",
+   "title": "Er is een slimmere én duurzamere oplossing",
    "description": "Slimme en duurzame manier om internationale accountants in te zetten: kostenbesparing, snelle inzetbaarheid en blijvende teamintegratie. Perfect passend bij jullie expertise.",
    "sourcePath": "/nl/over-ons/kennisbank/buitenlandse-accountants-naar-nederland-halen",
    "published": null,
@@ -5658,7 +5713,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-6045-edited-c5ad629f4b.webp",
+    "width": 1600,
+    "height": 1068
+   }
   }
  },
  {
@@ -5859,7 +5919,12 @@
       "/insights/recruitment-trends-in-2025"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-6028-edited-d4de3b3110.webp",
+    "width": 1600,
+    "height": 1068
+   }
   },
   "nl": {
    "title": "BOT-model: de sleutel tot succesvolle expansie naar India",
@@ -6058,7 +6123,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-6028-edited-d4de3b3110.webp",
+    "width": 1600,
+    "height": 1068
+   }
   }
  },
  {
@@ -6118,7 +6188,12 @@
       "/insights/recruitment-trends-in-2025"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/chris-van-der-deijl-8cd19ab6fc.webp",
+    "width": 1600,
+    "height": 1067
+   }
   },
   "nl": {
    "title": "Chris van der Deijl gestart bij WorldEmp als Director Port AI & Marketing",
@@ -6177,7 +6252,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/chris-van-der-deijl-8cd19ab6fc.webp",
+    "width": 1600,
+    "height": 1067
+   }
   }
  },
  {
@@ -6247,10 +6327,15 @@
      ]
     }
    ],
-   "translated": true
+   "translated": true,
+   "card": {
+    "src": "/media/insourcing-outsourcing-abdd48b91c.webp",
+    "width": 672,
+    "height": 378
+   }
   },
   "nl": {
-   "title": "Dag outsourcing hallo insourcing - WorldEmp",
+   "title": "De voordelen van virtueel insourcen",
    "description": "Miscommunicatie, missende kennisopbouw en te weinig focus op klantwaarde zijn de grootste problemen die ondernemingen ondervinden bij outsourcen.",
    "sourcePath": "/nl/over-ons/kennisbank/dag-outsourcing-hallo-insourcing",
    "published": null,
@@ -6320,14 +6405,19 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/insourcing-outsourcing-abdd48b91c.webp",
+    "width": 672,
+    "height": 378
+   }
   }
  },
  {
   "route": "/insights/de-energietransitie-stokt-door-gebrek-capaciteit",
   "kind": "article",
   "en": {
-   "title": "Solum Technology: drie jaar samenwerken met WorldEmp",
+   "title": "The step came out of scarcity in the Netherlands",
    "description": "A look back at three years of collaboration between Solum Technology and WorldEmp. On growth, specialist capacity, a sense of team and building a strong international team.",
    "sourcePath": "/en/about-us/knowledge-base/de-energietransitie-stokt-door-gebrek-capaciteit",
    "published": null,
@@ -6478,10 +6568,15 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/team-solum-d3952e6528.webp",
+    "width": 1206,
+    "height": 896
+   }
   },
   "nl": {
-   "title": "Solum Technology: drie jaar samenwerken met WorldEmp",
+   "title": "De stap kwam voort uit schaarste in Nederland",
    "description": "Een terugblik op drie jaar samenwerking tussen Solum Technology en WorldEmp. Over groei, specialistische capaciteit, teamgevoel en bouwen aan een sterk internationaal team.",
    "sourcePath": "/nl/over-ons/kennisbank/solum-technology-drie-jaar-samenwerken-bouwen",
    "published": null,
@@ -6646,7 +6741,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/team-solum-d3952e6528.webp",
+    "width": 1206,
+    "height": 896
+   }
   }
  },
  {
@@ -6916,7 +7016,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/10-1-afea94a135.webp",
+    "width": 1600,
+    "height": 2400
+   }
   },
   "nl": {
    "title": "Dedicated Remote Medewerkers: Zo werkt het Digital Knowledge Migrant (DKM)-model",
@@ -7191,14 +7296,19 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/10-1-afea94a135.webp",
+    "width": 1600,
+    "height": 2400
+   }
   }
  },
  {
   "route": "/insights/duurzame-oplossing-personeelskrapte",
   "kind": "article",
   "en": {
-   "title": "Waarom remote engineers een verstandige keuze zijn",
+   "title": "Why are firms choosing this in such numbers?",
    "description": "WorldEmp delivers a remote engineer within 2-6 weeks who integrates fully into your team, with no agency fees and no organisational fuss.",
    "sourcePath": "/en/about-us/knowledge-base/duurzame-oplossing-personeelskrapte",
    "published": null,
@@ -7362,10 +7472,15 @@
       "/insights/recruitment-trends-in-2025"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-5965-edited-1686c1d60b.webp",
+    "width": 1600,
+    "height": 1068
+   }
   },
   "nl": {
-   "title": "Waarom remote engineers een verstandige keuze zijn",
+   "title": "Waarom kiezen kantoren hier massaal voor?",
    "description": "WorldEmp levert binnen 2–6 weken een remote engineer die volledig in jouw team integreert, zonder bemiddelingskosten of organisatorisch gedoe.",
    "sourcePath": "/nl/over-ons/kennisbank/duurzame-oplossing-personeelskrapte",
    "published": null,
@@ -7543,7 +7658,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-5965-edited-1686c1d60b.webp",
+    "width": 1600,
+    "height": 1068
+   }
   }
  },
  {
@@ -7639,7 +7759,12 @@
      ]
     }
    ],
-   "translated": true
+   "translated": true,
+   "card": {
+    "src": "/media/4-employees-worldemp-1-9d6136a0c1.webp",
+    "width": 1000,
+    "height": 548
+   }
   },
   "nl": {
    "title": "Effectief werken, met een team op afstand",
@@ -7720,7 +7845,12 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/4-employees-worldemp-1-9d6136a0c1.webp",
+    "width": 1000,
+    "height": 548
+   }
   }
  },
  {
@@ -7902,7 +8032,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/expertinterviews-worldemp-8e5ca34673.webp",
+    "width": 623,
+    "height": 384
+   }
   },
   "nl": {
    "title": "Expertinterview - Maarten Steinbuch",
@@ -8092,7 +8227,12 @@
      "text": "Daarnaast bieden wij uitgebreide ondersteuning op het gebied van technologie en tools. We zorgen ervoor dat jouw team toegang heeft tot de beste tools voor communicatie en samenwerking, en bieden training en ondersteuning om ervoor te zorgen dat iedereen deze tools effectief kan gebruiken.",
      "html": "Daarnaast bieden wij uitgebreide ondersteuning op het gebied van technologie en tools. We zorgen ervoor dat jouw team toegang heeft tot de beste tools voor communicatie en samenwerking, en bieden training en ondersteuning om ervoor te zorgen dat iedereen deze tools effectief kan gebruiken.&nbsp;"
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/expertinterview-maarten-steinbuch-420x200-1-4979e43431.webp",
+    "width": 420,
+    "height": 200
+   }
   }
  },
  {
@@ -8259,7 +8399,12 @@
      "text": "Additionally, we provide extensive support in terms of technology and tools. We ensure that your team has access to the best tools for communication and collaboration, and offer training and support to ensure that everyone can use these tools effectively.",
      "html": "Additionally, we provide extensive support in terms of technology and tools. We ensure that your team has access to the best tools for communication and collaboration, and offer training and support to ensure that everyone can use these tools effectively."
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/expertinterview-albert-mulder-420x200-fd6f3c2349.webp",
+    "width": 420,
+    "height": 200
+   }
   },
   "nl": {
    "title": "Expertinterview - Albert Mulder",
@@ -8422,7 +8567,12 @@
      "text": "Daarnaast bieden wij uitgebreide ondersteuning op het gebied van technologie en tools. We zorgen ervoor dat jouw team toegang heeft tot de beste tools voor communicatie en samenwerking, en bieden training en ondersteuning om ervoor te zorgen dat iedereen deze tools effectief kan gebruiken.",
      "html": "Daarnaast bieden wij uitgebreide ondersteuning op het gebied van technologie en tools. We zorgen ervoor dat jouw team toegang heeft tot de beste tools voor communicatie en samenwerking, en bieden training en ondersteuning om ervoor te zorgen dat iedereen deze tools effectief kan gebruiken.&nbsp;"
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/expertinterview-albert-mulder-420x200-fd6f3c2349.webp",
+    "width": 420,
+    "height": 200
+   }
   }
  },
  {
@@ -8619,7 +8769,12 @@
      "text": "In addition, we provide comprehensive support in technology and tools. We ensure your team has access to the best tools for communication and collaboration, and we offer training and support to ensure everyone can use these tools effectively.",
      "html": "In addition, we provide comprehensive support in technology and tools. We ensure your team has access to<strong> the best tools</strong> for communication and collaboration, and we offer training and support to ensure everyone can use these tools <strong>effectively</strong>."
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/expertinterview-jasper-fortuin-420x200-5304e3117c.webp",
+    "width": 420,
+    "height": 200
+   }
   },
   "nl": {
    "title": "Expertinterview - Jasper Fortuin",
@@ -8826,7 +8981,12 @@
      "text": "Daarnaast bieden wij uitgebreide ondersteuning op het gebied van technologie en tools. We zorgen ervoor dat jouw team toegang heeft tot de beste tools voor communicatie en samenwerking, en bieden training en ondersteuning om ervoor te zorgen dat iedereen deze tools effectief kan gebruiken.",
      "html": "Daarnaast bieden wij uitgebreide ondersteuning op het gebied van technologie en tools. We zorgen ervoor dat jouw team toegang heeft tot de beste tools voor communicatie en samenwerking, en bieden training en ondersteuning om ervoor te zorgen dat iedereen deze tools effectief kan gebruiken.&nbsp;"
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/expertinterview-jasper-fortuin-420x200-5304e3117c.webp",
+    "width": 420,
+    "height": 200
+   }
   }
  },
  {
@@ -9001,7 +9161,12 @@
      "text": "Additionally, we provide comprehensive support in terms of technology and tools. We ensure that your team has access to the best tools for communication and collaboration and offer training and support to ensure that everyone can use these tools effectively.",
      "html": "Additionally, we provide comprehensive support in terms of technology and tools. We ensure that your team has access to the<strong> best tools for communication and collaboration</strong> and offer training and support to ensure that everyone can use these tools effectively."
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/expertinterviews-peter-worldemp-7e136f6fa0.webp",
+    "width": 623,
+    "height": 384
+   }
   },
   "nl": {
    "title": "Expertinterview - Peter van Londen",
@@ -9186,7 +9351,12 @@
      "text": "Daarnaast bieden wij uitgebreide ondersteuning op het gebied van technologie en tools. We zorgen ervoor dat jouw team toegang heeft tot de beste tools voor communicatie en samenwerking, en bieden training en ondersteuning om ervoor te zorgen dat iedereen deze tools effectief kan gebruiken.",
      "html": "Daarnaast bieden wij uitgebreide ondersteuning op het gebied van technologie en tools. We zorgen ervoor dat jouw team toegang heeft tot de beste tools voor communicatie en samenwerking, en bieden training en ondersteuning om ervoor te zorgen dat iedereen deze tools effectief kan gebruiken.&nbsp;"
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/expertinterview-peter-van-londen-420x200-1-940d24ea59.webp",
+    "width": 420,
+    "height": 200
+   }
   }
  },
  {
@@ -9267,7 +9437,12 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/frank-240x200-de48aa6bf1.webp",
+    "width": 420,
+    "height": 200
+   }
   },
   "nl": {
    "title": "Hoe een toevallige ontmoeting nieuw personeel oplevert",
@@ -9340,7 +9515,12 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/frank-240x200-de48aa6bf1.webp",
+    "width": 420,
+    "height": 200
+   }
   }
  },
  {
@@ -9523,7 +9703,12 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-6047-edited-7bcf31b798.webp",
+    "width": 1600,
+    "height": 1067
+   }
   },
   "nl": {
    "title": "Hoe digitale kennismigranten de krapte op de arbeidsmarkt oplossen",
@@ -9702,7 +9887,12 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-6047-edited-7bcf31b798.webp",
+    "width": 1600,
+    "height": 1067
+   }
   }
  },
  {
@@ -9891,7 +10081,12 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-6066-edited-291642b224.webp",
+    "width": 1600,
+    "height": 1093
+   }
   },
   "nl": {
    "title": "Productiviteit op afstand: Hoe remote IT-personeel meer kan presteren dan lokaal personeel",
@@ -10105,7 +10300,12 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-6066-edited-291642b224.webp",
+    "width": 1600,
+    "height": 1093
+   }
   }
  },
  {
@@ -10230,7 +10430,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/iso42001-peter-van-londen-en-frank-korf-lr-478f419c29.webp",
+    "width": 1600,
+    "height": 1067
+   }
   },
   "nl": {
    "title": "WorldEmp behaalt ISO 42001-certificering voor verantwoord AI-management",
@@ -10351,7 +10556,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/iso42001-peter-van-londen-en-frank-korf-lr-478f419c29.webp",
+    "width": 1600,
+    "height": 1067
+   }
   }
  },
  {
@@ -10610,7 +10820,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-10000-76-f9fd271b81.webp",
+    "width": 1600,
+    "height": 1068
+   }
   },
   "nl": {
    "title": "India heeft mij veranderd: een ander perspectief op talent",
@@ -10940,14 +11155,19 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-10000-76-f9fd271b81.webp",
+    "width": 1600,
+    "height": 1068
+   }
   }
  },
  {
   "route": "/insights/kubo-80",
   "kind": "article",
   "en": {
-   "title": "Digitale kennismigranten: buitenlandse accountants duurzaam inzetten",
+   "title": "Many conversations, many flavours and above all many opportunities",
    "description": "A smart and sustainable way to bring in international accountants: lower costs, quick to deploy and lasting team integration. A perfect fit for your expertise.",
    "sourcePath": "/en/about-us/knowledge-base/kubo-80",
    "published": null,
@@ -11016,10 +11236,15 @@
       "/insights/recruitment-trends-in-2025"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/oe2025-1-979f4272e2.webp",
+    "width": 1600,
+    "height": 1200
+   }
   },
   "nl": {
-   "title": "Digitale kennismigranten: buitenlandse accountants duurzaam inzetten",
+   "title": "Veel gesprekken, veel smaken en vooral veel kansen",
    "description": "Slimme en duurzame manier om internationale accountants in te zetten: kostenbesparing, snelle inzetbaarheid en blijvende teamintegratie. Perfect passend bij jullie expertise.",
    "sourcePath": "/nl/over-ons/kennisbank/offshoreenergy2025",
    "published": null,
@@ -11094,14 +11319,19 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/oe2025-1-979f4272e2.webp",
+    "width": 1600,
+    "height": 1200
+   }
   }
  },
  {
   "route": "/insights/kubo-80-jaar",
   "kind": "article",
   "en": {
-   "title": "Digitale kennismigranten: buitenlandse accountants duurzaam inzetten",
+   "title": "KUBO 80 jaar",
    "description": "A smart and sustainable way to bring in international accountants: lower costs, quick to deploy and lasting team integration. A perfect fit for your expertise.",
    "sourcePath": "/en/about-us/knowledge-base/kubo-80-jaar",
    "published": null,
@@ -11198,10 +11428,15 @@
       "/insights/recruitment-trends-in-2025"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/whatsapp-image-2025-11-26-at-08-53-35-1-e8cc76866b.webp",
+    "width": 1600,
+    "height": 900
+   }
   },
   "nl": {
-   "title": "Digitale kennismigranten: buitenlandse accountants duurzaam inzetten",
+   "title": "Wat maakt WorldEmp uniek?",
    "description": "Slimme en duurzame manier om internationale accountants in te zetten: kostenbesparing, snelle inzetbaarheid en blijvende teamintegratie. Perfect passend bij jullie expertise.",
    "sourcePath": "/nl/over-ons/kennisbank/kubo-80",
    "published": null,
@@ -11301,7 +11536,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/whatsapp-image-2025-11-26-at-08-53-35-1-e8cc76866b.webp",
+    "width": 1600,
+    "height": 900
+   }
   }
  },
  {
@@ -11363,10 +11603,15 @@
      ]
     }
    ],
-   "translated": true
+   "translated": true,
+   "card": {
+    "src": "/media/expertinterview-maarten-steinbuch-420x200-2-d5cdb25485.webp",
+    "width": 420,
+    "height": 200
+   }
   },
   "nl": {
-   "title": "Dag outsourcing hallo insourcing - WorldEmp",
+   "title": "Professor Maarten Steinbuch treedt toe tot Raad van Advies WorldEmp",
    "description": "Miscommunicatie, missende kennisopbouw en te weinig focus op klantwaarde zijn de grootste problemen die ondernemingen ondervinden bij outsourcen.",
    "sourcePath": "/nl/over-ons/kennisbank/maarten-steinbuch-treedt-toe-tot-raad-van-advies-worldemp",
    "published": null,
@@ -11426,7 +11671,12 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/expertinterview-maarten-steinbuch-420x200-2-d5cdb25485.webp",
+    "width": 420,
+    "height": 200
+   }
   }
  },
  {
@@ -11581,7 +11831,12 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/worldemp-lowres-16-bd37248749.webp",
+    "width": 1200,
+    "height": 800
+   }
   },
   "nl": {
    "title": "Offshore IT outsourcing: Wat bedrijven moeten weten en profiteren",
@@ -11752,14 +12007,19 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/worldemp-lowres-16-bd37248749.webp",
+    "width": 1200,
+    "height": 800
+   }
   }
  },
  {
   "route": "/insights/offshoreenergy2025",
   "kind": "article",
   "en": {
-   "title": "Digitale kennismigranten: buitenlandse accountants duurzaam inzetten",
+   "title": "Offshoreenergy2025",
    "description": "Find out how WorldEmp applies ISO 42001 to generative AI: from coding standards and testing to training, guardrails and data governance, in line with GDPR and ISO 27001.",
    "sourcePath": "/en/about-us/knowledge-base/offshoreenergy2025",
    "published": null,
@@ -11880,10 +12140,15 @@
      "height": 1335,
      "alt": "Financial expert"
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/1760338481693-be291403e9.webp",
+    "width": 1600,
+    "height": 1200
+   }
   },
   "nl": {
-   "title": "Digitale kennismigranten: buitenlandse accountants duurzaam inzetten",
+   "title": "ISO 42001 in de praktijk: van engineering tot datagovernance",
    "description": "Ontdek hoe WorldEmp ISO 42001 toepast in generatieve AI: van coding standards en testen tot training, guardrails en datagovernance, in lijn met GDPR en ISO 27001.",
    "sourcePath": "/nl/over-ons/kennisbank/blogiso-42001",
    "published": null,
@@ -12024,7 +12289,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/1760338481693-be291403e9.webp",
+    "width": 1600,
+    "height": 1200
+   }
   }
  },
  {
@@ -12179,7 +12449,12 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/worldemp-profit-web-561573c5eb.webp",
+    "width": 1000,
+    "height": 700
+   }
   },
   "nl": {
    "title": "Softwareontwikkeling uitbesteden: voordelen, strategieën & best practices",
@@ -12347,7 +12622,12 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/worldemp-profit-web-561573c5eb.webp",
+    "width": 1000,
+    "height": 700
+   }
   }
  },
  {
@@ -12374,7 +12654,12 @@
      "alt": ""
     }
    ],
-   "translated": true
+   "translated": true,
+   "card": {
+    "src": "/media/compare-worldemp-nl-846524924e.webp",
+    "width": 1177,
+    "height": 526
+   }
   },
   "nl": {
    "title": "Outsourcing",
@@ -12397,7 +12682,12 @@
      "height": 526,
      "alt": ""
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/compare-worldemp-nl-846524924e.webp",
+    "width": 1177,
+    "height": 526
+   }
   }
  },
  {
@@ -12556,7 +12846,12 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/unknown-0352a03997.webp",
+    "width": 1600,
+    "height": 1200
+   }
   },
   "nl": {
    "title": "Outsourcing Engineering: Meer flexibiliteit en lagere kosten voor bedrijven",
@@ -12721,7 +13016,12 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/unknown-0352a03997.webp",
+    "width": 1600,
+    "height": 1200
+   }
   }
  },
  {
@@ -12815,7 +13115,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/peter-van-wessel-nzk-lr-73bad7d83d.webp",
+    "width": 1250,
+    "height": 705
+   }
   },
   "nl": {
    "title": "Peter van Wessel over tankopslag, energietransitie en personeelstekort",
@@ -12986,7 +13291,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/peter-van-wessel-nzk-lr-73bad7d83d.webp",
+    "width": 1250,
+    "height": 705
+   }
   }
  },
  {
@@ -13205,7 +13515,12 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-6062-edited-6803122992.webp",
+    "width": 1600,
+    "height": 1068
+   }
   },
   "nl": {
    "title": "De recruitment trends & ontwikkelingen in 2025",
@@ -13426,14 +13741,19 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-6062-edited-6803122992.webp",
+    "width": 1600,
+    "height": 1068
+   }
   }
  },
  {
   "route": "/insights/remote-engineer-via-worldemp",
   "kind": "article",
   "en": {
-   "title": "Waarom remote engineers een verstandige keuze zijn",
+   "title": "What does a remote engineer do?",
    "description": "WorldEmp delivers a remote engineer within 2-6 weeks who integrates fully into your team, with no agency fees and no organisational fuss.",
    "sourcePath": "/en/about-us/knowledge-base/remote-engineer-via-worldemp",
    "published": null,
@@ -13599,10 +13919,15 @@
       "/insights/recruitment-trends-in-2025"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-6030-edited-49b8733b3f.webp",
+    "width": 1600,
+    "height": 1068
+   }
   },
   "nl": {
-   "title": "Waarom remote engineers een verstandige keuze zijn",
+   "title": "Wat doet een remote engineer?",
    "description": "WorldEmp levert binnen 2–6 weken een remote engineer die volledig in jouw team integreert, zonder bemiddelingskosten of organisatorisch gedoe.",
    "sourcePath": "/nl/over-ons/kennisbank/remote-engineer-via-worldemp",
    "published": null,
@@ -13786,7 +14111,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-6030-edited-49b8733b3f.webp",
+    "width": 1600,
+    "height": 1068
+   }
   }
  },
  {
@@ -13845,7 +14175,12 @@
       "/insights/outsourcing"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/bluedesk-x-worldemp-240x200-764fa21b6f.webp",
+    "width": 420,
+    "height": 200
+   }
   },
   "nl": {
    "title": "Remote werken bij bluedesk",
@@ -13902,7 +14237,12 @@
       "/insights/outsourcing"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/bluedesk-x-worldemp-240x200-764fa21b6f.webp",
+    "width": 420,
+    "height": 200
+   }
   }
  },
  {
@@ -14544,7 +14884,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/machinery-horizontaal-2-4e3dc8f911.webp",
+    "width": 1536,
+    "height": 1024
+   }
   },
   "nl": {
    "title": "Detachering uitgelegd: betekenis, vormen, wetgeving en het WorldEmp-model",
@@ -15097,7 +15442,12 @@
      ]
     }
    ],
-   "translated": true
+   "translated": true,
+   "card": {
+    "src": "/media/machinery-horizontaal-2-4e3dc8f911.webp",
+    "width": 1536,
+    "height": 1024
+   }
   }
  },
  {
@@ -15281,7 +15631,12 @@
       "/insights/recruitment-trends-in-2025"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-6047-edited-5b5e3e8ecd.webp",
+    "width": 1600,
+    "height": 1067
+   }
   },
   "nl": {
    "title": "Slimme personeelsoplossingen voor een groeiende Brainportregio",
@@ -15468,7 +15823,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-6047-edited-5b5e3e8ecd.webp",
+    "width": 1600,
+    "height": 1067
+   }
   }
  },
  {
@@ -15525,7 +15885,12 @@
      ]
     }
    ],
-   "translated": true
+   "translated": true,
+   "card": {
+    "src": "/media/worldemp-soft-skills-e69c66f27a.webp",
+    "width": 1125,
+    "height": 788
+   }
   },
   "nl": {
    "title": "Soft skills om te kunnen thuiswerken",
@@ -15581,666 +15946,19 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
-  }
- },
- {
-  "route": "/insights/solum-technology-drie-jaar-samenwerken-bouwen",
-  "kind": "article",
-  "en": {
-   "title": "Solum Technology: drie jaar samenwerken met WorldEmp",
-   "description": "A look back at three years of collaboration between Solum Technology and WorldEmp. On growth, specialist capacity, a sense of team and building a strong international team.",
-   "sourcePath": "/en/about-us/knowledge-base/solum-technology-drie-jaar-samenwerken-bouwen",
-   "published": null,
-   "categories": [],
-   "blocks": [
-    {
-     "type": "text",
-     "text": "Solum Technology wanted to offer customers more than individual components. Delivering engineering and complete conveyor solutions as well called for extra specialist capacity. Working with WorldEmp, the company found a way to build that capacity with a team that genuinely became part of the organisation. We spoke about it with Martin de Koning, CEO of Solum Technology."
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "The step came out of scarcity in the Netherlands"
-    },
-    {
-     "type": "text",
-     "text": "For Solum the reason was clear. The specialist engineering knowledge they needed turned out to be barely available in the Netherlands. For De Koning, that was the moment to look beyond the usual routes."
-    },
-    {
-     "type": "text",
-     "text": "“As a company we wanted to grow and offer customers the complete picture. For that you need people with the right engineering experience. They were simply not to be found for us in the Netherlands,” De Koning said."
-    },
-    {
-     "type": "text",
-     "text": "Through WorldEmp, India came into view as a serious option. Not as a detached remote solution, but as a way to build a team purposefully that genuinely worked for Solum."
-    },
-    {
-     "type": "image",
-     "src": "/media/team-solum-d3952e6528.webp",
-     "width": 1206,
-     "height": 896,
-     "alt": "offshore oil, gas, wind, jack-up, energy transition"
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "ISO 42001 in practice: from engineering to data governance"
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Focused on quality from the start"
-    },
-    {
-     "type": "text",
-     "text": "What mattered to Solum was that the people in India worked full time and exclusively for the company. Only then, according to De Koning, can you really build commitment, responsibility and quality. The same went for the working environment. With their own Solum-branded office, the team got a clear place of its own, which mattered to Solum in building a sense of team and ownership."
-    },
-    {
-     "type": "text",
-     "text": "“They really had to fit our team,” said De Koning."
-    },
-    {
-     "type": "text",
-     "text": "What the partnership with WorldEmp gave him above all, he says, was the confidence that comes from having room to build carefully. First finding out whether it works professionally and personally, while at the same time genuinely investing in people who work for your organisation."
-    },
-    {
-     "type": "text",
-     "text": "“That gave us the room to really find out whether it worked professionally and personally. At the same time, the people were genuinely working for Solum. So you are not building something temporary - from day one you are laying the foundations of your own team,” De Koning explained."
-    },
-    {
-     "type": "image",
-     "src": "/media/solum-team-social-3-ee7eb95a5e.webp",
-     "width": 1600,
-     "height": 1114,
-     "alt": ""
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "You build a team with attention"
-    },
-    {
-     "type": "text",
-     "text": "What became clear in the conversation with De Koning is that success does not only depend on finding the right people, but above all on how you shape the working relationship. You do not build a remote team by handing over work alone."
-    },
-    {
-     "type": "text",
-     "text": "“A partnership like this asks for attention, time and involvement. You have to really bring people into your company, into your way of working and into where you want to go together,” said De Koning."
-    },
-    {
-     "type": "text",
-     "text": "So from the start Solum chose frequent contact, clear alignment and an intensive onboarding. The first colleagues from India came to the Netherlands early on, and travelled to China as well. That, according to De Koning, is what made the difference. People got to know not only the work, but the company, the customers and each other."
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Trust and ownership grow together"
-    },
-    {
-     "type": "text",
-     "text": "What stands out most in his account is how strongly De Koning approaches the partnership as one between equals. Not by fitting people to a Dutch standard, but by looking seriously at who they are, how they work and what they need in order to do well."
-    },
-    {
-     "type": "text",
-     "text": "“You have to understand who you are working with. If you give people the room to take responsibility and you are open yourself, trust develops. And out of that trust, ownership grows,” De Koning said."
-    },
-    {
-     "type": "text",
-     "text": "The approach paid off. Over the past few years the team in India has grown into a stable and committed group. Where a lot of day-to-day alignment was needed at first, the team now operates more and more independently and takes on more responsibility in delivery itself."
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "More than extra capacity"
-    },
-    {
-     "type": "text",
-     "text": "For Solum, working with WorldEmp has produced more than extra engineering capacity alone. It brought a strong team, more clout, and an organisation on firmer international footing."
-    },
-    {
-     "type": "text",
-     "text": "It also became clear in the conversation that the process has given De Koning something personally. India brought him not only a team, but enjoyment in the work together. The energy, the positivity and the commitment of the team are what have stayed with him."
-    },
-    {
-     "type": "text",
-     "text": "“They open the day with a smile and close the day with a smile. That enjoyment and that positivity are infectious. I have learned a great deal from it myself,” he said."
-    },
-    {
-     "type": "image",
-     "src": "/media/solum-team-3-13323e781f.webp",
-     "width": 1182,
-     "height": 665,
-     "alt": "WorldEmp"
-    },
-    {
-     "type": "heading",
-     "level": 4,
-     "text": "Interested? Want to know more?"
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Advice for companies considering this step"
-    },
-    {
-     "type": "text",
-     "text": "Asked what he would pass on to companies considering a comparable step, De Koning was clear. A choice like this asks for entrepreneurship and a willingness to genuinely invest in people. But that is exactly when it can deliver a great deal."
-    },
-    {
-     "type": "text",
-     "text": "“Take the step. Give people a chance, make them a real part of your team and invest in the relationship. Do that well and you get an enormous amount back,” he concluded."
-    },
-    {
-     "type": "cards",
-     "routes": [
-      "/insights/sterkere-semiconductorteams-bouwen",
-      "/insights/jaspers-experience",
-      "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
-     ]
-    }
-   ]
-  },
-  "nl": {
-   "title": "Solum Technology: drie jaar samenwerken met WorldEmp",
-   "description": "Een terugblik op drie jaar samenwerking tussen Solum Technology en WorldEmp. Over groei, specialistische capaciteit, teamgevoel en bouwen aan een sterk internationaal team.",
-   "sourcePath": "/nl/over-ons/kennisbank/solum-technology-drie-jaar-samenwerken-bouwen-1",
-   "published": null,
-   "categories": [],
-   "blocks": [
-    {
-     "type": "text",
-     "text": "Solum Technology wilde klanten meer bieden dan losse componenten. Om ook engineering en complete conveyoroplossingen te kunnen leveren, was extra specialistische capaciteit nodig. In de samenwerking met WorldEmp vond het bedrijf een manier om die capaciteit op te bouwen met een team dat echt onderdeel werd van de organisatie. We spraken daarover met Martin de Koning, CEO van Solum Technology.",
-     "html": "<strong data-end=\"453\" data-start=\"54\">Solum Technology wilde klanten meer bieden dan losse componenten. Om ook engineering en complete conveyoroplossingen te kunnen leveren, was extra specialistische capaciteit nodig. In de samenwerking met WorldEmp vond het bedrijf een manier om die capaciteit op te bouwen met een team dat echt onderdeel werd van de organisatie. We spraken daarover met Martin de Koning, CEO van Solum Technology.</strong>"
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "De stap kwam voort uit schaarste in Nederland"
-    },
-    {
-     "type": "text",
-     "text": "Voor Solum was de aanleiding duidelijk. De benodigde specialistische engineeringkennis bleek in Nederland nauwelijks beschikbaar. Dat was voor De Koning het moment om verder te kijken dan de gebruikelijke routes.",
-     "html": "Voor Solum was de aanleiding duidelijk. De benodigde specialistische engineeringkennis bleek in Nederland nauwelijks beschikbaar. Dat was voor De Koning het moment om verder te kijken dan de gebruikelijke routes."
-    },
-    {
-     "type": "text",
-     "text": "“Wij wilden als bedrijf doorgroeien en klanten het complete plaatje bieden. Dan heb je mensen nodig met de juiste engineeringervaring. Die waren voor ons in Nederland simpelweg niet te vinden,” vertelde De Koning.",
-     "html": "“Wij wilden als bedrijf doorgroeien en klanten het complete plaatje bieden. Dan heb je mensen nodig met de juiste engineeringervaring. Die waren voor ons in Nederland simpelweg niet te vinden,” vertelde De Koning."
-    },
-    {
-     "type": "text",
-     "text": "Via WorldEmp kwam India in beeld als een serieuze optie. Niet als losse oplossing op afstand, maar als manier om gericht een team op te bouwen dat echt voor Solum werkte.",
-     "html": "Via WorldEmp kwam India in beeld als een serieuze optie. Niet als losse oplossing op afstand, maar als manier om gericht een team op te bouwen dat echt voor Solum werkte."
-    },
-    {
-     "type": "image",
-     "src": "/media/team-solum-d3952e6528.webp",
-     "width": 1206,
-     "height": 896,
-     "alt": "offshore oil, gas, wind, jack-up, energy transition"
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Vanaf het begin gericht op kwaliteit"
-    },
-    {
-     "type": "text",
-     "text": "Wat voor Solum belangrijk was, was dat de mensen in India fulltime en exclusief voor het bedrijf werkten. Alleen dan kun je volgens De Koning echt bouwen aan betrokkenheid, verantwoordelijkheid en kwaliteit. Dat gold ook voor de werkomgeving. Met een eigen, Solum gebrand kantoor kreeg het team een duidelijke eigen plek, wat voor Solum belangrijk was in het verder opbouwen van teamgevoel en eigenaarschap.",
-     "html": "Wat voor Solum belangrijk was, was dat de mensen in India fulltime en exclusief voor het bedrijf werkten. Alleen dan kun je volgens De Koning echt bouwen aan betrokkenheid, verantwoordelijkheid en kwaliteit. Dat gold ook voor de werkomgeving. Met een eigen, Solum gebrand kantoor kreeg het team een duidelijke eigen plek, wat voor Solum belangrijk was in het verder opbouwen van teamgevoel en eigenaarschap."
-    },
-    {
-     "type": "text",
-     "text": "“Dat moest echt wel bij ons team passen,” zei De Koning.",
-     "html": "“Dat moest echt wel bij ons team passen,” zei De Koning."
-    },
-    {
-     "type": "text",
-     "text": "Volgens hem gaf de samenwerking met WorldEmp vooral vertrouwen doordat er ruimte was om zorgvuldig op te bouwen. Eerst ervaren of het inhoudelijk en persoonlijk klopt, terwijl je tegelijk wel echt investeert in mensen die voor jouw organisatie werken.",
-     "html": "Volgens hem gaf de samenwerking met WorldEmp vooral vertrouwen doordat er ruimte was om zorgvuldig op te bouwen. Eerst ervaren of het inhoudelijk en persoonlijk klopt, terwijl je tegelijk wel echt investeert in mensen die voor jouw organisatie werken."
-    },
-    {
-     "type": "text",
-     "text": "“Dat gaf ons de ruimte om goed te ervaren of het inhoudelijk en persoonlijk klopte. Tegelijkertijd werkten de mensen wel echt voor Solum. Daardoor bouw je niet iets tijdelijks op, maar leg je vanaf dag één de basis voor je eigen team,” lichtte De Koning toe.",
-     "html": "“Dat gaf ons de ruimte om goed te ervaren of het inhoudelijk en persoonlijk klopte. Tegelijkertijd werkten de mensen wel echt voor Solum. Daardoor bouw je niet iets tijdelijks op, maar leg je vanaf dag één de basis voor je eigen team,” lichtte De Koning toe."
-    },
-    {
-     "type": "image",
-     "src": "/media/solum-team-social-3-ee7eb95a5e.webp",
-     "width": 1600,
-     "height": 1114,
-     "alt": ""
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Een team bouw je met aandacht"
-    },
-    {
-     "type": "text",
-     "text": "In het gesprek met De Koning werd duidelijk dat succes niet alleen afhangt van het vinden van de juiste mensen, maar vooral van de manier waarop je de samenwerking vormgeeft. Een team op afstand bouw je niet door alleen werk over te dragen.",
-     "html": "In het gesprek met De Koning werd duidelijk dat succes niet alleen afhangt van het vinden van de juiste mensen, maar vooral van de manier waarop je de samenwerking vormgeeft. Een team op afstand bouw je niet door alleen werk over te dragen."
-    },
-    {
-     "type": "text",
-     "text": "“Zo’n samenwerking vraagt aandacht, tijd en betrokkenheid. Je moet mensen echt meenemen in je bedrijf, in je manier van werken en in waar je samen naartoe wilt,” zei De Koning.",
-     "html": "“Zo’n samenwerking vraagt aandacht, tijd en betrokkenheid. Je moet mensen echt meenemen in je bedrijf, in je manier van werken en in waar je samen naartoe wilt,” zei De Koning."
-    },
-    {
-     "type": "text",
-     "text": "Daarom koos Solum vanaf het begin voor veel contact, duidelijke afstemming en een intensieve onboarding. De eerste collega’s uit India kwamen al snel naar Nederland en reisden ook mee naar China. Juist dat maakte volgens De Koning het verschil. Mensen leerden niet alleen het werk kennen, maar ook het bedrijf, de klanten en elkaar.",
-     "html": "Daarom koos Solum vanaf het begin voor veel contact, duidelijke afstemming en een intensieve onboarding. De eerste collega’s uit India kwamen al snel naar Nederland en reisden ook mee naar China. Juist dat maakte volgens De Koning het verschil. Mensen leerden niet alleen het werk kennen, maar ook het bedrijf, de klanten en elkaar."
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Vertrouwen en eigenaarschap groeien samen"
-    },
-    {
-     "type": "text",
-     "text": "Wat in zijn verhaal vooral opvalt, is hoe sterk De Koning samenwerking benadert vanuit gelijkwaardigheid. Niet door mensen aan te passen aan een Nederlandse standaard, maar door serieus te kijken naar wie zij zijn, hoe zij werken en wat zij nodig hebben om goed tot hun recht te komen.",
-     "html": "Wat in zijn verhaal vooral opvalt, is hoe sterk De Koning samenwerking benadert vanuit gelijkwaardigheid. Niet door mensen aan te passen aan een Nederlandse standaard, maar door serieus te kijken naar wie zij zijn, hoe zij werken en wat zij nodig hebben om goed tot hun recht te komen."
-    },
-    {
-     "type": "text",
-     "text": "“Je moet begrijpen met wie je samenwerkt. Als je mensen de ruimte geeft om verantwoordelijkheid te nemen en jezelf open opstelt, dan ontstaat er vertrouwen. En vanuit dat vertrouwen groeit eigenaarschap,” vertelde De Koning.",
-     "html": "“Je moet begrijpen met wie je samenwerkt. Als je mensen de ruimte geeft om verantwoordelijkheid te nemen en jezelf open opstelt, dan ontstaat er vertrouwen. En vanuit dat vertrouwen groeit eigenaarschap,” vertelde De Koning."
-    },
-    {
-     "type": "text",
-     "text": "Die aanpak wierp zijn vruchten af. In de afgelopen jaren groeide het team in India uit tot een stabiele en betrokken groep. Waar in het begin nog veel dagelijkse afstemming nodig was, opereert het team inmiddels steeds zelfstandiger en neemt het ook zelf meer verantwoordelijkheid in de uitvoering.",
-     "html": "Die aanpak wierp zijn vruchten af. In de afgelopen jaren groeide het team in India uit tot een stabiele en betrokken groep. Waar in het begin nog veel dagelijkse afstemming nodig was, opereert het team inmiddels steeds zelfstandiger en neemt het ook zelf meer verantwoordelijkheid in de uitvoering."
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Meer dan extra capaciteit"
-    },
-    {
-     "type": "text",
-     "text": "Voor Solum heeft de samenwerking met WorldEmp meer opgeleverd dan extra engineeringcapaciteit alleen. Het bracht een sterk team, meer slagkracht en een organisatie die internationaal steviger staat.",
-     "html": "Voor Solum heeft de samenwerking met WorldEmp meer opgeleverd dan extra engineeringcapaciteit alleen. Het bracht een sterk team, meer slagkracht en een organisatie die internationaal steviger staat."
-    },
-    {
-     "type": "text",
-     "text": "In het gesprek werd ook duidelijk dat het traject De Koning persoonlijk iets heeft gebracht. India leverde hem niet alleen een team op, maar ook plezier in de samenwerking. Vooral de energie, de positiviteit en de betrokkenheid van het team zijn hem bijgebleven.",
-     "html": "In het gesprek werd ook duidelijk dat het traject De Koning persoonlijk iets heeft gebracht. India leverde hem niet alleen een team op, maar ook plezier in de samenwerking. Vooral de energie, de positiviteit en de betrokkenheid van het team zijn hem bijgebleven."
-    },
-    {
-     "type": "text",
-     "text": "“Ze openen de dag met een glimlach en sluiten de dag met een glimlach af. Dat plezier en die positiviteit werken aanstekelijk. Daar heb ik zelf ook veel van geleerd,” vertelde hij.",
-     "html": "“Ze openen de dag met een glimlach en sluiten de dag met een glimlach af. Dat plezier en die positiviteit werken aanstekelijk. Daar heb ik zelf ook veel van geleerd,” vertelde hij."
-    },
-    {
-     "type": "image",
-     "src": "/media/solum-team-3-13323e781f.webp",
-     "width": 1182,
-     "height": 665,
-     "alt": "WorldEmp"
-    },
-    {
-     "type": "heading",
-     "level": 4,
-     "text": "Interesse? Meer weten?"
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Een advies aan bedrijven die deze stap overwegen"
-    },
-    {
-     "type": "text",
-     "text": "Op de vraag wat hij zou meegeven aan bedrijven die een vergelijkbare stap overwegen, was De Koning helder. Zo’n keuze vraagt ondernemerschap en de bereidheid om echt in mensen te investeren. Maar juist dan kan het veel opleveren.",
-     "html": "Op de vraag wat hij zou meegeven aan bedrijven die een vergelijkbare stap overwegen, was De Koning helder. Zo’n keuze vraagt ondernemerschap en de bereidheid om echt in mensen te investeren. Maar juist dan kan het veel opleveren."
-    },
-    {
-     "type": "text",
-     "text": "“Ga die stap aan. Geef mensen een kans, maak ze echt onderdeel van je team en investeer in de samenwerking. Als je dat goed doet, krijg je daar ontzettend veel voor terug,” besloot hij.",
-     "html": "“Ga die stap aan. Geef mensen een kans, maak ze echt onderdeel van je team en investeer in de samenwerking. Als je dat goed doet, krijg je daar ontzettend veel voor terug,” besloot hij."
-    },
-    {
-     "type": "cards",
-     "routes": [
-      "/insights/sterkere-semiconductorteams-bouwen",
-      "/insights/jaspers-experience",
-      "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
-     ]
-    }
-   ]
-  }
- },
- {
-  "route": "/insights/solum-technology-drie-jaar-samenwerken-bouwen-1",
-  "kind": "article",
-  "en": {
-   "title": "Solum Technology: drie jaar samenwerken met WorldEmp",
-   "description": "A look back at three years of collaboration between Solum Technology and WorldEmp. On growth, specialist capacity, a sense of team and building a strong international team.",
-   "sourcePath": "/en/about-us/knowledge-base/solum-technology-drie-jaar-samenwerken-bouwen-1",
-   "published": null,
-   "categories": [],
-   "blocks": [
-    {
-     "type": "text",
-     "text": "Solum Technology wanted to offer customers more than individual components. Delivering engineering and complete conveyor solutions as well called for extra specialist capacity. Working with WorldEmp, the company found a way to build that capacity with a team that genuinely became part of the organisation. We spoke about it with Martin de Koning, CEO of Solum Technology."
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "The step came out of scarcity in the Netherlands"
-    },
-    {
-     "type": "text",
-     "text": "For Solum the reason was clear. The specialist engineering knowledge they needed turned out to be barely available in the Netherlands. For De Koning, that was the moment to look beyond the usual routes."
-    },
-    {
-     "type": "text",
-     "text": "“As a company we wanted to grow and offer customers the complete picture. For that you need people with the right engineering experience. They were simply not to be found for us in the Netherlands,” De Koning said."
-    },
-    {
-     "type": "text",
-     "text": "Through WorldEmp, India came into view as a serious option. Not as a detached remote solution, but as a way to build a team purposefully that genuinely worked for Solum."
-    },
-    {
-     "type": "image",
-     "src": "/media/team-solum-d3952e6528.webp",
-     "width": 1206,
-     "height": 896,
-     "alt": "offshore oil, gas, wind, jack-up, energy transition"
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "ISO 42001 in practice: from engineering to data governance"
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Focused on quality from the start"
-    },
-    {
-     "type": "text",
-     "text": "What mattered to Solum was that the people in India worked full time and exclusively for the company. Only then, according to De Koning, can you really build commitment, responsibility and quality. The same went for the working environment. With their own Solum-branded office, the team got a clear place of its own, which mattered to Solum in building a sense of team and ownership."
-    },
-    {
-     "type": "text",
-     "text": "“They really had to fit our team,” said De Koning."
-    },
-    {
-     "type": "text",
-     "text": "What the partnership with WorldEmp gave him above all, he says, was the confidence that comes from having room to build carefully. First finding out whether it works professionally and personally, while at the same time genuinely investing in people who work for your organisation."
-    },
-    {
-     "type": "text",
-     "text": "“That gave us the room to really find out whether it worked professionally and personally. At the same time, the people were genuinely working for Solum. So you are not building something temporary - from day one you are laying the foundations of your own team,” De Koning explained."
-    },
-    {
-     "type": "image",
-     "src": "/media/solum-team-social-3-ee7eb95a5e.webp",
-     "width": 1600,
-     "height": 1114,
-     "alt": ""
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "You build a team with attention"
-    },
-    {
-     "type": "text",
-     "text": "What became clear in the conversation with De Koning is that success does not only depend on finding the right people, but above all on how you shape the working relationship. You do not build a remote team by handing over work alone."
-    },
-    {
-     "type": "text",
-     "text": "“A partnership like this asks for attention, time and involvement. You have to really bring people into your company, into your way of working and into where you want to go together,” said De Koning."
-    },
-    {
-     "type": "text",
-     "text": "So from the start Solum chose frequent contact, clear alignment and an intensive onboarding. The first colleagues from India came to the Netherlands early on, and travelled to China as well. That, according to De Koning, is what made the difference. People got to know not only the work, but the company, the customers and each other."
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Trust and ownership grow together"
-    },
-    {
-     "type": "text",
-     "text": "What stands out most in his account is how strongly De Koning approaches the partnership as one between equals. Not by fitting people to a Dutch standard, but by looking seriously at who they are, how they work and what they need in order to do well."
-    },
-    {
-     "type": "text",
-     "text": "“You have to understand who you are working with. If you give people the room to take responsibility and you are open yourself, trust develops. And out of that trust, ownership grows,” De Koning said."
-    },
-    {
-     "type": "text",
-     "text": "The approach paid off. Over the past few years the team in India has grown into a stable and committed group. Where a lot of day-to-day alignment was needed at first, the team now operates more and more independently and takes on more responsibility in delivery itself."
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "More than extra capacity"
-    },
-    {
-     "type": "text",
-     "text": "For Solum, working with WorldEmp has produced more than extra engineering capacity alone. It brought a strong team, more clout, and an organisation on firmer international footing."
-    },
-    {
-     "type": "text",
-     "text": "It also became clear in the conversation that the process has given De Koning something personally. India brought him not only a team, but enjoyment in the work together. The energy, the positivity and the commitment of the team are what have stayed with him."
-    },
-    {
-     "type": "text",
-     "text": "“They open the day with a smile and close the day with a smile. That enjoyment and that positivity are infectious. I have learned a great deal from it myself,” he said."
-    },
-    {
-     "type": "image",
-     "src": "/media/solum-team-3-13323e781f.webp",
-     "width": 1182,
-     "height": 665,
-     "alt": "WorldEmp"
-    },
-    {
-     "type": "heading",
-     "level": 4,
-     "text": "Interested? Want to know more?"
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Advice for companies considering this step"
-    },
-    {
-     "type": "text",
-     "text": "Asked what he would pass on to companies considering a comparable step, De Koning was clear. A choice like this asks for entrepreneurship and a willingness to genuinely invest in people. But that is exactly when it can deliver a great deal."
-    },
-    {
-     "type": "text",
-     "text": "“Take the step. Give people a chance, make them a real part of your team and invest in the relationship. Do that well and you get an enormous amount back,” he concluded."
-    },
-    {
-     "type": "cards",
-     "routes": [
-      "/insights/sterkere-semiconductorteams-bouwen",
-      "/insights/jaspers-experience",
-      "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
-     ]
-    }
-   ]
-  },
-  "nl": {
-   "title": "Solum Technology: drie jaar samenwerken met WorldEmp",
-   "description": "Een terugblik op drie jaar samenwerking tussen Solum Technology en WorldEmp. Over groei, specialistische capaciteit, teamgevoel en bouwen aan een sterk internationaal team.",
-   "sourcePath": "/nl/over-ons/kennisbank/solum-technology-drie-jaar-samenwerken-bouwen-2",
-   "published": null,
-   "categories": [],
-   "blocks": [
-    {
-     "type": "text",
-     "text": "Solum Technology wilde klanten meer bieden dan losse componenten. Om ook engineering en complete conveyoroplossingen te kunnen leveren, was extra specialistische capaciteit nodig. In de samenwerking met WorldEmp vond het bedrijf een manier om die capaciteit op te bouwen met een team dat echt onderdeel werd van de organisatie. We spraken daarover met Martin de Koning, CEO van Solum Technology.",
-     "html": "<strong data-end=\"453\" data-start=\"54\">Solum Technology wilde klanten meer bieden dan losse componenten. Om ook engineering en complete conveyoroplossingen te kunnen leveren, was extra specialistische capaciteit nodig. In de samenwerking met WorldEmp vond het bedrijf een manier om die capaciteit op te bouwen met een team dat echt onderdeel werd van de organisatie. We spraken daarover met Martin de Koning, CEO van Solum Technology.</strong>"
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "De stap kwam voort uit schaarste in Nederland"
-    },
-    {
-     "type": "text",
-     "text": "Voor Solum was de aanleiding duidelijk. De benodigde specialistische engineeringkennis bleek in Nederland nauwelijks beschikbaar. Dat was voor De Koning het moment om verder te kijken dan de gebruikelijke routes.",
-     "html": "Voor Solum was de aanleiding duidelijk. De benodigde specialistische engineeringkennis bleek in Nederland nauwelijks beschikbaar. Dat was voor De Koning het moment om verder te kijken dan de gebruikelijke routes."
-    },
-    {
-     "type": "text",
-     "text": "“Wij wilden als bedrijf doorgroeien en klanten het complete plaatje bieden. Dan heb je mensen nodig met de juiste engineeringervaring. Die waren voor ons in Nederland simpelweg niet te vinden,” vertelde De Koning.",
-     "html": "“Wij wilden als bedrijf doorgroeien en klanten het complete plaatje bieden. Dan heb je mensen nodig met de juiste engineeringervaring. Die waren voor ons in Nederland simpelweg niet te vinden,” vertelde De Koning."
-    },
-    {
-     "type": "text",
-     "text": "Via WorldEmp kwam India in beeld als een serieuze optie. Niet als losse oplossing op afstand, maar als manier om gericht een team op te bouwen dat echt voor Solum werkte.",
-     "html": "Via WorldEmp kwam India in beeld als een serieuze optie. Niet als losse oplossing op afstand, maar als manier om gericht een team op te bouwen dat echt voor Solum werkte."
-    },
-    {
-     "type": "image",
-     "src": "/media/team-solum-d3952e6528.webp",
-     "width": 1206,
-     "height": 896,
-     "alt": "offshore oil, gas, wind, jack-up, energy transition"
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Vanaf het begin gericht op kwaliteit"
-    },
-    {
-     "type": "text",
-     "text": "Wat voor Solum belangrijk was, was dat de mensen in India fulltime en exclusief voor het bedrijf werkten. Alleen dan kun je volgens De Koning echt bouwen aan betrokkenheid, verantwoordelijkheid en kwaliteit. Dat gold ook voor de werkomgeving. Met een eigen, Solum gebrand kantoor kreeg het team een duidelijke eigen plek, wat voor Solum belangrijk was in het verder opbouwen van teamgevoel en eigenaarschap.",
-     "html": "Wat voor Solum belangrijk was, was dat de mensen in India fulltime en exclusief voor het bedrijf werkten. Alleen dan kun je volgens De Koning echt bouwen aan betrokkenheid, verantwoordelijkheid en kwaliteit. Dat gold ook voor de werkomgeving. Met een eigen, Solum gebrand kantoor kreeg het team een duidelijke eigen plek, wat voor Solum belangrijk was in het verder opbouwen van teamgevoel en eigenaarschap."
-    },
-    {
-     "type": "text",
-     "text": "“Dat moest echt wel bij ons team passen,” zei De Koning.",
-     "html": "“Dat moest echt wel bij ons team passen,” zei De Koning."
-    },
-    {
-     "type": "text",
-     "text": "Volgens hem gaf de samenwerking met WorldEmp vooral vertrouwen doordat er ruimte was om zorgvuldig op te bouwen. Eerst ervaren of het inhoudelijk en persoonlijk klopt, terwijl je tegelijk wel echt investeert in mensen die voor jouw organisatie werken.",
-     "html": "Volgens hem gaf de samenwerking met WorldEmp vooral vertrouwen doordat er ruimte was om zorgvuldig op te bouwen. Eerst ervaren of het inhoudelijk en persoonlijk klopt, terwijl je tegelijk wel echt investeert in mensen die voor jouw organisatie werken."
-    },
-    {
-     "type": "text",
-     "text": "“Dat gaf ons de ruimte om goed te ervaren of het inhoudelijk en persoonlijk klopte. Tegelijkertijd werkten de mensen wel echt voor Solum. Daardoor bouw je niet iets tijdelijks op, maar leg je vanaf dag één de basis voor je eigen team,” lichtte De Koning toe.",
-     "html": "“Dat gaf ons de ruimte om goed te ervaren of het inhoudelijk en persoonlijk klopte. Tegelijkertijd werkten de mensen wel echt voor Solum. Daardoor bouw je niet iets tijdelijks op, maar leg je vanaf dag één de basis voor je eigen team,” lichtte De Koning toe."
-    },
-    {
-     "type": "image",
-     "src": "/media/solum-team-social-3-ee7eb95a5e.webp",
-     "width": 1600,
-     "height": 1114,
-     "alt": ""
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Een team bouw je met aandacht"
-    },
-    {
-     "type": "text",
-     "text": "In het gesprek met De Koning werd duidelijk dat succes niet alleen afhangt van het vinden van de juiste mensen, maar vooral van de manier waarop je de samenwerking vormgeeft. Een team op afstand bouw je niet door alleen werk over te dragen.",
-     "html": "In het gesprek met De Koning werd duidelijk dat succes niet alleen afhangt van het vinden van de juiste mensen, maar vooral van de manier waarop je de samenwerking vormgeeft. Een team op afstand bouw je niet door alleen werk over te dragen."
-    },
-    {
-     "type": "text",
-     "text": "“Zo’n samenwerking vraagt aandacht, tijd en betrokkenheid. Je moet mensen echt meenemen in je bedrijf, in je manier van werken en in waar je samen naartoe wilt,” zei De Koning.",
-     "html": "“Zo’n samenwerking vraagt aandacht, tijd en betrokkenheid. Je moet mensen echt meenemen in je bedrijf, in je manier van werken en in waar je samen naartoe wilt,” zei De Koning."
-    },
-    {
-     "type": "text",
-     "text": "Daarom koos Solum vanaf het begin voor veel contact, duidelijke afstemming en een intensieve onboarding. De eerste collega’s uit India kwamen al snel naar Nederland en reisden ook mee naar China. Juist dat maakte volgens De Koning het verschil. Mensen leerden niet alleen het werk kennen, maar ook het bedrijf, de klanten en elkaar.",
-     "html": "Daarom koos Solum vanaf het begin voor veel contact, duidelijke afstemming en een intensieve onboarding. De eerste collega’s uit India kwamen al snel naar Nederland en reisden ook mee naar China. Juist dat maakte volgens De Koning het verschil. Mensen leerden niet alleen het werk kennen, maar ook het bedrijf, de klanten en elkaar."
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Vertrouwen en eigenaarschap groeien samen"
-    },
-    {
-     "type": "text",
-     "text": "Wat in zijn verhaal vooral opvalt, is hoe sterk De Koning samenwerking benadert vanuit gelijkwaardigheid. Niet door mensen aan te passen aan een Nederlandse standaard, maar door serieus te kijken naar wie zij zijn, hoe zij werken en wat zij nodig hebben om goed tot hun recht te komen.",
-     "html": "Wat in zijn verhaal vooral opvalt, is hoe sterk De Koning samenwerking benadert vanuit gelijkwaardigheid. Niet door mensen aan te passen aan een Nederlandse standaard, maar door serieus te kijken naar wie zij zijn, hoe zij werken en wat zij nodig hebben om goed tot hun recht te komen."
-    },
-    {
-     "type": "text",
-     "text": "“Je moet begrijpen met wie je samenwerkt. Als je mensen de ruimte geeft om verantwoordelijkheid te nemen en jezelf open opstelt, dan ontstaat er vertrouwen. En vanuit dat vertrouwen groeit eigenaarschap,” vertelde De Koning.",
-     "html": "“Je moet begrijpen met wie je samenwerkt. Als je mensen de ruimte geeft om verantwoordelijkheid te nemen en jezelf open opstelt, dan ontstaat er vertrouwen. En vanuit dat vertrouwen groeit eigenaarschap,” vertelde De Koning."
-    },
-    {
-     "type": "text",
-     "text": "Die aanpak wierp zijn vruchten af. In de afgelopen jaren groeide het team in India uit tot een stabiele en betrokken groep. Waar in het begin nog veel dagelijkse afstemming nodig was, opereert het team inmiddels steeds zelfstandiger en neemt het ook zelf meer verantwoordelijkheid in de uitvoering.",
-     "html": "Die aanpak wierp zijn vruchten af. In de afgelopen jaren groeide het team in India uit tot een stabiele en betrokken groep. Waar in het begin nog veel dagelijkse afstemming nodig was, opereert het team inmiddels steeds zelfstandiger en neemt het ook zelf meer verantwoordelijkheid in de uitvoering."
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Meer dan extra capaciteit"
-    },
-    {
-     "type": "text",
-     "text": "Voor Solum heeft de samenwerking met WorldEmp meer opgeleverd dan extra engineeringcapaciteit alleen. Het bracht een sterk team, meer slagkracht en een organisatie die internationaal steviger staat.",
-     "html": "Voor Solum heeft de samenwerking met WorldEmp meer opgeleverd dan extra engineeringcapaciteit alleen. Het bracht een sterk team, meer slagkracht en een organisatie die internationaal steviger staat."
-    },
-    {
-     "type": "text",
-     "text": "In het gesprek werd ook duidelijk dat het traject De Koning persoonlijk iets heeft gebracht. India leverde hem niet alleen een team op, maar ook plezier in de samenwerking. Vooral de energie, de positiviteit en de betrokkenheid van het team zijn hem bijgebleven.",
-     "html": "In het gesprek werd ook duidelijk dat het traject De Koning persoonlijk iets heeft gebracht. India leverde hem niet alleen een team op, maar ook plezier in de samenwerking. Vooral de energie, de positiviteit en de betrokkenheid van het team zijn hem bijgebleven."
-    },
-    {
-     "type": "text",
-     "text": "“Ze openen de dag met een glimlach en sluiten de dag met een glimlach af. Dat plezier en die positiviteit werken aanstekelijk. Daar heb ik zelf ook veel van geleerd,” vertelde hij.",
-     "html": "“Ze openen de dag met een glimlach en sluiten de dag met een glimlach af. Dat plezier en die positiviteit werken aanstekelijk. Daar heb ik zelf ook veel van geleerd,” vertelde hij."
-    },
-    {
-     "type": "image",
-     "src": "/media/solum-team-3-13323e781f.webp",
-     "width": 1182,
-     "height": 665,
-     "alt": "WorldEmp"
-    },
-    {
-     "type": "heading",
-     "level": 4,
-     "text": "Interesse? Meer weten?"
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Een advies aan bedrijven die deze stap overwegen"
-    },
-    {
-     "type": "text",
-     "text": "Op de vraag wat hij zou meegeven aan bedrijven die een vergelijkbare stap overwegen, was De Koning helder. Zo’n keuze vraagt ondernemerschap en de bereidheid om echt in mensen te investeren. Maar juist dan kan het veel opleveren.",
-     "html": "Op de vraag wat hij zou meegeven aan bedrijven die een vergelijkbare stap overwegen, was De Koning helder. Zo’n keuze vraagt ondernemerschap en de bereidheid om echt in mensen te investeren. Maar juist dan kan het veel opleveren."
-    },
-    {
-     "type": "text",
-     "text": "“Ga die stap aan. Geef mensen een kans, maak ze echt onderdeel van je team en investeer in de samenwerking. Als je dat goed doet, krijg je daar ontzettend veel voor terug,” besloot hij.",
-     "html": "“Ga die stap aan. Geef mensen een kans, maak ze echt onderdeel van je team en investeer in de samenwerking. Als je dat goed doet, krijg je daar ontzettend veel voor terug,” besloot hij."
-    },
-    {
-     "type": "cards",
-     "routes": [
-      "/insights/sterkere-semiconductorteams-bouwen",
-      "/insights/jaspers-experience",
-      "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
-     ]
-    }
-   ]
+   ],
+   "card": {
+    "src": "/media/worldemp-soft-skills-e69c66f27a.webp",
+    "width": 1125,
+    "height": 788
+   }
   }
  },
  {
   "route": "/insights/solum-technology-drie-jaar-samenwerken-bouwen-3",
   "kind": "article",
   "en": {
-   "title": "Solum Technology: drie jaar samenwerken met WorldEmp",
+   "title": "Competitive, serious and anything but casual.",
    "description": "A look back at three years of collaboration between Solum Technology and WorldEmp. On growth, specialist capacity, a sense of team and building a strong international team.",
    "sourcePath": "/en/about-us/knowledge-base/solum-technology-drie-jaar-samenwerken-bouwen-3",
    "published": null,
@@ -16326,10 +16044,15 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/team-solum-d3952e6528.webp",
+    "width": 1206,
+    "height": 896
+   }
   },
   "nl": {
-   "title": "Solum Technology: drie jaar samenwerken met WorldEmp",
+   "title": "Sportief, serieus en allesbehalve vrijblijvend.",
    "description": "Een terugblik op drie jaar samenwerking tussen Solum Technology en WorldEmp. Over groei, specialistische capaciteit, teamgevoel en bouwen aan een sterk internationaal team.",
    "sourcePath": "/nl/over-ons/kennisbank/solum-technology-drie-jaar-samenwerken-bouwen-4",
    "published": null,
@@ -16422,7 +16145,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/team-solum-d3952e6528.webp",
+    "width": 1206,
+    "height": 896
+   }
   }
  },
  {
@@ -16877,10 +16605,15 @@
      ]
     }
    ],
-   "translated": true
+   "translated": true,
+   "card": {
+    "src": "/media/chatgpt-image-aug-11-2026-04-44-57-pm-416bf75bc9.webp",
+    "width": 1402,
+    "height": 1122
+   }
   },
   "nl": {
-   "title": "Sterkere semiconductorteams bouwen met internationaal talent",
+   "title": "Wanneer één vacature een hele roadmap beïnvloedt",
    "description": "Ontdek hoe semiconductorbedrijven internationaal talent kunnen inzetten om hun engineeringcapaciteit te versterken en duurzaam te groeien.",
    "sourcePath": "/nl/over-ons/kennisbank/sterkere-semiconductorteams-bouwen",
    "published": null,
@@ -17399,7 +17132,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/chatgpt-image-aug-11-2026-04-44-57-pm-416bf75bc9.webp",
+    "width": 1402,
+    "height": 1122
+   }
   }
  },
  {
@@ -17615,7 +17353,12 @@
       "/insights/recruitment-trends-in-2025"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/worldemp-tankfarming-420x200-1afd58a54d.webp",
+    "width": 420,
+    "height": 200
+   }
   },
   "nl": {
    "title": "Het versterken van de toekomst van tankterminals",
@@ -17827,7 +17570,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/worldemp-tankfarming-420x200-1afd58a54d.webp",
+    "width": 420,
+    "height": 200
+   }
   }
  },
  {
@@ -18073,7 +17821,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/shubham-2352e14a2e.webp",
+    "width": 1254,
+    "height": 1254
+   }
   },
   "nl": {
    "title": "Van SEO naar GEO: zichtbaar in AI en zoekmachines",
@@ -18167,7 +17920,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/shubham-2352e14a2e.webp",
+    "width": 1254,
+    "height": 1254
+   }
   }
  },
  {
@@ -18199,7 +17957,12 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/worldemp-financiele-telegraaf-85d40dfe68.webp",
+    "width": 841,
+    "height": 1190
+   }
   },
   "nl": {
    "title": "Financiële Telegraaf over WorldEmp",
@@ -18227,7 +17990,12 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/worldemp-financiele-telegraaf-85d40dfe68.webp",
+    "width": 841,
+    "height": 1190
+   }
   }
  },
  {
@@ -18440,7 +18208,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/ai-f0f7e405ef.webp",
+    "width": 1536,
+    "height": 1024
+   }
   },
   "nl": {
    "title": "EU AI Act 2026: Hoe Europese bedrijven compliance omzetten in concurrentievoordeel",
@@ -18664,7 +18437,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/ai-f0f7e405ef.webp",
+    "width": 1536,
+    "height": 1024
+   }
   }
  },
  {
@@ -18791,7 +18569,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-6030-edited-49b8733b3f.webp",
+    "width": 1600,
+    "height": 1068
+   }
   },
   "nl": {
    "title": "Het groeiende tekort aan technisch personeel in Nederland (oplossing)",
@@ -18933,7 +18716,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-6030-edited-49b8733b3f.webp",
+    "width": 1600,
+    "height": 1068
+   }
   }
  },
  {
@@ -19149,7 +18937,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/csm-steinbuch-maarten-w-as-0789-669d363cea-e613cdac5c.webp",
+    "width": 945,
+    "height": 630
+   }
   },
   "nl": {
    "title": "De kennismigrant van de toekomst hoeft niet altijd te verhuizen",
@@ -19286,7 +19079,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/csm-steinbuch-maarten-w-as-0789-669d363cea-e613cdac5c.webp",
+    "width": 945,
+    "height": 630
+   }
   }
  },
  {
@@ -19443,7 +19241,12 @@
       "/insights/recruitment-trends-in-2025"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-6018-edited-db549f7f14.webp",
+    "width": 1600,
+    "height": 1068
+   }
   },
   "nl": {
    "title": "De Nieuwe Generatie Tech Talent: Zo Vind en Bindt u de IT-Experts van Morgen",
@@ -19615,981 +19418,19 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
-  }
- },
- {
-  "route": "/insights/the-next-semiconductor-breakthrough",
-  "kind": "article",
-  "en": {
-   "title": "Build stronger semiconductor teams with international talent",
-   "description": "Discover how semiconductor companies can use international talent to strengthen engineering capacity, address skills shortages and support sustainable growth.",
-   "sourcePath": "/en/about-us/knowledge-base/the-next-semiconductor-breakthrough",
-   "published": null,
-   "categories": [
-    "News",
-    "Kennisartikel"
    ],
-   "blocks": [
-    {
-     "type": "text",
-     "text": "Part three of three",
-     "html": "<strong><em>Part three of three</em></strong>"
-    },
-    {
-     "type": "text",
-     "text": "The semiconductor industry has always advanced by overcoming limits.",
-     "html": "The semiconductor industry has always advanced by overcoming limits."
-    },
-    {
-     "type": "text",
-     "text": "Smaller components. Greater computing power. Faster processing. More sophisticated manufacturing.",
-     "html": "Smaller components. Greater computing power. Faster processing. More sophisticated manufacturing."
-    },
-    {
-     "type": "text",
-     "text": "Today, however, one of the industry’s most pressing constraints cannot be solved inside a laboratory or cleanroom. It is the growing distance between what semiconductor companies want to achieve and the specialised talent available to make it happen.",
-     "html": "Today, however, one of the industry’s most pressing constraints cannot be solved inside a laboratory or cleanroom. It is the growing distance between what semiconductor companies want to achieve and the specialised talent available to make it happen."
-    },
-    {
-     "type": "text",
-     "text": "In the first article of this series, we explored why talent has become a strategic bottleneck. In the second, we examined the consequences: longer recruitment cycles, intense competition for specialists and growing pressure on existing engineering teams.",
-     "html": "In the first article of this series, we explored why talent has become a strategic bottleneck. In the second, we examined the consequences: longer recruitment cycles, intense competition for specialists and growing pressure on existing engineering teams."
-    },
-    {
-     "type": "text",
-     "text": "In this final article, we focus on what comes next.",
-     "html": "In this final article, we focus on what comes next."
-    },
-    {
-     "type": "text",
-     "text": "Because semiconductor companies cannot wait for the labour market to catch up. They need a practical way to access specialised expertise, strengthen their teams and keep moving forward—without compromising collaboration, quality or control.",
-     "html": "Because semiconductor companies cannot wait for the labour market to catch up. They need a practical way to access specialised expertise, strengthen their teams and keep moving forward—without compromising collaboration, quality or control."
-    },
-    {
-     "type": "image",
-     "src": "/media/chatgpt-image-sep-7-2026-03-16-18-pm-0028ebe9e8.webp",
-     "width": 1100,
-     "height": 1430,
-     "alt": "offshore oil, gas, wind, jack-up, energy transition"
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "When one vacancy affects an entire roadmap"
-    },
-    {
-     "type": "text",
-     "text": "A difficult-to-fill vacancy rarely remains an isolated HR issue.",
-     "html": "A difficult-to-fill vacancy rarely remains an isolated HR issue."
-    },
-    {
-     "type": "text",
-     "text": "When the right specialist cannot be found, development milestones may be delayed. Senior engineers spend more time covering capacity gaps and less time solving technical problems. Teams may need to postpone projects or decline opportunities because the necessary expertise is unavailable.",
-     "html": "When the right specialist cannot be found, development milestones may be delayed. Senior engineers spend more time covering capacity gaps and less time solving technical problems. Teams may need to postpone projects or decline opportunities because the necessary expertise is unavailable."
-    },
-    {
-     "type": "text",
-     "text": "One empty chair can influence an entire roadmap.",
-     "html": "One empty chair can influence an entire roadmap."
-    },
-    {
-     "type": "text",
-     "text": "The instinctive response is often to intensify recruitment: publish the vacancy more widely, approach more candidates and wait for the right profile to appear.",
-     "html": "The instinctive response is often to intensify recruitment: publish the vacancy more widely, approach more candidates and wait for the right profile to appear."
-    },
-    {
-     "type": "text",
-     "text": "But what if the problem is not the reach of the search?",
-     "html": "But what if the problem is not the reach of the search?"
-    },
-    {
-     "type": "text",
-     "text": "What if the required expertise is simply unavailable in sufficient numbers within the local market?",
-     "html": "What if the required expertise is simply unavailable in sufficient numbers within the local market?"
-    },
-    {
-     "type": "text",
-     "text": "At that point, searching harder is no longer enough. Organisations need to search differently.",
-     "html": "At that point, searching harder is no longer enough. Organisations need to search differently."
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "The answer may be closer than the distance suggests"
-    },
-    {
-     "type": "text",
-     "text": "Somewhere in India, there may be an engineer with the expertise your organisation has been searching for.",
-     "html": "Somewhere in India, there may be an engineer with the expertise your organisation has been searching for."
-    },
-    {
-     "type": "text",
-     "text": "The challenge is finding that person, determining whether they will succeed within your organisation and creating the conditions for them to become a genuine part of your team.",
-     "html": "The challenge is finding that person, determining whether they will succeed within your organisation and creating the conditions for them to become a genuine part of your team."
-    },
-    {
-     "type": "text",
-     "text": "That is where WorldEmp enters the picture.",
-     "html": "That is where WorldEmp enters the picture."
-    },
-    {
-     "type": "text",
-     "text": "WorldEmp connects European companies with carefully selected professionals in India. But our service is not built around forwarding CVs or filling seats as quickly as possible.",
-     "html": "WorldEmp connects European companies with carefully selected professionals in India. But our service is not built around forwarding CVs or filling seats as quickly as possible."
-    },
-    {
-     "type": "text",
-     "text": "We build the bridge between talent availability and operational reality.",
-     "html": "We build the bridge between talent availability and operational reality."
-    },
-    {
-     "type": "text",
-     "text": "We begin by understanding the requirement behind the job description. We assess technical expertise alongside communication, ownership, independence and cultural alignment. We then manage the local Furth employment structure and continue supporting the collaboration after the new colleague joins.",
-     "html": "We begin by understanding the requirement behind the job description. We assess technical expertise alongside communication, ownership, independence and cultural alignment. We then manage the local Furth employment structure and continue supporting the collaboration after the new colleague joins."
-    },
-    {
-     "type": "text",
-     "text": "The result is not a disconnected external resource. It is a dedicated professional who works directly with the client’s team while WorldEmp takes care of the employment framework around them.",
-     "html": "The result is not a disconnected external resource. It is a dedicated professional who works directly with the client’s team while WorldEmp takes care of the employment framework around them."
-    },
-    {
-     "type": "text",
-     "text": "Different location. One team. Shared objectives.",
-     "html": "<strong>Different location. One team. Shared objectives.</strong>"
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "How WorldEmp turns international talent into team capacity"
-    },
-    {
-     "type": "text",
-     "text": "Our approach is built around four connected stages: define, select, integrate and support.",
-     "html": "Our approach is built around four connected stages: <strong>define, select, integrate and support.</strong>"
-    },
-    {
-     "type": "text",
-     "text": "Each stage is designed to reduce uncertainty and help turn international recruitment into a stable, long-term working relationship.",
-     "html": "Each stage is designed to reduce uncertainty and help turn international recruitment into a stable, long-term working relationship."
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Define what the team actually needs"
-    },
-    {
-     "type": "text",
-     "text": "A job title rarely tells the complete story.",
-     "html": "A job title rarely tells the complete story."
-    },
-    {
-     "type": "text",
-     "text": "Two positions with the same title may require entirely different technical backgrounds, levels of independence and experience within specialised engineering environments.",
-     "html": "Two positions with the same title may require entirely different technical backgrounds, levels of independence and experience within specialised engineering environments."
-    },
-    {
-     "type": "text",
-     "text": "WorldEmp therefore begins with a detailed intake. Together, we examine the organisation’s objectives, technical environment, team structure and current capacity constraints.",
-     "html": "WorldEmp therefore begins with a detailed intake. Together, we examine the organisation’s objectives, technical environment, team structure and current capacity constraints."
-    },
-    {
-     "type": "heading",
-     "level": 4,
-     "text": "Questions we help answer"
-    },
-    {
-     "type": "list",
-     "ordered": false,
-     "items": [
-      "What expertise is currently missing from the team?",
-      "What must the new colleague be able to deliver?",
-      "Which systems, tools and processes will they work with?",
-      "How independently must they operate?",
-      "What would make the collaboration successful after six or twelve months?"
-     ]
-    },
-    {
-     "type": "text",
-     "text": "This gives us more than a vacancy to fill. It creates a clear picture of the colleague the organisation actually needs.",
-     "html": "This gives us more than a vacancy to fill. It creates a clear picture of the colleague the organisation actually needs."
-    },
-    {
-     "type": "image",
-     "src": "/media/35-488f1d8adf.webp",
-     "width": 1600,
-     "height": 1066,
-     "alt": ""
-    },
-    {
-     "type": "image",
-     "src": "/media/3ac2fdfb-a267-4f7b-86dc-d043f3985096-ee07cce7a9.webp",
-     "width": 1600,
-     "height": 900,
-     "alt": ""
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Select for more than technical skills"
-    },
-    {
-     "type": "text",
-     "text": "Access to a large talent market creates value only when the selection process is precise.",
-     "html": "Access to a large talent market creates value only when the selection process is precise."
-    },
-    {
-     "type": "text",
-     "text": "WorldEmp sources candidates through its network in India and evaluates them through a structured assessment process. Depending on the role, this may include experience screening, technical evaluations, competency-based interviews, STAR interviews and TMA assessments.",
-     "html": "WorldEmp sources candidates through its network in India and evaluates them through a structured assessment process. Depending on the role, this may include experience screening, technical evaluations, competency-based interviews, STAR interviews and TMA assessments."
-    },
-    {
-     "type": "text",
-     "text": "Technical knowledge is essential, but it is not sufficient on its own.",
-     "html": "Technical knowledge is essential, but it is not sufficient on its own."
-    },
-    {
-     "type": "text",
-     "text": "We also consider whether the candidate can communicate complex information clearly, work independently while remaining connected to the team, take ownership and respond effectively to feedback and changing priorities.",
-     "html": "We also consider whether the candidate can communicate complex information clearly, work independently while remaining connected to the team, take ownership and respond effectively to feedback and changing priorities."
-    },
-    {
-     "type": "text",
-     "text": "The client remains involved throughout the final interview and selection stages. WorldEmp provides access, conducts the assessments and presents a focused selection. The company decides who joins its team.",
-     "html": "The client remains involved throughout the final interview and selection stages. WorldEmp provides access, conducts the assessments and presents a focused selection. The company decides who joins its team."
-    },
-    {
-     "type": "text",
-     "text": "Not a stack of CVs. A carefully selected group of people who could genuinely belong in the organisation.",
-     "html": "<strong>Not a stack of CVs. A carefully selected group of people who could genuinely belong in the organisation.</strong>"
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Integrate a colleague—not an external resource"
-    },
-    {
-     "type": "text",
-     "text": "Finding the right person is only half the work.",
-     "html": "Finding the right person is only half the work."
-    },
-    {
-     "type": "text",
-     "text": "The next step is ensuring that the professional can contribute effectively across borders.",
-     "html": "The next step is ensuring that the professional can contribute effectively across borders."
-    },
-    {
-     "type": "text",
-     "text": "After selection, WorldEmp supports onboarding and helps the specialist connect with the client’s systems, processes and expectations. The professional works from a WorldEmp workplace in India while collaborating directly with colleagues in Europe.",
-     "html": "After selection, WorldEmp supports onboarding and helps the specialist connect with the client’s systems, processes and expectations. The professional works from a WorldEmp workplace in India while collaborating directly with colleagues in Europe."
-    },
-    {
-     "type": "text",
-     "text": "They participate in meetings, contribute to shared deliverables and become familiar with the organisation’s technical standards, documentation practices and working methods.",
-     "html": "They participate in meetings, contribute to shared deliverables and become familiar with the organisation’s technical standards, documentation practices and working methods."
-    },
-    {
-     "type": "text",
-     "text": "This integration is particularly important in the semiconductor industry. Complex engineering work depends on context, continuity and close collaboration between people who understand how their responsibilities contribute to the wider product or system.",
-     "html": "This integration is particularly important in the semiconductor industry. Complex engineering work depends on context, continuity and close collaboration between people who understand how their responsibilities contribute to the wider product or system."
-    },
-    {
-     "type": "text",
-     "text": "A remote colleague should not remain outside the team waiting for instructions.",
-     "html": "A remote colleague should not remain outside the team waiting for instructions."
-    },
-    {
-     "type": "text",
-     "text": "They should be inside the conversation.",
-     "html": "<strong>They should be inside the conversation.</strong>"
-    },
-    {
-     "type": "image",
-     "src": "/media/103-6e75dc8f0c.webp",
-     "width": 1600,
-     "height": 1067,
-     "alt": ""
-    },
-    {
-     "type": "image",
-     "src": "/media/team-on-floor-2-da5a8dca78.webp",
-     "width": 1600,
-     "height": 900,
-     "alt": ""
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Support everything behind the work"
-    },
-    {
-     "type": "text",
-     "text": "International collaboration introduces practical responsibilities.",
-     "html": "International collaboration introduces practical responsibilities."
-    },
-    {
-     "type": "text",
-     "text": "Who employs the professional locally? Who manages contracts, payroll and HR? Where will the person work? Who supports performance and resolves challenges after onboarding?",
-     "html": "Who employs the professional locally? Who manages contracts, payroll and HR? Where will the person work? Who supports performance and resolves challenges after onboarding?"
-    },
-    {
-     "type": "text",
-     "text": "WorldEmp manages this foundation.",
-     "html": "WorldEmp manages this foundation."
-    },
-    {
-     "type": "text",
-     "text": "The client directs the specialist’s technical work, priorities and daily responsibilities. WorldEmp manages local employment, payroll, HR support, workplace facilities, performance management and relevant compliance processes.",
-     "html": "The client directs the specialist’s technical work, priorities and daily responsibilities. WorldEmp manages local employment, payroll, HR support, workplace facilities, performance management and relevant compliance processes."
-    },
-    {
-     "type": "text",
-     "text": "We remain connected to both the company and the employee throughout the collaboration. Regular communication helps identify concerns early, support professional development and maintain a stable working relationship.",
-     "html": "We remain connected to both the company and the employee throughout the collaboration. Regular communication helps identify concerns early, support professional development and maintain a stable working relationship."
-    },
-    {
-     "type": "text",
-     "text": "This allows the client to focus on what the specialist was hired to do: contribute expertise, support innovation and strengthen the team.",
-     "html": "This allows the client to focus on what the specialist was hired to do: contribute expertise, support innovation and strengthen the team."
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Start with the capacity you need today"
-    },
-    {
-     "type": "text",
-     "text": "Not every organisation needs a large international team immediately.",
-     "html": "Not every organisation needs a large international team immediately."
-    },
-    {
-     "type": "text",
-     "text": "The starting point may be one specialist whose expertise has been difficult to find locally. It may be a small group supporting a new programme or additional capacity for an engineering team that has reached its limit.",
-     "html": "The starting point may be one specialist whose expertise has been difficult to find locally. It may be a small group supporting a new programme or additional capacity for an engineering team that has reached its limit."
-    },
-    {
-     "type": "text",
-     "text": "Through WorldEmp’s Digital Knowledge Migrant model, companies can add dedicated professionals in India to their existing teams. When greater flexibility is required, secondment can provide access to specific knowledge or additional capacity.",
-     "html": "Through WorldEmp’s Digital Knowledge Migrant model, companies can add dedicated professionals in India to their existing teams. When greater flexibility is required, secondment can provide access to specific knowledge or additional capacity."
-    },
-    {
-     "type": "text",
-     "text": "The collaboration can grow as the requirement develops.",
-     "html": "The collaboration can grow as the requirement develops."
-    },
-    {
-     "type": "text",
-     "text": "What begins with one carefully selected professional can become a connected team that retains knowledge, supports continuity and creates room for more ambitious work.",
-     "html": "What begins with one carefully selected professional can become a connected team that retains knowledge, supports continuity and creates room for more ambitious work."
-    },
-    {
-     "type": "text",
-     "text": "The objective is not growth for its own sake. It is to give companies the capacity to move when the local talent market tells them to wait.",
-     "html": "The objective is not growth for its own sake. It is to give companies the capacity to move when the local talent market tells them to wait."
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Technology creates possibilities. People turn them into progress."
-    },
-    {
-     "type": "text",
-     "text": "Across this three-part series, one conclusion has become increasingly clear.",
-     "html": "Across this three-part series, one conclusion has become increasingly clear."
-    },
-    {
-     "type": "text",
-     "text": "The semiconductor industry’s ambitions are accelerating, but ambition without the people to execute it eventually becomes delay.",
-     "html": "The semiconductor industry’s ambitions are accelerating, but ambition without the people to execute it eventually becomes delay."
-    },
-    {
-     "type": "text",
-     "text": "Facilities can be expanded. Equipment can be installed. Investments can be approved. Yet none of these can create progress without engineers and specialists capable of transforming technology into reliable solutions.",
-     "html": "Facilities can be expanded. Equipment can be installed. Investments can be approved. Yet none of these can create progress without engineers and specialists capable of transforming technology into reliable solutions."
-    },
-    {
-     "type": "text",
-     "text": "The next competitive advantage may therefore be more human than technological: the ability to connect the right expertise with the right organisation, wherever that expertise happens to be.",
-     "html": "The next competitive advantage may therefore be more human than technological: the ability to connect the right expertise with the right organisation, wherever that expertise happens to be."
-    },
-    {
-     "type": "text",
-     "text": "WorldEmp helps make that connection practical.",
-     "html": "WorldEmp helps make that connection practical."
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Let’s pause and talk at SEMICON India 2026"
-    },
-    {
-     "type": "text",
-     "text": "SEMICON India 2026 takes place from 17–19 September 2026 at Yashobhoomi, New Delhi, bringing together organisations from across the global semiconductor and electronics ecosystem.",
-     "html": "SEMICON India 2026 takes place from 17–19 September 2026 at Yashobhoomi, New Delhi, bringing together organisations from across the global semiconductor and electronics ecosystem."
-    },
-    {
-     "type": "text",
-     "text": "Frank Korf, Noortje van Sambeek and Chris van der Deijl will represent WorldEmp at this leading international semiconductor event.",
-     "html": "Frank Korf, Noortje van Sambeek and Chris van der Deijl will represent WorldEmp at this leading international semiconductor event."
-    },
-    {
-     "type": "text",
-     "text": "You can find us at the NL Pavilion, where WorldEmp will participate alongside High Tech NL Semiconductors.",
-     "html": "You can find us at the NL Pavilion, where WorldEmp will participate alongside High Tech NL Semiconductors."
-    },
-    {
-     "type": "text",
-     "text": "The event will be filled with conversations about investment, manufacturing, innovation and growth. We want to create room for another important conversation—the one about the people needed to make those ambitions possible.",
-     "html": "The event will be filled with conversations about investment, manufacturing, innovation and growth. We want to create room for another important conversation—the one about the people needed to make those ambitions possible."
-    },
-    {
-     "type": "image",
-     "src": "/media/frank-korf-2-31951c4a1b.webp",
-     "width": 1600,
-     "height": 2400,
-     "alt": ""
-    },
-    {
-     "type": "text",
-     "text": "“The future of semiconductors will be shaped by the connections we create today. I’m excited to meet the people, exchange ideas and help engineer what comes next.”",
-     "html": "“The future of semiconductors will be shaped by the connections we create today. I’m excited to meet the people, exchange ideas and help engineer what comes next.”"
-    },
-    {
-     "type": "text",
-     "text": "Frank Korf, CEO and Founder"
-    },
-    {
-     "type": "image",
-     "src": "/media/nora-0dfe39b2dc.webp",
-     "width": 154,
-     "height": 199,
-     "alt": ""
-    },
-    {
-     "type": "text",
-     "text": "“India’s semiconductor momentum is impossible to ignore. I look forward to connecting global ambition with Indian expertise—and creating partnerships that drive the industry forward.”",
-     "html": "“India’s semiconductor momentum is impossible to ignore. I look forward to connecting global ambition with Indian expertise—and creating partnerships that drive the industry forward.”"
-    },
-    {
-     "type": "text",
-     "text": "Noortje van Sambeek, Strategic Lead Partner"
-    },
-    {
-     "type": "image",
-     "src": "/media/chris-van-der-deijl-2-34b52ec631.webp",
-     "width": 1600,
-     "height": 2400,
-     "alt": ""
-    },
-    {
-     "type": "text",
-     "text": "“SEMICON India is where bold ambitions meet real opportunities. I’m excited to explore how the right people and partnerships can turn those ambitions into lasting growth.”",
-     "html": "“SEMICON India is where bold ambitions meet real opportunities. I’m excited to explore how the right people and partnerships can turn those ambitions into lasting growth.”"
-    },
-    {
-     "type": "text",
-     "text": "Chris van der Deijl, Marketing Director"
-    },
-    {
-     "type": "text",
-     "text": "On 18 September 2026 at 8:30 AM, WorldEmp and NXL will host an exclusive breakfast at Vivanta New Delhi, Dwarka.",
-     "html": "On <strong>18 September 2026 at 8:30 AM</strong>, WorldEmp and NXL will host an exclusive breakfast at <strong>Vivanta New Delhi, Dwarka.</strong>"
-    },
-    {
-     "type": "text",
-     "text": "Together with industry leaders, we will discuss what it takes to build and scale in India—from finding specialised professionals to creating the team capacity required for sustainable growth.",
-     "html": "Together with industry leaders, we will discuss what it takes to build and scale in India—from finding specialised professionals to creating the team capacity required for sustainable growth."
-    },
-    {
-     "type": "text",
-     "text": "If a critical position has remained open for too long, your engineering team needs room to grow or you want to explore how talent in India could strengthen your organisation, bring that challenge to the table.",
-     "html": "If a critical position has remained open for too long, your engineering team needs room to grow or you want to explore how talent in India could strengthen your organisation, bring that challenge to the table."
-    },
-    {
-     "type": "text",
-     "text": "Meet Frank, Noortje and Chris at the NL Pavilion—or pause with us over breakfast.",
-     "html": "Meet Frank, Noortje and Chris at the NL Pavilion—or pause with us over breakfast."
-    },
-    {
-     "type": "text",
-     "text": "Let’s talk about the talent challenge behind your ambitions—and the people who could move them forward.",
-     "html": "<strong>Let’s talk about the talent challenge behind your ambitions—and the people who could move them forward.</strong>"
-    },
-    {
-     "type": "image",
-     "src": "/media/hs-dac32d1a59.webp",
-     "width": 1080,
-     "height": 1350,
-     "alt": "Peter van Wessel"
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "WorldEmp news"
-    },
-    {
-     "type": "cards",
-     "routes": [
-      "/insights/sterkere-semiconductorteams-bouwen",
-      "/insights/jaspers-experience",
-      "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
-     ]
-    }
-   ]
-  },
-  "nl": {
-   "title": "Sterkere semiconductorteams bouwen met internationaal talent",
-   "description": "Ontdek hoe semiconductorbedrijven internationaal talent kunnen inzetten om hun engineeringcapaciteit te versterken, tekorten op te vangen en duurzaam te groeien.",
-   "sourcePath": "/en/about-us/knowledge-base/the-next-semiconductor-breakthrough",
-   "published": null,
-   "categories": [
-    "News",
-    "Kennisartikel"
-   ],
-   "blocks": [
-    {
-     "type": "text",
-     "text": "Deel drie van drie"
-    },
-    {
-     "type": "text",
-     "text": "De semiconductorindustrie heeft zich altijd ontwikkeld door grenzen te verleggen."
-    },
-    {
-     "type": "text",
-     "text": "Kleinere componenten. Meer rekenkracht. Snellere verwerking. Geavanceerdere productie."
-    },
-    {
-     "type": "text",
-     "text": "Vandaag ligt een van de knellendste beperkingen van de industrie echter niet in een laboratorium of cleanroom. Het is de groeiende afstand tussen wat semiconductorbedrijven willen bereiken en het gespecialiseerde talent dat daarvoor beschikbaar is."
-    },
-    {
-     "type": "text",
-     "text": "In het eerste artikel van deze serie onderzochten we waarom talent een strategisch knelpunt is geworden. In het tweede keken we naar de gevolgen: langere recruitmentprocessen, hevige concurrentie om specialisten en toenemende druk op bestaande engineeringteams."
-    },
-    {
-     "type": "text",
-     "text": "In dit laatste artikel kijken we naar wat er daarna komt."
-    },
-    {
-     "type": "text",
-     "text": "Want semiconductorbedrijven kunnen niet wachten tot de arbeidsmarkt de vraag heeft ingehaald. Ze hebben een praktische manier nodig om toegang te krijgen tot gespecialiseerde expertise, hun teams te versterken en vooruit te blijven gaan — zonder in te leveren op samenwerking, kwaliteit of controle."
-    },
-    {
-     "type": "image",
-     "src": "/media/chatgpt-image-sep-7-2026-03-16-18-pm-0028ebe9e8.webp",
-     "width": 1100,
-     "height": 1430,
-     "alt": "offshore oil, gas, wind, jack-up, energy transition"
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Wanneer één vacature een hele roadmap beïnvloedt"
-    },
-    {
-     "type": "text",
-     "text": "Een moeilijk vervulbare vacature blijft zelden een geïsoleerd HR-vraagstuk."
-    },
-    {
-     "type": "text",
-     "text": "Wanneer de juiste specialist niet gevonden kan worden, kunnen ontwikkelmijlpalen vertraging oplopen. Senior engineers besteden meer tijd aan het opvangen van capaciteitstekorten en minder tijd aan het oplossen van technische vraagstukken. Teams moeten projecten soms uitstellen of kansen laten liggen omdat de benodigde expertise ontbreekt."
-    },
-    {
-     "type": "text",
-     "text": "Eén lege stoel kan een hele roadmap beïnvloeden."
-    },
-    {
-     "type": "text",
-     "text": "De eerste reactie is vaak om de recruitmentinspanningen op te voeren: de vacature breder uitzetten, meer kandidaten benaderen en wachten tot het juiste profiel zich aandient."
-    },
-    {
-     "type": "text",
-     "text": "Maar wat als het probleem niet ligt bij het bereik van de zoektocht?"
-    },
-    {
-     "type": "text",
-     "text": "Wat als de benodigde expertise simpelweg onvoldoende beschikbaar is op de lokale arbeidsmarkt?"
-    },
-    {
-     "type": "text",
-     "text": "Op dat punt is harder zoeken niet langer genoeg. Organisaties moeten anders gaan zoeken."
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Het antwoord is misschien dichterbij dan de afstand doet vermoeden"
-    },
-    {
-     "type": "text",
-     "text": "Ergens in India werkt misschien een engineer met precies de expertise waar jouw organisatie naar op zoek is."
-    },
-    {
-     "type": "text",
-     "text": "De uitdaging is om die persoon te vinden, te bepalen of hij of zij binnen jouw organisatie tot zijn recht komt en de voorwaarden te scheppen om echt onderdeel van jouw team te worden."
-    },
-    {
-     "type": "text",
-     "text": "Daar komt WorldEmp in beeld."
-    },
-    {
-     "type": "text",
-     "text": "WorldEmp verbindt Europese bedrijven met zorgvuldig geselecteerde professionals in India. Maar onze dienstverlening draait niet om het doorsturen van cv's of het zo snel mogelijk vullen van stoelen."
-    },
-    {
-     "type": "text",
-     "text": "Wij slaan de brug tussen beschikbaar talent en de dagelijkse praktijk."
-    },
-    {
-     "type": "text",
-     "text": "We beginnen met het begrijpen van de behoefte achter de functieomschrijving. Naast technische expertise beoordelen we communicatie, eigenaarschap, zelfstandigheid en culturele aansluiting. Vervolgens verzorgen we de lokale arbeidsrechtelijke structuur en blijven we de samenwerking ondersteunen nadat de nieuwe collega is gestart."
-    },
-    {
-     "type": "text",
-     "text": "Het resultaat is geen losstaande externe kracht. Het is een dedicated professional die rechtstreeks samenwerkt met het team van de opdrachtgever, terwijl WorldEmp alles rond het werkgeverschap regelt."
-    },
-    {
-     "type": "text",
-     "text": "Andere locatie. Eén team. Gedeelde doelen."
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Hoe WorldEmp internationaal talent omzet in teamcapaciteit"
-    },
-    {
-     "type": "text",
-     "text": "Onze aanpak is opgebouwd rond vier samenhangende stappen: definiëren, selecteren, integreren en ondersteunen."
-    },
-    {
-     "type": "text",
-     "text": "Elke stap is erop gericht onzekerheid te verkleinen en internationale recruitment om te zetten in een stabiele samenwerking voor de lange termijn."
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Bepaal wat het team écht nodig heeft"
-    },
-    {
-     "type": "text",
-     "text": "Een functietitel vertelt zelden het hele verhaal."
-    },
-    {
-     "type": "text",
-     "text": "Twee functies met dezelfde titel kunnen een totaal andere technische achtergrond, mate van zelfstandigheid en ervaring binnen gespecialiseerde engineeringomgevingen vragen."
-    },
-    {
-     "type": "text",
-     "text": "WorldEmp begint daarom met een uitgebreide intake. Samen kijken we naar de doelstellingen van de organisatie, de technische omgeving, de teamsamenstelling en de huidige capaciteitsknelpunten."
-    },
-    {
-     "type": "heading",
-     "level": 4,
-     "text": "Vragen die we samen beantwoorden"
-    },
-    {
-     "type": "list",
-     "ordered": false,
-     "items": [
-      "Welke expertise ontbreekt op dit moment binnen het team?",
-      "Wat moet de nieuwe collega kunnen opleveren?",
-      "Met welke systemen, tools en processen gaat hij of zij werken?",
-      "Hoe zelfstandig moet de professional kunnen werken?",
-      "Wanneer is de samenwerking na zes of twaalf maanden geslaagd?"
-     ]
-    },
-    {
-     "type": "text",
-     "text": "Zo hebben we meer dan een vacature om in te vullen. Er ontstaat een helder beeld van de collega die de organisatie daadwerkelijk nodig heeft."
-    },
-    {
-     "type": "image",
-     "src": "/media/35-488f1d8adf.webp",
-     "width": 1600,
-     "height": 1066,
-     "alt": ""
-    },
-    {
-     "type": "image",
-     "src": "/media/3ac2fdfb-a267-4f7b-86dc-d043f3985096-ee07cce7a9.webp",
-     "width": 1600,
-     "height": 900,
-     "alt": ""
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Selecteer op meer dan technische vaardigheden"
-    },
-    {
-     "type": "text",
-     "text": "Toegang tot een grote talentmarkt levert alleen waarde op wanneer het selectieproces nauwkeurig is."
-    },
-    {
-     "type": "text",
-     "text": "WorldEmp werft kandidaten via het eigen netwerk in India en beoordeelt hen met een gestructureerd assessmentproces. Afhankelijk van de rol kan dat bestaan uit een screening op ervaring, technische toetsen, competentiegerichte interviews, STAR-interviews en TMA-assessments."
-    },
-    {
-     "type": "text",
-     "text": "Technische kennis is essentieel, maar op zichzelf niet voldoende."
-    },
-    {
-     "type": "text",
-     "text": "We kijken ook of de kandidaat complexe informatie helder kan overbrengen, zelfstandig kan werken terwijl hij of zij verbonden blijft met het team, verantwoordelijkheid neemt en goed omgaat met feedback en veranderende prioriteiten."
-    },
-    {
-     "type": "text",
-     "text": "De opdrachtgever blijft betrokken bij de laatste interview- en selectierondes. WorldEmp geeft toegang, voert de assessments uit en presenteert een gerichte selectie. Het bedrijf beslist wie onderdeel wordt van het team."
-    },
-    {
-     "type": "text",
-     "text": "Geen stapel cv's. Een zorgvuldig geselecteerde groep mensen die daadwerkelijk binnen de organisatie zou passen."
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Integreer een collega — geen externe kracht"
-    },
-    {
-     "type": "text",
-     "text": "De juiste persoon vinden is slechts de helft van het werk."
-    },
-    {
-     "type": "text",
-     "text": "De volgende stap is ervoor zorgen dat de professional ook over landsgrenzen heen effectief kan bijdragen."
-    },
-    {
-     "type": "text",
-     "text": "Na de selectie ondersteunt WorldEmp de onboarding en helpt de specialist vertrouwd te raken met de systemen, processen en verwachtingen van de opdrachtgever. De professional werkt vanaf een WorldEmp-werklocatie in India en werkt rechtstreeks samen met collega's in Europa."
-    },
-    {
-     "type": "text",
-     "text": "Hij of zij neemt deel aan overleggen, werkt mee aan gezamenlijke deliverables en raakt vertrouwd met de technische standaarden, documentatie en werkwijzen van de organisatie."
-    },
-    {
-     "type": "text",
-     "text": "Die integratie is in de semiconductorindustrie extra belangrijk. Complex engineeringwerk vraagt om context, continuïteit en nauwe samenwerking tussen mensen die begrijpen hoe hun verantwoordelijkheden bijdragen aan het bredere product of systeem."
-    },
-    {
-     "type": "text",
-     "text": "Een remote collega hoort niet buiten het team te staan wachten op instructies."
-    },
-    {
-     "type": "text",
-     "text": "Die collega hoort onderdeel te zijn van het gesprek."
-    },
-    {
-     "type": "image",
-     "src": "/media/103-6e75dc8f0c.webp",
-     "width": 1600,
-     "height": 1067,
-     "alt": ""
-    },
-    {
-     "type": "image",
-     "src": "/media/team-on-floor-2-da5a8dca78.webp",
-     "width": 1600,
-     "height": 900,
-     "alt": ""
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Wij regelen alles rondom het werk"
-    },
-    {
-     "type": "text",
-     "text": "Internationale samenwerking brengt praktische verantwoordelijkheden met zich mee."
-    },
-    {
-     "type": "text",
-     "text": "Wie is lokaal de werkgever? Wie regelt contracten, salarisadministratie en HR? Waar werkt de professional? Wie ondersteunt de prestaties en lost uitdagingen op na de onboarding?"
-    },
-    {
-     "type": "text",
-     "text": "WorldEmp verzorgt die basis."
-    },
-    {
-     "type": "text",
-     "text": "De opdrachtgever stuurt het technische werk, de prioriteiten en de dagelijkse verantwoordelijkheden van de specialist aan. WorldEmp verzorgt het lokale werkgeverschap, de salarisadministratie, HR-ondersteuning, werkplekfaciliteiten, performance management en de relevante complianceprocessen."
-    },
-    {
-     "type": "text",
-     "text": "Gedurende de hele samenwerking blijven we in contact met zowel het bedrijf als de medewerker. Regelmatig overleg helpt om aandachtspunten vroeg te signaleren, professionele ontwikkeling te ondersteunen en de samenwerking stabiel te houden."
-    },
-    {
-     "type": "text",
-     "text": "Zo kan de opdrachtgever zich richten op waarvoor de specialist is aangenomen: expertise inbrengen, innovatie ondersteunen en het team versterken."
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Begin met de capaciteit die je vandaag nodig hebt"
-    },
-    {
-     "type": "text",
-     "text": "Niet iedere organisatie heeft meteen een groot internationaal team nodig."
-    },
-    {
-     "type": "text",
-     "text": "Het vertrekpunt kan één specialist zijn wiens expertise lokaal moeilijk te vinden was. Het kan een kleine groep zijn die een nieuw programma ondersteunt, of extra capaciteit voor een engineeringteam dat tegen zijn grenzen aanloopt."
-    },
-    {
-     "type": "text",
-     "text": "Via het Digital Knowledge Migrant-model van WorldEmp kunnen bedrijven dedicated professionals in India toevoegen aan hun bestaande teams. Wanneer meer flexibiliteit nodig is, kan detachering toegang geven tot specifieke kennis of extra capaciteit."
-    },
-    {
-     "type": "text",
-     "text": "De samenwerking kan meegroeien met de behoefte."
-    },
-    {
-     "type": "text",
-     "text": "Wat begint met één zorgvuldig geselecteerde professional kan uitgroeien tot een verbonden team dat kennis vasthoudt, continuïteit ondersteunt en ruimte maakt voor ambitieuzer werk."
-    },
-    {
-     "type": "text",
-     "text": "Het doel is niet groei om de groei. Het gaat erom bedrijven de capaciteit te geven om door te gaan wanneer de lokale arbeidsmarkt hen zegt te wachten."
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Technologie schept mogelijkheden. Mensen maken er vooruitgang van."
-    },
-    {
-     "type": "text",
-     "text": "Door deze driedelige serie heen is één conclusie steeds duidelijker geworden."
-    },
-    {
-     "type": "text",
-     "text": "De ambities van de semiconductorindustrie versnellen, maar ambitie zonder de mensen om die uit te voeren wordt uiteindelijk vertraging."
-    },
-    {
-     "type": "text",
-     "text": "Fabrieken kunnen worden uitgebreid. Apparatuur kan worden geïnstalleerd. Investeringen kunnen worden goedgekeurd. Maar geen daarvan levert vooruitgang op zonder engineers en specialisten die technologie kunnen omzetten in betrouwbare oplossingen."
-    },
-    {
-     "type": "text",
-     "text": "Het volgende concurrentievoordeel is daarom misschien menselijker dan technologisch: het vermogen om de juiste expertise te verbinden met de juiste organisatie, waar die expertise zich ook bevindt."
-    },
-    {
-     "type": "text",
-     "text": "WorldEmp maakt die verbinding praktisch uitvoerbaar."
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Laten we elkaar spreken op SEMICON India 2026"
-    },
-    {
-     "type": "text",
-     "text": "SEMICON India 2026 vindt plaats van 17 tot en met 19 september 2026 in Yashobhoomi, New Delhi, en brengt organisaties uit het wereldwijde semiconductor- en elektronica-ecosysteem samen."
-    },
-    {
-     "type": "text",
-     "text": "Frank Korf, Noortje van Sambeek en Chris van der Deijl vertegenwoordigen WorldEmp op dit toonaangevende internationale semiconductor-evenement."
-    },
-    {
-     "type": "text",
-     "text": "Je vindt ons in het NL Pavilion, waar WorldEmp samen met High Tech NL Semiconductors aanwezig is."
-    },
-    {
-     "type": "text",
-     "text": "Het evenement staat vol gesprekken over investeringen, productie, innovatie en groei. Wij willen ruimte maken voor een ander belangrijk gesprek — over de mensen die nodig zijn om die ambities mogelijk te maken."
-    },
-    {
-     "type": "image",
-     "src": "/media/frank-korf-2-31951c4a1b.webp",
-     "width": 1600,
-     "height": 2400,
-     "alt": ""
-    },
-    {
-     "type": "text",
-     "text": "“De toekomst van de semiconductorindustrie wordt bepaald door de verbindingen die we vandaag leggen. Ik kijk ernaar uit om mensen te ontmoeten, ideeën uit te wisselen en mee te bouwen aan wat er komt.”"
-    },
-    {
-     "type": "text",
-     "text": "Frank Korf, CEO en oprichter"
-    },
-    {
-     "type": "image",
-     "src": "/media/nora-0dfe39b2dc.webp",
-     "width": 154,
-     "height": 199,
-     "alt": ""
-    },
-    {
-     "type": "text",
-     "text": "“De vaart in de Indiase semiconductorindustrie is niet te negeren. Ik kijk ernaar uit om wereldwijde ambitie te verbinden met Indiase expertise — en partnerships op te bouwen die de industrie vooruithelpen.”"
-    },
-    {
-     "type": "text",
-     "text": "Noortje van Sambeek, Strategic Lead Partner"
-    },
-    {
-     "type": "image",
-     "src": "/media/chris-van-der-deijl-2-34b52ec631.webp",
-     "width": 1600,
-     "height": 2400,
-     "alt": ""
-    },
-    {
-     "type": "text",
-     "text": "“SEMICON India is de plek waar grote ambities en echte kansen samenkomen. Ik kijk ernaar uit om te ontdekken hoe de juiste mensen en partnerships die ambities kunnen omzetten in blijvende groei.”"
-    },
-    {
-     "type": "text",
-     "text": "Chris van der Deijl, Marketing Director"
-    },
-    {
-     "type": "text",
-     "text": "Op 18 september 2026 om 08.30 uur organiseren WorldEmp en NXL een exclusief ontbijt bij Vivanta New Delhi, Dwarka."
-    },
-    {
-     "type": "text",
-     "text": "Samen met leiders uit de industrie bespreken we wat er nodig is om in India op te bouwen en op te schalen — van het vinden van gespecialiseerde professionals tot het creëren van de teamcapaciteit die duurzame groei vraagt."
-    },
-    {
-     "type": "text",
-     "text": "Staat een cruciale functie al te lang open, heeft jouw engineeringteam ruimte nodig om te groeien of wil je ontdekken hoe talent uit India jouw organisatie kan versterken? Neem die uitdaging dan mee naar de gesprekstafel."
-    },
-    {
-     "type": "text",
-     "text": "Ontmoet Frank, Noortje en Chris bij het NL Pavilion — of schuif bij ons aan tijdens het ontbijt."
-    },
-    {
-     "type": "text",
-     "text": "Laten we praten over de talentuitdaging achter jouw ambities — en over de mensen die die vooruit kunnen brengen."
-    },
-    {
-     "type": "image",
-     "src": "/media/hs-dac32d1a59.webp",
-     "width": 1080,
-     "height": 1350,
-     "alt": "Peter van Wessel"
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "WorldEmp nieuws"
-    },
-    {
-     "type": "cards",
-     "routes": [
-      "/insights/sterkere-semiconductorteams-bouwen",
-      "/insights/jaspers-experience",
-      "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
-     ]
-    }
-   ],
-   "translated": true
+   "card": {
+    "src": "/media/dsc-6018-edited-db549f7f14.webp",
+    "width": 1600,
+    "height": 1068
+   }
   }
  },
  {
   "route": "/insights/the-reality-of-the-semiconductor-industry-talent-as-the-new-bottleneck",
   "kind": "article",
   "en": {
-   "title": "The Reality of the Semiconductor Industry: Talent as the New Bottleneck",
+   "title": "Semiconductors Have Become Strategic Infrastructure",
    "description": "Discover why specialized talent has become the semiconductor industry's biggest bottleneck and how organizations can build resilient teams to drive innovation and long-term growth.",
    "sourcePath": "/en/about-us/knowledge-base/the-reality-of-the-semiconductor-industry-talent-as-the-new-bottleneck",
    "published": null,
@@ -20865,10 +19706,15 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/semi-c1ae319dec.webp",
+    "width": 940,
+    "height": 788
+   }
   },
   "nl": {
-   "title": "De realiteit van de semiconductorindustrie: talent als bottleneck",
+   "title": "Semiconductors zijn uitgegroeid tot strategische infrastructuur",
    "description": "Ontdek waarom gespecialiseerd talent de nieuwe bottleneck wordt in de semiconductorindustrie en hoe organisaties bouwen aan duurzame groei en innovatie.",
    "sourcePath": "/nl/over-ons/kennisbank/de-realiteit-van-de-semiconductorindustrie-talent-als-de-nieuwe-bottleneck",
    "published": null,
@@ -21215,14 +20061,19 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/semi-c1ae319dec.webp",
+    "width": 940,
+    "height": 788
+   }
   }
  },
  {
   "route": "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market",
   "kind": "article",
   "en": {
-   "title": "The Reality of the Semiconductor Industry: Talent as the New Bottleneck",
+   "title": "Demand for Talent Is Growing Faster Than Supply",
    "description": "Discover why specialised talent has become the new bottleneck in the semiconductor industry and how organisations are building sustainable growth and innovation.",
    "sourcePath": "/en/about-us/knowledge-base/the-semiconductor-industry-is-growing-faster-than-the-labour-market",
    "published": null,
@@ -21528,10 +20379,15 @@
       "/insights/jaspers-experience"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/chatgpt-image-aug-11-2026-04-44-57-pm-416bf75bc9.webp",
+    "width": 1402,
+    "height": 1122
+   }
   },
   "nl": {
-   "title": "De realiteit van de semiconductorindustrie: talent als bottleneck",
+   "title": "De vraag naar talent groeit sneller dan het aanbod",
    "description": "Ontdek waarom gespecialiseerd talent de nieuwe bottleneck wordt in de semiconductorindustrie en hoe organisaties bouwen aan duurzame groei en innovatie.",
    "sourcePath": "/nl/over-ons/kennisbank/de-semiconductorindustrie-groeit-sneller-dan-de-arbeidsmarkt-kan-bijhouden",
    "published": null,
@@ -21892,7 +20748,12 @@
       "/insights/jaspers-experience"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/chatgpt-image-aug-11-2026-04-44-57-pm-416bf75bc9.webp",
+    "width": 1402,
+    "height": 1122
+   }
   }
  },
  {
@@ -21972,7 +20833,12 @@
       "/insights/recruitment-trends-in-2025"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/tussen-shanghai-en-seoul-f3a8ccb307.webp",
+    "width": 1200,
+    "height": 1116
+   }
   },
   "nl": {
    "title": "Wat ik leerde in Shanghai en Seoul over de toekomst van onze hightech en semiconindustrie",
@@ -22118,7 +20984,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/tussen-shanghai-en-seoul-f3a8ccb307.webp",
+    "width": 1200,
+    "height": 1116
+   }
   }
  },
  {
@@ -22393,7 +21264,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/energietransitie-2-5053a24c41.webp",
+    "width": 1600,
+    "height": 900
+   }
   },
   "nl": {
    "title": "De energietransitie stokt door gebrek aan capaciteit",
@@ -22549,7 +21425,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/energietransitie-2-5053a24c41.webp",
+    "width": 1600,
+    "height": 900
+   }
   }
  },
  {
@@ -22789,7 +21670,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/contructie-en-installatietechniek-2-7c8f91a729.webp",
+    "width": 1600,
+    "height": 1066
+   }
   },
   "nl": {
    "title": "8 redenen waarom talent op afstand een antwoord is op capaciteitsdruk in techniek en industrie",
@@ -23007,230 +21893,19 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
-  }
- },
- {
-  "route": "/insights/vervolg-op-ons-iso-42001-traject-1",
-  "kind": "article",
-  "en": {
-   "title": "A follow-up on the ISO 42001 programme at WorldEmp, from setting it up to demonstrable progress",
-   "description": "Read how WorldEmp is taking further steps in ISO 42001, with an internal audit, AI awareness and a firmer grip on the full lifecycle of AI applications.",
-   "sourcePath": "/en/about-us/knowledge-base/vervolg-op-ons-iso-42001-traject-1",
-   "published": null,
-   "categories": [],
-   "blocks": [
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "By: Peter van Londen, COO WorldEmp"
-    },
-    {
-     "type": "text",
-     "text": "Three weeks ago we shared how WorldEmp applies ISO 42001 in practice. In that article we showed how we are building a solid AI Management System, with attention to engineering, quality assurance, training, guardrails and data governance."
-    },
-    {
-     "type": "text",
-     "text": "Since then we have taken further concrete steps in that same programme."
-    },
-    {
-     "type": "image",
-     "src": "/media/ai-team-worldemp-india-4273ed6a5d.webp",
-     "width": 1280,
-     "height": 960,
-     "alt": "offshore oil, gas, wind, jack-up, energy transition"
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "ISO 42001 in practice: from engineering to data governance"
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "A Sustainable Alternative: Digital Knowledge Migrants"
-    },
-    {
-     "type": "heading",
-     "level": 4,
-     "text": "Governance and architecture"
-    },
-    {
-     "type": "text",
-     "text": "In the area of governance and architecture, we have achieved the following results:",
-     "html": "In the area of governance and architecture, we have achieved the following results:"
-    },
-    {
-     "type": "list",
-     "ordered": false,
-     "items": [
-      "We have developed a comprehensive AI Implementation High-Level Architecture & Design Playbook. This links ISO 42001 requirements to practical controls, a cloud-native architecture based on technologies such as Azure, AKS, Next.js and FastAPI, and a gated AI lifecycle delivery model.",
-      "We have set up clear governance structures, including RACI matrices and reference architectures for scalable, secure and ethical AI SaaS delivery."
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 4,
-     "text": "Responsible AI Impact Assessment"
-    },
-    {
-     "type": "list",
-     "ordered": false,
-     "items": [
-      "For our generative AI SaaS environment, we have carried out a comprehensive Responsible AI Impact Assessment:",
-      "This assessment covers, among other things, stakeholder mapping, fairness, privacy, human oversight and risk mitigations.",
-      "The approach is fully aligned with the Microsoft Responsible AI Standard and ISO 42001."
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 4,
-     "text": "Risk and incident management"
-    },
-    {
-     "type": "list",
-     "ordered": false,
-     "items": [
-      "Risk and incidents are structurally embedded in our AIMS:",
-      "We have created AI Impact Assessment Registers and Risk Assessment & Treatment Templates to systematically identify, evaluate and mitigate risks. This includes risks related to bias, privacy, security, reliability, operations and regulation.",
-      "We have implemented an Information Security Incident & Investigation Framework with AI-specific enhancements, automated reporting and root cause analysis workflows."
-     ]
-    },
-    {
-     "type": "heading",
-     "level": 4,
-     "text": "Our approach and principles"
-    },
-    {
-     "type": "list",
-     "ordered": false,
-     "items": [
-      "Three principles are central to our approach:",
-      "Human-in-the-loop oversight for high-impact decisions.",
-      "Continuous monitoring, incident response and improvement cycles.",
-      "Transparent stakeholder communication and clear disclosure of AI interactions."
-     ]
-    },
-    {
-     "type": "cards",
-     "routes": [
-      "/insights/sterkere-semiconductorteams-bouwen",
-      "/insights/jaspers-experience",
-      "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
-     ]
-    }
-   ]
-  },
-  "nl": {
-   "title": "Vervolg op ISO 42001 traject bij WorldEmp, van inrichting naar aantoonbare voortgang",
-   "description": "Lees hoe WorldEmp verdere stappen zet in ISO 42001, met een interne audit, AI awareness en meer grip op de volledige lifecycle van AI toepassingen.",
-   "sourcePath": "/nl/over-ons/kennisbank/vervolg-op-ons-iso-42001-traject-1",
-   "published": null,
-   "categories": [],
-   "blocks": [
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "Door: Peter van Londen, COO WorldEmp"
-    },
-    {
-     "type": "text",
-     "text": "Drie weken geleden deelden we hoe WorldEmp ISO 42001 in de praktijk toepast. In dat artikel lieten we zien hoe we werken aan een stevig AI Management System, met aandacht voor engineering, quality assurance, training, guardrails en datagovernance.",
-     "html": "Drie weken geleden deelden we hoe WorldEmp ISO 42001 in de praktijk toepast. In dat artikel lieten we zien hoe we werken aan een stevig AI Management System, met aandacht voor engineering, quality assurance, training, guardrails en datagovernance."
-    },
-    {
-     "type": "text",
-     "text": "Sindsdien hebben we in datzelfde traject opnieuw concrete stappen gezet.",
-     "html": "Sindsdien hebben we in datzelfde traject opnieuw concrete stappen gezet."
-    },
-    {
-     "type": "image",
-     "src": "/media/ai-team-worldemp-india-4273ed6a5d.webp",
-     "width": 1280,
-     "height": 960,
-     "alt": "offshore oil, gas, wind, jack-up, energy transition"
-    },
-    {
-     "type": "heading",
-     "level": 2,
-     "text": "De volgende stap in ons ISO 42001 traject"
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Interne audit als volgende stap"
-    },
-    {
-     "type": "text",
-     "text": "Zo hebben we onze eerste interne audit succesvol afgerond. Daarbij hebben we niet alleen gekeken naar de opzet van ons managementsysteem, maar ook naar de onderliggende documentatie en bewijslast van lopende AI toepassingen. Dat geeft ons een duidelijker beeld van waar we staan en bevestigt dat de basis goed is ingericht.",
-     "html": "Zo hebben we onze eerste interne audit succesvol afgerond. Daarbij hebben we niet alleen gekeken naar de opzet van ons managementsysteem, maar ook naar de onderliggende documentatie en bewijslast van lopende AI toepassingen. Dat geeft ons een duidelijker beeld van waar we staan en bevestigt dat de basis goed is ingericht."
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Bewustwording in de organisatie"
-    },
-    {
-     "type": "text",
-     "text": "Ook op organisatieniveau hebben we verdere voortgang geboekt. Medewerkers zijn inmiddels meegenomen in het verantwoord gebruik van AI binnen de kaders van ISO 42001. Daarmee bouwen we niet alleen aan processen en documentatie, maar ook aan bewustwording en een gedeelde manier van werken.",
-     "html": "Ook op organisatieniveau hebben we verdere voortgang geboekt. Medewerkers zijn inmiddels meegenomen in het verantwoord gebruik van AI binnen de kaders van ISO 42001. Daarmee bouwen we niet alleen aan processen en documentatie, maar ook aan bewustwording en een gedeelde manier van werken."
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Grip op de volledige lifecycle"
-    },
-    {
-     "type": "text",
-     "text": "Daarnaast hebben we onze workflows verder uitgewerkt en een lifecycle applicatie ingericht voor onze AI oplossingen. Hierdoor kunnen we per toepassing gestructureerd kijken naar risico’s, beheersmaatregelen en verantwoordelijkheden, vanaf het eerste concept tot en met implementatie en beheer.",
-     "html": "Daarnaast hebben we onze workflows verder uitgewerkt en een lifecycle applicatie ingericht voor onze AI oplossingen. Hierdoor kunnen we per toepassing gestructureerd kijken naar risico’s, beheersmaatregelen en verantwoordelijkheden, vanaf het eerste concept tot en met implementatie en beheer."
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Van inrichting naar toepassing"
-    },
-    {
-     "type": "text",
-     "text": "Deze stap is een logisch vervolg op ons eerdere bericht. Waar de vorige update vooral liet zien hoe we ISO 42001 inhoudelijk hebben ingebed in onze manier van werken, laat deze update zien dat die inrichting ook daadwerkelijk wordt getoetst en toegepast in de praktijk.",
-     "html": "Deze stap is een logisch vervolg op ons eerdere bericht. Waar de vorige update vooral liet zien hoe we ISO 42001 inhoudelijk hebben ingebed in onze manier van werken, laat deze update zien dat die inrichting ook daadwerkelijk wordt getoetst en toegepast in de praktijk."
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "ISO 42001 als structureel kader"
-    },
-    {
-     "type": "text",
-     "text": "Voor ons is ISO 42001 geen los compliance traject. Het is een manier om AI binnen WorldEmp zorgvuldig, transparant en beheersbaar te ontwikkelen en toe te passen.",
-     "html": "Voor ons is ISO 42001 geen los compliance traject. Het is een manier om AI binnen WorldEmp zorgvuldig, transparant en beheersbaar te ontwikkelen en toe te passen."
-    },
-    {
-     "type": "heading",
-     "level": 3,
-     "text": "Meer weten?"
-    },
-    {
-     "type": "text",
-     "text": "Wil je meer weten over hoe wij AI governance en ISO 42001 in de praktijk vormgeven? Neem gerust contact met ons op.",
-     "html": "Wil je meer weten over hoe wij AI governance en ISO 42001 in de praktijk vormgeven? Neem gerust contact met ons op."
-    },
-    {
-     "type": "cards",
-     "routes": [
-      "/insights/sterkere-semiconductorteams-bouwen",
-      "/insights/jaspers-experience",
-      "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
-     ]
-    }
-   ]
+   ],
+   "card": {
+    "src": "/media/contructie-en-installatietechniek-2-7c8f91a729.webp",
+    "width": 1600,
+    "height": 1066
+   }
   }
  },
  {
   "route": "/insights/vervolg-op-ons-iso-42001-traject-van-inrichting-naar-aantoonbare-voortgang",
   "kind": "article",
   "en": {
-   "title": "A follow-up on the ISO 42001 programme at WorldEmp, from setting it up to demonstrable progress",
+   "title": "ISO 42001 in practice: from engineering to data governance",
    "description": "Read how WorldEmp is taking further steps in ISO 42001, with an internal audit, AI awareness and a firmer grip on the full lifecycle of AI applications.",
    "sourcePath": "/en/about-us/knowledge-base/vervolg-op-ons-iso-42001-traject-van-inrichting-naar-aantoonbare-voortgang",
    "published": null,
@@ -23335,10 +22010,15 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/ai-team-worldemp-india-4273ed6a5d.webp",
+    "width": 1280,
+    "height": 960
+   }
   },
   "nl": {
-   "title": "Vervolg op ISO 42001 traject bij WorldEmp, van inrichting naar aantoonbare voortgang",
+   "title": "De volgende stap in ons ISO 42001 traject",
    "description": "Lees hoe WorldEmp verdere stappen zet in ISO 42001, met een interne audit, AI awareness en meer grip op de volledige lifecycle van AI toepassingen.",
    "sourcePath": "/nl/over-ons/kennisbank/vervolg-op-ons-iso-42001-traject",
    "published": null,
@@ -23439,7 +22119,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/ai-team-worldemp-india-4273ed6a5d.webp",
+    "width": 1280,
+    "height": 960
+   }
   }
  },
  {
@@ -23525,7 +22210,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/kubo-worldemp-india-visit-c45ca0ac18.webp",
+    "width": 1600,
+    "height": 900
+   }
   },
   "nl": {
    "title": "KUBO ziet kracht van samenwerking in India",
@@ -23636,7 +22326,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/kubo-worldemp-india-visit-c45ca0ac18.webp",
+    "width": 1600,
+    "height": 900
+   }
   }
  },
  {
@@ -23796,7 +22491,12 @@
       "/insights/recruitment-trends-in-2025"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-5954-edited-4fa68ce8c6.webp",
+    "width": 1600,
+    "height": 1068
+   }
   },
   "nl": {
    "title": "Waarom Digitale Kennismigranten de Slimmere Keuze Zijn",
@@ -23964,7 +22664,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-5954-edited-4fa68ce8c6.webp",
+    "width": 1600,
+    "height": 1068
+   }
   }
  },
  {
@@ -24136,7 +22841,12 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-6045-edited-c5ad629f4b.webp",
+    "width": 1600,
+    "height": 1068
+   }
   },
   "nl": {
    "title": "Werken met een remote team, zo moet dat",
@@ -24309,7 +23019,12 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/dsc-6045-edited-c5ad629f4b.webp",
+    "width": 1600,
+    "height": 1068
+   }
   }
  },
  {
@@ -24447,7 +23162,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/new-office-d8a0e09e33.webp",
+    "width": 1600,
+    "height": 1067
+   }
   },
   "nl": {
    "title": "WorldEmp vestigt zich op RDM Rotterdam | Dichter bij innovatie, haven en industrie",
@@ -24571,7 +23291,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/new-office-d8a0e09e33.webp",
+    "width": 1600,
+    "height": 1067
+   }
   }
  },
  {
@@ -24630,7 +23355,12 @@
      "text": "This way, organisations gain access to scarce expertise, while the pressure on housing, general practitioners and schools in the Netherlands does not increase further. WorldEmp ensures that these international professionals are strong in their field and fit seamlessly with working with the Dutch.",
      "html": "This way, organisations gain access to scarce expertise, while the pressure on housing, general practitioners and schools in the Netherlands does not increase further. WorldEmp ensures that these international professionals are strong in their field and fit seamlessly with working with the Dutch."
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/jasper-fortuin-dick-schoof-511fd55bd5.webp",
+    "width": 960,
+    "height": 1280
+   }
   },
   "nl": {
    "title": "WorldEmp ontmoet demissionair premier Dick Schoof tijdens werkbezoek aan India",
@@ -24693,7 +23423,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/jasper-fortuin-dick-schoof-511fd55bd5.webp",
+    "width": 960,
+    "height": 1280
+   }
   }
  },
  {
@@ -24717,7 +23452,12 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/worldemp-op-de-radio-1-61adbb2837.webp",
+    "width": 1600,
+    "height": 842
+   }
   },
   "nl": {
    "title": "WorldEmp bij Zakendoen op BNR nieuwsradio",
@@ -24738,7 +23478,12 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/worldemp-op-de-radio-2-d3600ba9d2.webp",
+    "width": 1600,
+    "height": 842
+   }
   }
  },
  {
@@ -24816,7 +23561,12 @@
      ]
     }
    ],
-   "translated": true
+   "translated": true,
+   "card": {
+    "src": "/media/worldemp-eindhoven-remote-werken-cd1c47fbb7.webp",
+    "width": 1600,
+    "height": 711
+   }
   },
   "nl": {
    "title": "WorldEmp werft digitale kennismigrant voor Brainport",
@@ -24902,14 +23652,19 @@
       "/insights/remote-working-at-bluedesk"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/worldemp-eindhoven-remote-werken-cd1c47fbb7.webp",
+    "width": 1600,
+    "height": 711
+   }
   }
  },
  {
   "route": "/insights/zonder-engineers-geen-offshore-industrie-de-onmisbare-kracht-in-olie-gas-en-wind-op-zee",
   "kind": "article",
   "en": {
-   "title": "Digitale kennismigranten: buitenlandse accountants duurzaam inzetten",
+   "title": "the indispensable force in oil, gas and offshore wind",
    "description": "A smart and sustainable way to bring in international accountants: lower costs, quick to deploy and lasting team integration. A perfect fit for your expertise.",
    "sourcePath": "/en/about-us/knowledge-base/zonder-engineers-geen-offshore-industrie-de-onmisbare-kracht-in-olie-gas-en-wind-op-zee",
    "published": null,
@@ -24991,10 +23746,15 @@
       "/insights/recruitment-trends-in-2025"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/offshore-maritime-36-c5f2280020.webp",
+    "width": 764,
+    "height": 507
+   }
   },
   "nl": {
-   "title": "Digitale kennismigranten: buitenlandse accountants duurzaam inzetten",
+   "title": "de onmisbare kracht in olie, gas en wind op zee",
    "description": "Slimme en duurzame manier om internationale accountants in te zetten: kostenbesparing, snelle inzetbaarheid en blijvende teamintegratie. Perfect passend bij jullie expertise.",
    "sourcePath": "/nl/over-ons/kennisbank/zonder-engineers-geen-offshore-industrie-de-onmisbare-kracht-in-olie-gas-en-wind-op-zee",
    "published": null,
@@ -25074,7 +23834,12 @@
       "/insights/the-semiconductor-industry-is-growing-faster-than-the-labour-market"
      ]
     }
-   ]
+   ],
+   "card": {
+    "src": "/media/offshore-maritime-36-c5f2280020.webp",
+    "width": 764,
+    "height": 507
+   }
   }
  },
  {

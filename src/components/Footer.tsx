@@ -23,8 +23,11 @@ export function Footer() {
 
   return (
     <footer className="bg-we-void text-white">
-      <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_2fr]">
+      <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8">
+        {/* Five link groups in five columns rather than three: at three they
+            wrapped to a second row, leaving a hole beside the short groups and
+            another under the brand block. */}
+        <div className="grid gap-12 lg:grid-cols-[minmax(0,15rem)_minmax(0,1fr)] lg:gap-16">
           <div>
             <Link href={href("/")} aria-label={`${site.name} - ${t.home}`}>
               <Logo height={40} tone="inverse" title={site.name} />
@@ -44,7 +47,7 @@ export function Footer() {
             </a>
           </div>
 
-          <div className="grid gap-10 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:grid-cols-5">
             {nav
               .filter((item) => item.children)
               .map((item) => (

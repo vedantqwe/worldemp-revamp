@@ -57,7 +57,7 @@ export type SiteContent = {
   };
   specialisationsIntro: { eyebrow: string; heading: string };
   specialisations: Specialisation[];
-  founderQuote: { quote: string; name: string; role: string };
+  founderQuote: { quote: string; name: string; role: string; email: string };
   costs: { heading: string; body: string };
   allInRate: { heading: string; body: string; includes: string[] };
   comparison: {
@@ -352,6 +352,7 @@ const en: SiteContent = {
     quote: "Always surround yourself with people who are smarter than you.",
     name: "Frank Korf",
     role: "CEO & Founder",
+      email: "frank.korf@worldemp.com",
   },
   costs: {
     heading: "Free recruitment and 40-70% lower labour costs",
@@ -864,6 +865,7 @@ const nl: SiteContent = {
     quote: "Verzamel altijd mensen om je heen die slimmer zijn dan jijzelf.",
     name: "Frank Korf",
     role: "CEO & Founder",
+      email: "frank.korf@worldemp.com",
   },
   costs: {
     heading: "Gratis werving en 40-70% lagere arbeidskosten",

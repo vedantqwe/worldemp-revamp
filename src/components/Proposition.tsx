@@ -15,7 +15,7 @@ import { useContent } from "@/lib/content-context";
  * so the quote reads as a closed shape rather than something left open.
  */
 export function FounderQuote() {
-  const { c } = useContent();
+  const { c, t } = useContent();
   const { founderQuote } = c;
 
   return (
@@ -42,6 +42,18 @@ export function FounderQuote() {
             <span className="mx-2 text-we-line">|</span>
             {founderQuote.role}
           </figcaption>
+          {/* His own address, as the live team page publishes it - a quote from
+              the founder invites a reply, and the reply should not have to go
+              through the general inbox. */}
+          <a
+            href={`mailto:${founderQuote.email}`}
+            className="group mt-5 inline-flex items-center gap-2 rounded-full border border-we-indigo/25 px-5 py-2.5 text-sm font-semibold text-we-indigo transition-colors duration-300 hover:bg-we-indigo hover:text-white"
+          >
+            {t.mailFounder} {founderQuote.name.split(" ")[0]}
+            <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-0.5">
+              &rarr;
+            </span>
+          </a>
         </Reveal>
       </div>
     </section>

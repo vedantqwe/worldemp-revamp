@@ -6,6 +6,27 @@ import { localeHref, ui, type Locale } from "@/lib/i18n";
 import { testimonialsFor } from "@/lib/site";
 
 /**
+ * As much of a quote as fits, ending where a sentence ends.
+ *
+ * Cutting at a character count left the card reading "...dedicated to our…",
+ * which is not a quotation, it is a quotation interrupted. Whole sentences up
+ * to the limit read as a complete thought and need no ellipsis at all. Only
+ * when the first sentence is already too long does it fall back to cutting -
+ * at a word, with the ellipsis earned.
+ */
+function excerptSentences(text: string, max: number): string {
+  if (text.length <= max) return text;
+  let out = "";
+  for (const sentence of text.split(/(?<=[.!?”])\s+/)) {
+    const next = out ? `${out} ${sentence}` : sentence;
+    if (next.length > max) break;
+    out = next;
+  }
+  if (out) return out;
+  return `${text.slice(0, max).replace(/\s+\S*$/, "")}…`;
+}
+
+/**
  * The margin column.
  *
  * The prose is set at a reading measure and pinned to the left gutter, which
@@ -39,7 +60,13 @@ export function PageAside({
    * - the same page always shows the same person, which a random pick would
    * not, and a reader moving between pages sees the set rather than one.
    */
-  const testimonials = testimonialsFor(locale);
+  const QUOTE_MAX = 260;
+  // Only the quotes that can be shown whole, or cut cleanly at a sentence.
+  // Peter Storm's opens with a 256-character sentence, which no excerpt can
+  // shorten without interrupting him, so he is not offered for this slot.
+  const testimonials = testimonialsFor(locale).filter(
+    (t) => excerptSentences(t.quote, QUOTE_MAX).endsWith("…") === false,
+  );
   const borrowed =
     quote || !testimonials.length
       ? null
@@ -47,11 +74,7 @@ export function PageAside({
           [...route].reduce((n, ch) => (n * 31 + ch.charCodeAt(0)) >>> 0, 7) % testimonials.length
         ];
 
-  // Clipped at a word, not mid-syllable: CSS line-clamp cuts wherever the
-  // line happens to end, which left the card reading "WorldEmp has mad...".
-  const shown = borrowed && borrowed.quote.length > 190
-    ? `${borrowed.quote.slice(0, 190).replace(/\s+\S*$/, "")}\u2026`
-    : borrowed?.quote;
+  const shown = borrowed ? excerptSentences(borrowed.quote, QUOTE_MAX) : undefined;
 
   const hasContents = headings.length >= 4;
   if (!hasContents && !quote && !borrowed) return null;
