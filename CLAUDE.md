@@ -254,11 +254,33 @@ being there, because the visitor spends a click finding out. So:
   any internal link or asset does not resolve. 18k links across 278 pages, so
   the claim that nothing is dead is checked rather than asserted.
 
-Still open: **some knowledge-base articles are Dutch under `/en`.** That is the
-live site's own state - the English edition of those pages exists but was never
-translated, so the crawl faithfully carries Dutch text. Pages missing an edition
-entirely fall back to the other language with a visible note; these cannot be
-detected that way.
+Still open: the privacy statement, below.
+
+## Both languages are actually the language they claim
+
+The live site publishes an English edition of most pages, but a good number
+were never translated: the English URL exists, the page renders, and the words
+on it are Dutch. `/en/solutions/finance` opened with "De juiste Finance expert
+voor jouw uitdaging". Nine further pages had no English edition at all, and two
+had no Dutch one.
+
+`src/content/translations.en.json` and `.nl.json` hold the missing side, keyed
+by a **hash of the source string** rather than by route and position, so a
+re-crawl that reorders or repeats a paragraph still finds its translation, and
+a paragraph the live site rewrites shows up as missing rather than silently
+keeping the old text. The content build swaps them in, and builds a whole
+edition by translation where one is absent - flagged `translated: true`, which
+the page says out loud, because a translation made here is not the same thing
+as copy the company wrote and approved.
+
+`node tools/scraper/check-language.mjs` votes on stop words per paragraph and
+fails if any edition carries the other language. 288 built pages, 287 in their
+own language.
+
+The one exception is **`/en/privacy`**, deliberately. Publishing our own
+English rendering of a privacy and cookie statement as the company's own is not
+a build step's decision, so the English reader gets the Dutch text and is told
+why. Translate it properly and drop it in when there is an approved version.
 
 ## Commands
 
@@ -267,7 +289,8 @@ npm run dev       # http://localhost:3000
 npm run build     # all routes should prerender static (277 pages)
 npx eslint src tools   # next lint is gone in Next 16
 npm run build:pages    # static export for GitHub Pages -> out/
-node tools/pages/check-links.mjs   # every internal link in out/ resolves
+node tools/pages/check-links.mjs      # every internal link in out/ resolves
+node tools/scraper/check-language.mjs # no edition carries the other language
 
 cd tools/scraper && npm run sync        # re-migrate content from the live site
 cd tools/brand   && npm run build-logo      # re-vectorise the logo

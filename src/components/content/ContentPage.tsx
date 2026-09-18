@@ -32,6 +32,15 @@ export function ContentPage({
 }) {
   const t = ui[locale];
   const { edition, fallbackFrom } = page;
+  const note = fallbackFrom
+    ? fallbackFrom === "en"
+      ? "Dit artikel is alleen in het Engels gepubliceerd."
+      : "This page is published in Dutch only."
+    : edition.translated
+      ? locale === "nl"
+        ? "WorldEmp publiceert deze pagina alleen in het Engels. Dit is een vertaling, niet de eigen Nederlandse tekst van het bedrijf."
+        : "WorldEmp publishes this page in Dutch only. This is a translation, not the company's own English copy."
+      : null;
 
   return (
     <>
@@ -68,13 +77,12 @@ export function ContentPage({
         ) : null}
 
         {/* A few pages exist in one language only on the live site. Saying so
-            is better than silently serving the other language. */}
-        {fallbackFrom ? (
+            is better than silently serving the other language - or than
+            passing a translation off as the company's own words. */}
+        {note ? (
           <p className="mx-auto mb-10 max-w-7xl px-5 sm:px-8">
             <span className="block max-w-[42rem] rounded-2xl border border-we-line bg-we-paper px-5 py-4 text-sm leading-relaxed text-we-muted sm:px-6">
-              {fallbackFrom === "en"
-                ? "Dit artikel is alleen in het Engels gepubliceerd."
-                : "This page is published in Dutch only."}
+              {note}
             </span>
           </p>
         ) : null}

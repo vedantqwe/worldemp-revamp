@@ -81,8 +81,12 @@ requests on either.
 - **Neither form has a backend.** Both compose the submission as an email and
   hand it to the visitor's mail client, which works but is not a pipeline —
   wire `submit()` in `ContactForm.tsx` and `Newsletter.tsx` to a real endpoint.
-- **Some knowledge-base articles are Dutch under `/en`** — that is how the live
-  site publishes them; the English edition exists but was never translated.
+- **`/en/privacy` is in Dutch on purpose.** Every other page is now in its own
+  language (`node tools/scraper/check-language.mjs` checks this), but an
+  English rendering of a privacy statement is not something to publish as the
+  company's own. Drop in an approved translation when there is one.
+- **Eleven pages exist in one language upstream** and carry a translation made
+  here, labelled as such on the page. `src/content/translations.{en,nl}.json`.
 - **The role pictures are found, not commissioned.** They are public-domain
   photographs chosen by keyword from Openverse and duotoned to the brand by
   `tools/brand/build-role-art.mjs` — good enough to ship, not art-directed.

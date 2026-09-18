@@ -28,6 +28,12 @@ export type Block =
 
 export type Edition = {
   title: string;
+  /**
+   * True when this edition was produced by translating the other one, because
+   * the live site never published this language. Surfaced on the page: a
+   * translation is not the same thing as copy the company wrote and approved.
+   */
+  translated?: boolean;
   description: string;
   /** Where this came from on the live site, for traceability. */
   sourcePath: string;

@@ -85,6 +85,69 @@ const NL_ONLY_SECTORS = {
   '/nl/sectoren/semiconductor-industrie': '/sectors/semiconductor-industry',
 };
 
+/* ---------------------------------------------------------------- i18n -- */
+
+/**
+ * English pages that are not in English.
+ *
+ * The live site publishes an English edition of most pages, but a good number
+ * were never actually translated: the English URL exists, the page renders,
+ * and the words on it are Dutch. /en/solutions/finance opens with "De juiste
+ * Finance expert voor jouw uitdaging". The crawl carries that faithfully,
+ * which is right of the crawl and no use to a reader who has just clicked EN.
+ *
+ * src/content/translations.en.json holds the English for each of those
+ * strings, keyed by a hash of the Dutch rather than by route and position, so
+ * a re-crawl that reorders or repeats a paragraph still finds its translation,
+ * and a paragraph the live site rewrites shows up as missing rather than
+ * silently keeping the old text.
+ *
+ * What is not in there is the privacy and cookie statement. Translating a
+ * legal text and publishing it as the company's own is not a build step's
+ * decision to make, so that page keeps its Dutch and says so - see
+ * NO_ENGLISH_EDITION.
+ */
+const TRANSLATIONS = {
+  en: JSON.parse(await fs.readFile(path.join(ROOT, 'src/content/translations.en.json'), 'utf8')),
+  nl: JSON.parse(await fs.readFile(path.join(ROOT, 'src/content/translations.nl.json'), 'utf8')),
+};
+
+const textHash = (text) =>
+  crypto.createHash('sha1').update(text).digest('hex').slice(0, 10);
+
+/** Routes whose English edition is dropped rather than shown in Dutch. */
+const NO_ENGLISH_EDITION = new Set(['/privacy']);
+
+/** Swaps translated strings into one edition's blocks; returns what it did. */
+function translateBlocks(blocks, into) {
+  const map = TRANSLATIONS[into];
+  let applied = 0;
+  const out = blocks.map((block) => {
+    if (block.type === 'text' || block.type === 'heading' || block.type === 'quote') {
+      const swapped = map[textHash(block.text)];
+      if (!swapped) return block;
+      applied += 1;
+      // The inline html mirrors the original and would contradict the swap.
+      const { html, ...rest } = block;
+      void html;
+      return { ...rest, text: swapped };
+    }
+    if (block.type === 'list') {
+      let touched = false;
+      const items = block.items.map((item) => {
+        const swapped = map[textHash(item)];
+        if (!swapped) return item;
+        touched = true;
+        applied += 1;
+        return swapped;
+      });
+      return touched ? { ...block, items } : block;
+    }
+    return block;
+  });
+  return { blocks: out, applied };
+}
+
 /* -------------------------------------------------------------------- art */
 
 /**
@@ -264,6 +327,7 @@ async function main() {
 
   /** route -> { kind, en, nl } */
   const pages = new Map();
+  let translationsApplied = 0;
 
   for (const record of records) {
     if (!record.blocks?.length) continue;
@@ -289,10 +353,23 @@ async function main() {
     if (!pages.has(route)) pages.set(route, { route, kind, en: null, nl: null });
     const entry = pages.get(route);
 
-    const blocks = foldStats(tidyBlocks(record.blocks, record.title));
+    let blocks = foldStats(tidyBlocks(record.blocks, record.title));
+    {
+      const translated = translateBlocks(blocks, record.locale);
+      blocks = translated.blocks;
+      translationsApplied += translated.applied;
+    }
+    // The page furniture needs translating too: the <title> and the meta
+    // description are as often Dutch on an English page as the body is, and
+    // they are what the masthead and the cards show.
+    const here = TRANSLATIONS[record.locale];
+    const title = here[textHash(record.title)] ?? record.title;
+    const rawDescription = record.description || firstParagraph(blocks).slice(0, 180);
+    const description = here[textHash(rawDescription)] ?? rawDescription;
+
     entry[record.locale] = {
-      title: record.title,
-      description: record.description || firstParagraph(blocks).slice(0, 180),
+      title,
+      description,
       sourcePath: record.path,
       published: record.published,
       categories: [...(labelsByPath.get(record.path) ?? [])],
@@ -433,6 +510,77 @@ async function main() {
     `card grids: ${cardGrids} kept (${cardsResolved} cards), ${cardGridsAsLists} left as lists, ` +
       `${cardsUnknown} links off-site or unmigrated`,
   );
+
+  for (const route of NO_ENGLISH_EDITION) {
+    const entry = pages.get(route);
+    if (entry?.en && entry.nl) entry.en = null;
+  }
+
+  /*
+   * Pages the live site never published in one of the two languages.
+   *
+   * Eleven of them, in both directions: seven Dutch-only knowledge-base
+   * articles and the two sector pages, which are linked from nowhere and only
+   * ever existed in Dutch, and two English-only articles with no Dutch
+   * edition. Until now they fell back to the other language with a note, which
+   * is honest but still leaves a reader who clicked EN looking at Dutch.
+   *
+   * So an English edition is built from the Dutch one. It is flagged
+   * `translated: true`, because a translation carried out here is not the same
+   * thing as copy the company wrote and approved, and the page says so. If any
+   * substantial paragraph has no translation the page is left alone rather
+   * than published half in each language.
+   */
+  let synthesised = 0;
+  for (const entry of pages.values()) {
+    const into = !entry.en ? 'en' : !entry.nl ? 'nl' : null;
+    if (!into || NO_ENGLISH_EDITION.has(entry.route)) continue;
+    const from = into === 'en' ? 'nl' : 'en';
+
+    // The CMS gives two of these pages the same <title> - the Steinbuch
+    // announcement carries the outsourcing article's - so where a title is
+    // not unique, the page's own first heading is the better name for it.
+    const shared = [...pages.values()].filter(
+      (other) => other !== entry && other[from]?.title === entry[from].title,
+    ).length > 0;
+    const ownHeading = entry[from].blocks.find((b) => b.type === 'heading')?.text;
+    // Both sides of a collision would otherwise lose their title, so the
+    // page whose slug the title matches keeps it, and the other takes its
+    // own heading.
+    const slugWords = new Set(entry.route.split('/').pop().split('-'));
+    const titleFits = entry[from].title
+      .toLowerCase()
+      .split(/[^a-z0-9]+/)
+      // The brand name is in half the titles and half the slugs, so it
+      // tells us nothing about whether this title belongs to this page.
+      .filter((w) => w.length > 3 && w !== 'worldemp')
+      .some((w) => slugWords.has(w));
+    const source = shared && !titleFits && ownHeading ? ownHeading : entry[from].title;
+    const title = TRANSLATIONS[into][textHash(source)];
+    if (!title) continue;
+
+    const { blocks, applied } = translateBlocks(entry[from].blocks, into);
+    const long = entry[from].blocks.filter(
+      (b) => (b.type === 'text' || b.type === 'heading') && (b.text?.split(/\s+/).length ?? 0) >= 8,
+    ).length;
+    if (applied < long) continue;
+
+    entry[into] = {
+      ...entry[from],
+      title,
+      description:
+        TRANSLATIONS[into][textHash(entry[from].description)] ?? entry[from].description,
+      blocks,
+      translated: true,
+    };
+    translationsApplied += applied;
+    synthesised += 1;
+  }
+  if (synthesised) {
+    console.log(`editions built by translation: ${synthesised}`);
+  }
+
+  console.log(`translations: ${translationsApplied} strings swapped into the thinner edition`);
 
   const sorted = [...pages.values()].sort((a, b) => a.route.localeCompare(b.route));
   await fs.writeFile(

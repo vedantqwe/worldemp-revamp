@@ -42,6 +42,18 @@ export default async function PrivacyPage({ params }: PageProps<"/[locale]/priva
         intro={page?.edition.description || undefined}
       />
       <section className="bg-white py-20 sm:py-28">
+        {/* The rest of the site's Dutch-only pages are translated. This one is
+            not: publishing our own English rendering of a privacy and cookie
+            statement as the company's own is not a build step's call to make,
+            so the English reader gets the Dutch text and is told why. */}
+        {page?.fallbackFrom === "nl" ? (
+          <p className="mx-auto mb-10 max-w-7xl px-5 sm:px-8">
+            <span className="block max-w-[42rem] rounded-2xl border border-we-line bg-we-paper px-5 py-4 text-sm leading-relaxed text-we-muted sm:px-6">
+              WorldEmp publishes its privacy and cookie statement in Dutch only. It is shown
+              here as published; a legal text is not something to translate unofficially.
+            </span>
+          </p>
+        ) : null}
         {page ? (
           <ContentBlocks blocks={page.edition.blocks} locale={locale} />
         ) : (
