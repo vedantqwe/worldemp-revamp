@@ -219,6 +219,19 @@ Borrowed deliberately, and why:
   extremes and the pairs: a portrait or a panorama is cropped to the frame the
   layout needs, and in a two-up band every tile is cropped regardless, because
   an even row is the whole reason for putting them side by side.
+- **A contents rail in the right margin** on any page with four headings or
+  more. The measure is set for reading and the masthead pins it to the left
+  gutter, which on a wide screen left the right half of the page empty - a
+  column of white as tall as the article. Stretching the text across it would
+  be worse: a 120-character line is harder to read than the gap. So the room
+  goes to the page's own headings, which a twenty-section migrated article
+  needed anyway. Below four headings there is no rail and the prose centres
+  instead of sitting against a void.
+- **A picture is not paired with a heading that introduces what follows it.**
+  A heading immediately before an image opens the section the image belongs
+  to; dragging it into the column beside the image stranded it at the bottom
+  of a short column against a tall photograph. It keeps its own full-width
+  line and the picture pairs with what comes after.
 - **A picture arrives a beat after the words beside it**, and settles back from
   a slight enlargement rather than appearing at rest (`RevealFigure`). It is
   the only motion on a content page, which is why it can afford to be slower

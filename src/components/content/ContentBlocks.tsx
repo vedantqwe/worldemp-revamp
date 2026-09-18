@@ -29,11 +29,58 @@ const COLUMN = "max-w-[34rem]";
 
 type ImageBlock = Extract<Block, { type: "image" }>;
 
+/**
+ * An id for a heading, from its own words.
+ *
+ * Derived rather than stored, so the anchor a reader copies out of the address
+ * bar keeps working across a re-crawl - it only changes if the heading itself
+ * does, which is the one case where it should.
+ */
+function headingId(text: string, index: number): string {
+  const slug = text
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")
+    .slice(0, 60);
+  // The index keeps two identically-titled sections apart, which the migrated
+  // pages do have ("Conclusie" twice on one article).
+  return slug ? `${slug}-${index}` : `section-${index}`;
+}
+
+/** The major headings of a page, for the contents rail beside it. */
+export function headingsOf(blocks: Block[]): { id: string; text: string }[] {
+  return blocks.flatMap((block, i) =>
+    block.type === "heading" && block.level <= 2 && block.text.trim()
+      ? [{ id: headingId(block.text, i), text: block.text }]
+      : [],
+  );
+}
+
 /** Blocks that read well in a half-width column next to a picture. */
 const PAIRABLE = new Set(["heading", "text", "list", "quote"]);
 
 /** How many blocks a picture may take with it into a split. */
 const MAX_PAIRED = 3;
+
+/**
+ * A picture needs enough words beside it to hold the other column up.
+ *
+ * A lone heading against a 16:10 photograph is a line of type centred in a
+ * column three hundred pixels tall, and the hole under it reads as a mistake.
+ * Below this, the picture takes the full measure instead and the heading keeps
+ * its own line.
+ */
+const MIN_PAIRED_CHARS = 110;
+
+function pairedText(blocks: Block[]): number {
+  return blocks.reduce((n, b) => {
+    if (b.type === "text" || b.type === "heading" || b.type === "quote") return n + b.text.length;
+    if (b.type === "list") return n + b.items.join(" ").length;
+    return n;
+  }, 0);
+}
 
 type Unit =
   | { kind: "prose"; blocks: Block[] }
@@ -102,7 +149,15 @@ function layout(blocks: Block[]): Unit[] {
       take += 1;
     }
 
-    if (take > 0) {
+    // A heading sitting immediately before the picture opens the section the
+    // picture belongs to. Pairing the picture with the paragraphs above it
+    // would drag that heading into the column with them, where it ends up
+    // stranded at the bottom of a short column against a tall photograph and
+    // cut off from the section it names. Let the picture pair with what
+    // follows instead, and the heading keep its own full-width line.
+    if (buffer.length && buffer[buffer.length - 1].type === "heading") take = 0;
+
+    if (take > 0 && pairedText(buffer.slice(buffer.length - take)) >= MIN_PAIRED_CHARS) {
       const tail = buffer.slice(buffer.length - take);
       buffer = buffer.slice(0, buffer.length - take);
       flush();
@@ -121,7 +176,7 @@ function layout(blocks: Block[]): Unit[] {
     }
 
     flush();
-    if (ahead.length) {
+    if (ahead.length && pairedText(ahead) >= MIN_PAIRED_CHARS) {
       units.push({ kind: "split", blocks: ahead, image: run[0], flip: splits % 2 === 1 });
       splits += 1;
       i = j - 1;
@@ -148,12 +203,22 @@ function eagerUnits(units: Unit[]): boolean[] {
   });
 }
 
-export function ContentBlocks({ blocks, locale }: { blocks: Block[]; locale: Locale }) {
+export function ContentBlocks({
+  blocks,
+  locale,
+  className = "mx-auto max-w-7xl px-5 sm:px-8",
+}: {
+  blocks: Block[];
+  locale: Locale;
+  /** The wrapper, so a page can put this inside a grid with a rail beside it. */
+  className?: string;
+}) {
   const units = layout(blocks);
   const eagerly = eagerUnits(units);
+  const ids = new Map(blocks.map((b, i) => [b, headingId(b.type === "heading" ? b.text : "", i)]));
 
   return (
-    <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <div className={className}>
       {units.map((unit, u) => {
         switch (unit.kind) {
           case "prose":
@@ -163,22 +228,34 @@ export function ContentBlocks({ blocks, locale }: { blocks: Block[]; locale: Loc
               // the unit itself to separate it from what came before - which
               // matters most on a phone, where a split stacks and its picture
               // would otherwise butt straight into the next heading.
-              <div key={u} className={`[&>*:first-child]:mt-0 ${u === 0 ? "" : "mt-16"}`}>
+              <div key={u} className={`[&>*:first-child]:mt-0 ${u === 0 ? "" : "mt-12"}`}>
                 {unit.blocks.map((block, i) => (
-                  <BlockView key={i} block={block} locale={locale} />
+                  <BlockView
+                    key={i}
+                    block={block}
+                    locale={locale}
+                    id={ids.get(block)}
+                    afterHeading={unit.blocks[i - 1]?.type === "heading"}
+                  />
                 ))}
               </div>
             );
 
           case "split":
             return (
-              <div key={u} className="mt-20 grid items-center gap-10 first:mt-0 lg:grid-cols-2 lg:gap-16">
+              <div key={u} className="mt-14 grid items-center gap-10 first:mt-0 lg:grid-cols-2 lg:gap-14">
                 <Reveal
                   className={`${COLUMN} [&>*:first-child]:mt-0 ${unit.flip ? "lg:order-2" : ""}`}
                   y={24}
                 >
                   {unit.blocks.map((block, i) => (
-                    <BlockView key={i} block={block} locale={locale} />
+                    <BlockView
+                      key={i}
+                      block={block}
+                      locale={locale}
+                      id={ids.get(block)}
+                      afterHeading={unit.blocks[i - 1]?.type === "heading"}
+                    />
                   ))}
                 </Reveal>
                 {/* A beat behind the words, so the eye reads then looks. */}
@@ -199,13 +276,13 @@ export function ContentBlocks({ blocks, locale }: { blocks: Block[]; locale: Loc
                 image={unit.image}
                 priority={eagerly[u]}
                 sizes="(min-width: 64rem) 56rem, 100vw"
-                className="mt-16 max-w-[56rem] first:mt-0"
+                className="mt-14 max-w-[56rem] first:mt-0"
               />
             );
 
           case "gallery":
             return (
-              <div key={u} className="mt-16 grid gap-5 first:mt-0 sm:grid-cols-2">
+              <div key={u} className="mt-14 grid gap-5 first:mt-0 sm:grid-cols-2">
                 {unit.images.map((image, i) => (
                   <Figure
                     key={i}
@@ -289,7 +366,18 @@ function Figure({
   );
 }
 
-function BlockView({ block, locale }: { block: Block; locale: Locale }) {
+function BlockView({
+  block,
+  locale,
+  id,
+  afterHeading = false,
+}: {
+  block: Block;
+  locale: Locale;
+  id?: string;
+  /** The block before this one was a heading, so this one needs less air. */
+  afterHeading?: boolean;
+}) {
   switch (block.type) {
     case "heading": {
       // The H1 is the page masthead, so body headings start at H2 and the
@@ -298,10 +386,13 @@ function BlockView({ block, locale }: { block: Block; locale: Locale }) {
       const isMajor = Tag === "h2";
       return (
         <Tag
+          // Anchored so the contents rail can point at it, and offset so the
+          // fixed header does not sit on top of the heading it jumps to.
+          id={isMajor ? id : undefined}
           className={`${MEASURE} text-balance font-display leading-[1.15] text-we-ink ${
             isMajor
-              ? "mt-16 text-[clamp(1.5rem,2.6vw,2.1rem)]"
-              : "mt-10 text-[clamp(1.2rem,2vw,1.5rem)]"
+              ? `scroll-mt-28 text-[clamp(1.5rem,2.6vw,2.1rem)] ${afterHeading ? "mt-6" : "mt-16"}`
+              : `text-[clamp(1.2rem,2vw,1.5rem)] ${afterHeading ? "mt-4" : "mt-10"}`
           }`}
         >
           {block.text}

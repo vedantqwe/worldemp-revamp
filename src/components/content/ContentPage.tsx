@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { CtaBand } from "@/components/CtaBand";
-import { ContentBlocks } from "@/components/content/ContentBlocks";
+import { ContentBlocks, headingsOf } from "@/components/content/ContentBlocks";
+import { PageContents } from "@/components/content/PageContents";
 import { CardGrid } from "@/components/content/CardGrid";
 import type { CardSummary, ResolvedPage } from "@/lib/pages";
 import { localeHref, ui, type Locale } from "@/lib/i18n";
@@ -32,6 +33,11 @@ export function ContentPage({
 }) {
   const t = ui[locale];
   const { edition, fallbackFrom } = page;
+  const headings = headingsOf(edition.blocks);
+  // The rail earns its column on a long page and gets in the way on a short
+  // one, so the layout follows it: with a rail the prose sits left of it, and
+  // without one the prose is centred rather than pinned against a void.
+  const hasRail = headings.length >= 4;
   const note = fallbackFrom
     ? fallbackFrom === "en"
       ? "Dit artikel is alleen in het Engels gepubliceerd."
@@ -61,33 +67,52 @@ export function ContentPage({
         tags={edition.categories}
       />
 
-      <article className="bg-white py-20 sm:py-28">
-        {backTo ? (
-          <nav className="mx-auto mb-12 max-w-7xl px-5 sm:px-8">
-            <Link
-              href={localeHref(locale, backTo.href)}
-              className="group inline-flex items-center gap-2 text-sm font-semibold text-we-indigo"
-            >
-              <span aria-hidden className="transition-transform duration-300 group-hover:-translate-x-1">
-                &larr;
-              </span>
-              {t.backTo} {backTo.label.toLowerCase()}
-            </Link>
-          </nav>
-        ) : null}
+      <article className="bg-white py-14 sm:py-20">
+        <div className={`mx-auto px-5 sm:px-8 ${hasRail ? "max-w-6xl" : "max-w-7xl"}`}>
+          <div
+            className={
+              hasRail ? "lg:grid lg:grid-cols-[minmax(0,1fr)_13rem] lg:gap-x-12" : ""
+            }
+          >
+            <div className={hasRail ? "" : "mx-auto max-w-[52rem]"}>
+              {backTo ? (
+                <nav className="mb-8">
+                  <Link
+                    href={localeHref(locale, backTo.href)}
+                    className="group inline-flex items-center gap-2 text-sm font-semibold text-we-indigo"
+                  >
+                    <span
+                      aria-hidden
+                      className="transition-transform duration-300 group-hover:-translate-x-1"
+                    >
+                      &larr;
+                    </span>
+                    {t.backTo} {backTo.label.toLowerCase()}
+                  </Link>
+                </nav>
+              ) : null}
 
-        {/* A few pages exist in one language only on the live site. Saying so
-            is better than silently serving the other language - or than
-            passing a translation off as the company's own words. */}
-        {note ? (
-          <p className="mx-auto mb-10 max-w-7xl px-5 sm:px-8">
-            <span className="block max-w-[42rem] rounded-2xl border border-we-line bg-we-paper px-5 py-4 text-sm leading-relaxed text-we-muted sm:px-6">
-              {note}
-            </span>
-          </p>
-        ) : null}
+              {/* A few pages exist in one language only on the live site.
+                  Saying so is better than silently serving the other language
+                  - or than passing a translation off as the company's own. */}
+              {note ? (
+                <p className="mb-10 max-w-[42rem] rounded-2xl border border-we-line bg-we-paper px-5 py-4 text-sm leading-relaxed text-we-muted sm:px-6">
+                  {note}
+                </p>
+              ) : null}
 
-        <ContentBlocks blocks={edition.blocks} locale={locale} />
+              <ContentBlocks blocks={edition.blocks} locale={locale} className="" />
+            </div>
+
+            {hasRail ? (
+              <aside className="hidden lg:block">
+                <div className="sticky top-28 max-h-[calc(100vh-9rem)] overflow-y-auto pr-1">
+                  <PageContents headings={headings} label={t.onThisPage} />
+                </div>
+              </aside>
+            ) : null}
+          </div>
+        </div>
       </article>
 
       {related?.length ? (

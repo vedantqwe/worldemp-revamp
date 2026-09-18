@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
  * content below starts above the fold, but on the same gradient mesh so the
  * pages read as one site.
  *
- * `pt-36` clears the 5rem fixed header with room to spare, so the eyebrow is
+ * The top padding clears the 5rem fixed header with room to spare, so the eyebrow is
  * never tucked under the bar - on a long title the header goes to its solid
  * state as soon as the visitor scrolls, and the two never overlap.
  */
@@ -28,7 +28,7 @@ export function PageHero({
   tags?: string[];
 }) {
   return (
-    <section className="relative isolate overflow-hidden bg-we-indigo pb-20 pt-36 text-white sm:pb-24 sm:pt-44">
+    <section className="relative isolate overflow-hidden bg-we-indigo pb-14 pt-32 text-white sm:pb-20 sm:pt-36">
       <div aria-hidden className="we-mesh absolute inset-0 -z-10" />
       <div aria-hidden className="we-grid-lines absolute inset-0 -z-10 opacity-50" />
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
