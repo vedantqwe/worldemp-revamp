@@ -38,6 +38,26 @@ function excerptSentences(text: string, max: number): string {
  * Each is skipped when there is nothing to show, so a short page with no
  * quote gets no rail at all rather than an empty column with headings in it.
  */
+/**
+ * The mark that closes a quotation.
+ *
+ * Opened and never closed, a pull quote reads as though it were cut off - the
+ * margin card looked truncated even when the sentence it held was complete.
+ * It sits inline after the last word rather than on its own line, so a
+ * two-line quote does not grow a third, and it is hidden from assistive tech
+ * because the blockquote already carries the semantics.
+ */
+function QuoteClose() {
+  return (
+    <span
+      aria-hidden
+      className="we-gradient-text ml-1 align-[-0.35em] font-display text-2xl leading-none"
+    >
+      &rdquo;
+    </span>
+  );
+}
+
 export function PageAside({
   locale,
   headings,
@@ -95,6 +115,7 @@ export function PageAside({
             </span>
             <blockquote className="mt-1 font-display text-base leading-snug text-we-ink">
               {quote}
+              <QuoteClose />
             </blockquote>
           </figure>
         ) : borrowed ? (
@@ -104,6 +125,7 @@ export function PageAside({
             </span>
             <blockquote className="mt-1 font-display text-[0.9375rem] leading-snug text-we-ink">
               {shown}
+              <QuoteClose />
             </blockquote>
             <figcaption className="mt-4 flex items-center gap-3">
               {borrowed.portrait ? (

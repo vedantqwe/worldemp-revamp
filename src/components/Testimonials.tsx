@@ -171,8 +171,17 @@ function TestimonialCard({ item }: { item: Testimonial }) {
           {item.name.charAt(0)}
         </span>
       )}
+      {/* Opened and closed, like every other quotation on the site. Both
+          marks are decorative - the blockquote carries the semantics, and a
+          screen reader announcing two stray quotation marks helps nobody. */}
       <blockquote className="mt-7 flex-1 text-[0.975rem] leading-relaxed text-we-ink/80">
+        <span aria-hidden className="we-gradient-text mr-1 align-[-0.3em] font-display text-2xl leading-none">
+          &ldquo;
+        </span>
         {item.quote}
+        <span aria-hidden className="we-gradient-text ml-1 align-[-0.35em] font-display text-2xl leading-none">
+          &rdquo;
+        </span>
       </blockquote>
       <figcaption className="mt-7 border-t border-we-line pt-5 text-sm">
         <span className="block font-display font-semibold text-we-ink">{item.name}</span>

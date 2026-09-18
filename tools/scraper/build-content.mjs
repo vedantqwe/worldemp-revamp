@@ -728,6 +728,28 @@ async function main() {
   const richness = (entry) =>
     ['en', 'nl'].reduce((n, l) => n + (entry[l] ? (entry[l].translated ? 1 : 2) : 0), 0);
 
+  /*
+   * How much the slug has to do with what is on the page.
+   *
+   * The CMS files articles under the wrong address as well as duplicating
+   * them: the Solum Technology case study is also published at
+   * /de-energietransitie-stokt-door-gebrek-capaciteit, which is the name of a
+   * different piece entirely. When two routes carry the same body, the one
+   * whose slug is about that body is the one worth keeping.
+   */
+  const slugFit = (entry) => {
+    const slug = new Set(
+      entry.route.split('/').pop().split('-').filter((w) => w.length > 3),
+    );
+    if (!slug.size) return 0;
+    const edition = entry.nl ?? entry.en;
+    const opening = `${edition.blocks.find((b) => b.type === 'text')?.text ?? ''} ${edition.title}`;
+    const body = new Set((opening.toLowerCase().match(/[a-zà-ÿ]{4,}/g) ?? []).slice(0, 60));
+    let shared = 0;
+    for (const w of slug) if (body.has(w)) shared += 1;
+    return shared / slug.size;
+  };
+
   const articles = [...pages.values()].filter((p) => p.kind === 'article');
   const duplicates = new Set();
 
@@ -748,8 +770,12 @@ async function main() {
 
       if (!sameBody && !(twins && sameTitle)) continue;
 
-      const loser = richness(a) >= richness(b) ? b : a;
-      duplicates.add(loser.route);
+      // Slug relevance first, because a correctly-filed copy is worth more
+      // than an extra edition; richness settles it when both fit equally.
+      const fitA = slugFit(a);
+      const fitB = slugFit(b);
+      const keepA = Math.abs(fitA - fitB) > 0.05 ? fitA > fitB : richness(a) >= richness(b);
+      duplicates.add((keepA ? b : a).route);
     }
   }
 

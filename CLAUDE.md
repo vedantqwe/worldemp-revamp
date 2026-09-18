@@ -261,6 +261,13 @@ Borrowed deliberately, and why:
   two lines of copy, so the tall card spent half its height empty with its
   title stranded at the bottom. Two wide cards over three narrow ones give the
   same reading order out of rows that end where the words do.
+- **Every quotation is opened and closed.** Both marks are decorative and
+  hidden from the accessibility tree - the blockquote carries the semantics -
+  but a quote opened and never closed reads as cut off, which made complete
+  sentences look truncated in the margin and in the carousel. The margin quote
+  is also excerpted by sentence rather than by character count, and a quote
+  whose first sentence cannot fit is not offered for that slot at all rather
+  than being interrupted into one.
 - **A picture is not paired with a heading that introduces what follows it.**
   A heading immediately before an image opens the section the image belongs
   to; dragging it into the column beside the image stranded it at the bottom
