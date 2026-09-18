@@ -83,7 +83,7 @@ diagonal stroke, which overshoots the letterforms.
 
 Regenerate with `npm install && npm run build-logo` in `tools/brand`.
 
-## The role pages are drawn, not photographed
+## The role pages are pictured, not populated
 
 The live site illustrates all 33 role pages with the same eleven stock
 photographs of WorldEmp staff, so a Data Engineer and a Compliance Specialist
@@ -91,18 +91,43 @@ are introduced by the same man at the same desk. They are pictures of
 identifiable people used as decoration, which is a poor fit for a role page and
 a consent question nobody needs to have.
 
-`tools/brand/build-role-art.mjs` draws one flat workspace scene per role and
-per discipline instead - the diagram on the wall chosen by discipline, the rest
-varied by a hash of the slug, so no two are the same - and writes them to
-`public/roles/`. Palette tokens only, and no text in the artwork: the card and
-the masthead already name the role, and a drawing that has to be redrawn to be
-translated will go stale in one language or the other.
+`tools/brand/build-role-art.mjs` gives each role and each discipline a subject
+of its own: a bridge, a shipyard, a server hall, a whiteboard full of sprints.
+Things rather than people - a photograph of a *different* stranger is the same
+mistake with better lighting, and thirty-three pictures of someone at a laptop
+say nothing the other thirty-two do not.
 
-Only the lead image is kept; the rest of a role page's photographs were the
-same few again further down. Anything in `public/roles/` that the script did
-not write is left alone, so real illustrations can be dropped in per role.
+The pictures come from **Openverse, filtered to CC0 and public domain**, so
+there is nothing to attribute and nothing to license. `public/roles/manifest.json`
+records creator, source, licence and id for each, and the id pins the choice so
+a rerun reproduces this set rather than whatever the index holds that day. The
+subjects are curated in `role-art.queries.mjs`: search on an open archive
+returns a 1905 newspaper as readily as a shipyard, so the terms and the result
+index are chosen by eye from `-- --candidates` contact sheets. Six picks were
+replaced after review because they had a person or a pair of hands in them.
+
+Openverse over the illustration libraries on licence grounds: unDraw's terms
+forbid downloading or scraping its assets programmatically, and Storyset,
+Humaaans and IRA Design all want visible attribution, which does not belong on
+a corporate marketing page.
+
+Each is then **duotoned** into one indigo ramp. A translucent brand wash was
+tried first at three strengths and does not work: weak, it leaves the yellow
+cable yellow and the green door green; strong enough to unify, it fogs every
+subject into mush. A duotone throws the original colour away instead, so
+thirty-seven archive photographs read as one set at full contrast. Exposure is
+levelled first, so a high-key photograph and a dark one arrive at the same
+weight, and the discipline's accent sits in one corner to keep the four
+sections apart.
+
+`role-scenes.mjs` still draws the flat workspace scene, now as the fallback for
+anything the archive cannot picture. Nothing needed it in the end. Anything in
+`public/roles/` that the script did not write is left alone, so commissioned
+artwork can be dropped in per role.
 
     cd tools/brand && npm run build-role-art
+    cd tools/brand && npm run build-role-art -- --candidates   # contact sheets
+    cd tools/brand && npm run build-role-art -- civil-engineer # just that one
 
 ## Content is crawled, not retyped
 
@@ -176,6 +201,11 @@ Borrowed deliberately, and why:
   its own must be stoppable. It also pauses on hover and focus.
 - **Asymmetric bento grid** for the five pillars — unequal cells give the eye a
   reading order that five identical cards do not.
+- **A discipline page opens on the discipline** - its positioning paragraph,
+  the count of roles under it, two of the brand's figures and its own picture,
+  before any list of jobs. The paragraph is the homepage's solutions copy,
+  reused rather than restated, and the body's opening line is dropped when it
+  is the same sentence, which it usually is.
 - **Pictures set beside their text, alternating sides** (the house style of the
   large consultancies) — the CMS emits an image as a sibling of the paragraphs
   around it, which renders as a column of text interrupted by full-width
@@ -185,7 +215,14 @@ Borrowed deliberately, and why:
   and one with no prose to sit beside keeps the full measure. Nothing is
   cropped to a house ratio - a diagram survives letterboxing far worse than a
   photograph survives being its own shape - so what is shared is the frame, the
-  radius, the entrance and the slow lift on hover.
+  radius, the entrance and the slow lift on hover. The exceptions are the
+  extremes and the pairs: a portrait or a panorama is cropped to the frame the
+  layout needs, and in a two-up band every tile is cropped regardless, because
+  an even row is the whole reason for putting them side by side.
+- **A picture arrives a beat after the words beside it**, and settles back from
+  a slight enlargement rather than appearing at rest (`RevealFigure`). It is
+  the only motion on a content page, which is why it can afford to be slower
+  than the text. Reduced motion collapses it to a fade.
 
 ## Motion rules
 

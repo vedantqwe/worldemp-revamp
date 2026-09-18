@@ -4,7 +4,6 @@
  "generated": [
   "data.webp",
   "engineering.webp",
-  "finance.webp",
   "it.webp",
   "data-big-data-specialist.webp",
   "data-data-engineer.webp",
@@ -21,13 +20,9 @@
   "engineering-mechanical-engineer.webp",
   "engineering-naval-architect.webp",
   "engineering-process-engineer.webp",
-  "engineering-projectmanager.webp",
   "engineering-structural-engineer.webp",
-  "finance-bookkeeper-accountant.webp",
   "finance-compliance-specialist.webp",
-  "finance-cryptocurrency-blockchain-expert.webp",
   "finance-financial-planning-expert.webp",
-  "finance-fintech-expert.webp",
   "finance-insurance-expert.webp",
   "finance-risk-management-expert.webp",
   "finance-tax-specialist.webp",
@@ -37,7 +32,384 @@
   "it-cloud-devops-engineer.webp",
   "it-cybersecurity-specialist.webp",
   "it-database-administrator.webp",
+  "it-ui-ux-designer.webp",
+  "finance.webp",
+  "finance-bookkeeper-accountant.webp",
+  "finance-cryptocurrency-blockchain-expert.webp",
+  "finance-fintech-expert.webp",
   "it-test-engineer.webp",
-  "it-ui-ux-designer.webp"
- ]
+  "engineering-projectmanager.webp"
+ ],
+ "sources": {
+  "data.webp": {
+   "id": "b0a8724f-e8ba-4a40-a059-a1eb3e1999eb",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/2O0IOI1DA8.jpg",
+   "title": "Data Chart",
+   "creator": "khunkorn laowisit",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/data-chart-2O0IOI1DA8",
+   "query": "data"
+  },
+  "engineering.webp": {
+   "id": "6963186c-8fd6-4225-8041-ce864d0ae74b",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/TJ20HKB9BY.jpg",
+   "title": "Industrial Machine",
+   "creator": "Joe deSousa",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/industrial-machine-TJ20HKB9BY",
+   "query": "industrial engineering"
+  },
+  "finance.webp": {
+   "id": "4d1148cc-bfb7-4c0c-ad66-250fff032b50",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/LPD3QR7VQG.jpg",
+   "title": "Finance Flatlay",
+   "creator": "Artsy Crafty",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/finance-flatlay-LPD3QR7VQG",
+   "query": "finance"
+  },
+  "it.webp": {
+   "id": "77e9b421-4121-4ad0-b0fa-03432e4c1d7d",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/FSPLFPQBCZ.jpg",
+   "title": "Code Coding",
+   "creator": "Negative Space",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/code-coding-FSPLFPQBCZ",
+   "query": "technology code"
+  },
+  "data-big-data-specialist.webp": {
+   "id": "a5d43a6c-1b3c-4595-b696-3d5e6114ccba",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/U4TACBBYTL.jpg",
+   "title": "Futuristic Data",
+   "creator": "Altered Reality",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/futuristic-data-U4TACBBYTL",
+   "query": "data"
+  },
+  "data-data-engineer.webp": {
+   "id": "65a752b8-abd8-4e80-a2aa-2bec75ff2855",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/QVKM5X26VN.jpg",
+   "title": "Network Cable",
+   "creator": "Lenharth Systems",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/network-cable-QVKM5X26VN",
+   "query": "network cable"
+  },
+  "data-data-scientist.webp": {
+   "id": "f272c31f-d045-4367-b064-36bbb875769f",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/JVSII4KCCK.jpg",
+   "title": "Analytics Charts",
+   "creator": "Negative Space",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/analytics-charts-JVSII4KCCK",
+   "query": "analytics chart"
+  },
+  "data-master-data-management-specialist.webp": {
+   "id": "5046692e-c543-438f-a98a-0c9701b96b39",
+   "url": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L3Vwd2s2MjA3MDM2NS13aWtpbWVkaWEtaW1hZ2Uta293bzA4MjguanBn.jpg",
+   "title": "Binders boxes shelves large archive",
+   "creator": null,
+   "license": "cc0 1.0",
+   "source": "rawpixel",
+   "page": "https://www.rawpixel.com/image/3298148/free-photo-image-warehouse-aisle-book",
+   "query": "archive"
+  },
+  "engineering-automation-engineer.webp": {
+   "id": "20941460-4136-43b0-b6df-6e1ea3811ce1",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/WUBMLJRYEK.jpg",
+   "title": "Robot Technology",
+   "creator": "Alex Knight",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/robot-technology-WUBMLJRYEK",
+   "query": "robot"
+  },
+  "engineering-bim-modeler.webp": {
+   "id": "9cb4e397-fe0b-4b4a-a1c0-02d7ba97b969",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/2XJ1VEE57Q.jpg",
+   "title": "Architectural Design",
+   "creator": "Karol Dach",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/architectural-design-2XJ1VEE57Q",
+   "query": "architectural design"
+  },
+  "engineering-chemical-engineer.webp": {
+   "id": "f9ac5a6f-77e5-4b95-be2d-a94da005dfcc",
+   "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdXB3azYyNDI0NDk0LXdpa2ltZWRpYS1pbWFnZS1rb3dzNXExdi5qcGc.jpg",
+   "title": "heap empty test tubes",
+   "creator": null,
+   "license": "cc0 1.0",
+   "source": "rawpixel",
+   "page": "https://www.rawpixel.com/image/3305760/free-photo-image-lab-medicine-research",
+   "query": "test tubes"
+  },
+  "engineering-civil-engineer.webp": {
+   "id": "dfac9668-f526-4243-bac0-173fff7ecbee",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/9CGW06WAWR.jpg",
+   "title": "Bridge Architecture",
+   "creator": "Gerrit Vermeulen",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/bridge-architecture-9CGW06WAWR",
+   "query": "bridge architecture"
+  },
+  "engineering-document-controller.webp": {
+   "id": "212437f5-df50-456b-99ed-4b1a448f1c8a",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/AB4F938C85.jpg",
+   "title": "Business Document",
+   "creator": "Daria Nepriakhina",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/business-document-AB4F938C85",
+   "query": "documents"
+  },
+  "engineering-electrical-engineer.webp": {
+   "id": "81d24582-b2dd-41c4-b524-37063618ca35",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/D0DY9J64VN.jpg",
+   "title": "Power Lines",
+   "creator": "Tim Sullivan",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/power-lines-D0DY9J64VN",
+   "query": "power lines"
+  },
+  "engineering-fire-safety-engineer.webp": {
+   "id": "87138106-6f12-4b44-ba1e-be7f80ec9d39",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/NLIILCDIDD.jpg",
+   "title": "Fire Extinguisher",
+   "creator": "Matt Bango",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/fire-extinguisher-NLIILCDIDD",
+   "query": "fire extinguisher"
+  },
+  "engineering-maritime-engineer.webp": {
+   "id": "cd14edf1-bd51-4f29-a45d-0eca774bf5ce",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/1FA263F8AF.jpg",
+   "title": "Cargo Harbor",
+   "creator": "Leeroy",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/cargo-harbor-1FA263F8AF",
+   "query": "cargo harbor"
+  },
+  "engineering-mechanical-engineer.webp": {
+   "id": "7b4d65fe-6f30-469b-8e93-0c20f92e3be7",
+   "url": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L3B4MTE3NDY1MC1pbWFnZS1rd3Z3N2l6Mi5qcGc.jpg",
+   "title": "Machinery gear close image",
+   "creator": null,
+   "license": "cc0 1.0",
+   "source": "rawpixel",
+   "page": "https://www.rawpixel.com/image/5913020/photo-image-light-public-domain-plant",
+   "query": "machinery gear"
+  },
+  "engineering-naval-architect.webp": {
+   "id": "009976a3-5a07-40d3-a262-06a3228fd0f0",
+   "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZmwyMDc3MDg2NTQ2MS1pbWFnZS1reWNqcmZlMy5qcGc.jpg",
+   "title": "Gdansk shipyard",
+   "creator": null,
+   "license": "cc0 1.0",
+   "source": "rawpixel",
+   "page": "https://www.rawpixel.com/image/6082154/gdansk-shipyard",
+   "query": "shipyard"
+  },
+  "engineering-process-engineer.webp": {
+   "id": "57ad17f8-30cd-48f7-ae34-2569e9662e2f",
+   "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGQyMDctMy0wNDQuanBn.jpg",
+   "title": "Oil refinery Texas. Original image",
+   "creator": "Carol M Highsmith",
+   "license": "cc0 1.0",
+   "source": "rawpixel",
+   "page": "https://www.rawpixel.com/image/3094090/free-photo-image-oil-industry-energy",
+   "query": "oil refinery"
+  },
+  "engineering-projectmanager.webp": {
+   "id": "830c25c3-92a8-4b48-86ae-6f7c64b2b18d",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/YR89OQFMT1.jpg",
+   "title": "Whiteboard Post-Itnotes",
+   "creator": "Startup Stock Photos",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/whiteboard-post-itnotes-YR89OQFMT1",
+   "query": "whiteboard planning"
+  },
+  "engineering-structural-engineer.webp": {
+   "id": "f5bf64c8-d544-4054-8274-348f893c5f0d",
+   "url": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL3B4MTA0NTcxMS1pbWFnZS1rd3Z3Zzdody5qcGc.jpg",
+   "title": "Steel structure building construction image",
+   "creator": null,
+   "license": "cc0 1.0",
+   "source": "rawpixel",
+   "page": "https://www.rawpixel.com/image/5914819/image-public-domain-tree-wood",
+   "query": "steel structure"
+  },
+  "finance-bookkeeper-accountant.webp": {
+   "id": "f3394359-e4c3-49c8-b073-f214195fe825",
+   "url": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTExL3Nta2trczE5ODAtMTAxXzMyLWltYWdlLmpwZw.jpg",
+   "title": "Financial Accounting",
+   "creator": null,
+   "license": "cc0 1.0",
+   "source": "rawpixel",
+   "page": "https://www.rawpixel.com/image/8769332/financial-accounting",
+   "query": "accounting"
+  },
+  "finance-compliance-specialist.webp": {
+   "id": "c2f6e232-c5cd-4868-9f21-74b40f619d55",
+   "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHg4NTQ5MDEtaW1hZ2Uta3d2dXkycXQuanBn.jpg",
+   "title": "Free contract image",
+   "creator": null,
+   "license": "cc0 1.0",
+   "source": "rawpixel",
+   "page": "https://www.rawpixel.com/image/5904997/free-contract-image-public-domain-cc0-photo",
+   "query": "contract"
+  },
+  "finance-cryptocurrency-blockchain-expert.webp": {
+   "id": "1ba991df-13bc-487e-bdc8-c7a7873b483a",
+   "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHUyMzQ5NTY0LWltYWdlLWt3dndoejlqLmpwZw.jpg",
+   "title": "Dark Bitcoin Coins",
+   "creator": null,
+   "license": "cc0 1.0",
+   "source": "rawpixel",
+   "page": "https://www.rawpixel.com/image/5914956/dark-bitcoin-coins",
+   "query": "bitcoin"
+  },
+  "finance-financial-planning-expert.webp": {
+   "id": "11a8ff63-7ad4-4771-95f5-9f002ab9ba67",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/ZLEVSWFWZC.jpg",
+   "title": "Piggy Bank",
+   "creator": "Artsy Crafty",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/piggy-bank-ZLEVSWFWZC",
+   "query": "piggy bank"
+  },
+  "finance-fintech-expert.webp": {
+   "id": "04bf5eaa-edf3-458e-8624-d518ea48788a",
+   "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvc3YxNjYwNTAtaW1hZ2Uta3oyZTJ2b2suanBn.jpg",
+   "title": "Visa cards close up, location",
+   "creator": null,
+   "license": "cc0 1.0",
+   "source": "rawpixel",
+   "page": "https://www.rawpixel.com/image/6112260/photo-image-background-public-domain-plastic",
+   "query": "credit card payment"
+  },
+  "finance-insurance-expert.webp": {
+   "id": "38bd93d8-c5dd-4c48-9202-3b9ea666d37b",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/L7X3V4PRUI.jpg",
+   "title": "Umbrella Rain",
+   "creator": "Sajjad Ghanavati",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/umbrella-rain-L7X3V4PRUI",
+   "query": "umbrella rain"
+  },
+  "finance-risk-management-expert.webp": {
+   "id": "ce28e292-6394-46e3-aec8-59d02db0ae20",
+   "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGQxMDktcGRvYmowMDA1Mi1pbWFnZS1sMGEzNjUwYS5qcGc.jpg",
+   "title": "Balance Scales (c. 1939) Ruth",
+   "creator": "nationalgalleryofart",
+   "license": "cc0 1.0",
+   "source": "rawpixel",
+   "page": "https://www.rawpixel.com/image/3391544/free-illustration-image-antique-art-artwork",
+   "query": "balance scales"
+  },
+  "finance-tax-specialist.webp": {
+   "id": "1a11f465-1a0d-4f20-ab35-5beac297bc8e",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/Y2GUBQIPXD.jpg",
+   "title": "Calculator Numbers",
+   "creator": "Negative Space",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/calculator-numbers-Y2GUBQIPXD",
+   "query": "calculator"
+  },
+  "it-ai-specialist.webp": {
+   "id": "d8481036-84c7-4766-9672-15ecb18f8c37",
+   "url": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL3N2MTIxNDM0LWltYWdlLWt3dnVpbjNjLmpwZw.jpg",
+   "title": "Free circuit board image",
+   "creator": null,
+   "license": "cc0 1.0",
+   "source": "rawpixel",
+   "page": "https://www.rawpixel.com/image/5902389/photo-image-public-domain-technology-computer",
+   "query": "circuit board"
+  },
+  "it-application-developer.webp": {
+   "id": "f4a0cabe-4e2d-4018-8700-9bd267beaa73",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/1STVFMTBJY.jpg",
+   "title": "Programming Code",
+   "creator": "One Idea LLC",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/programming-code-1STVFMTBJY",
+   "query": "programming code"
+  },
+  "it-application-manager.webp": {
+   "id": "42f30356-c8c4-4eb0-b1c5-8bd4ca05e336",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/SLZRDLFT96.jpg",
+   "title": "Computer Monitors",
+   "creator": "Tran Mau Tri Tam",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/computer-monitors-SLZRDLFT96",
+   "query": "computer monitor"
+  },
+  "it-cloud-devops-engineer.webp": {
+   "id": "7d2ed772-9e4d-4582-9297-6c2d6ac94d06",
+   "url": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9zdGF0aWMvaW1hZ2Uvd2Vic2l0ZS8yMDIyLTA0L2xyL3B4MTI0MTMyNS1pbWFnZS1rd3Z3NGFoMC5qcGc.jpg",
+   "title": "Free computer server room image",
+   "creator": null,
+   "license": "cc0 1.0",
+   "source": "rawpixel",
+   "page": "https://www.rawpixel.com/image/5912401/image-public-domain-black-technology",
+   "query": "server room"
+  },
+  "it-cybersecurity-specialist.webp": {
+   "id": "0221794c-3caf-4f70-809a-83977526006e",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/4YOS7QUWRV.jpg",
+   "title": "Padlock Lock",
+   "creator": "Michal Jarmoluk",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/padlock-lock-4YOS7QUWRV",
+   "query": "padlock"
+  },
+  "it-database-administrator.webp": {
+   "id": "432c03d5-b558-48b7-b2d8-3cb016c30227",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/GP4J9CBZUU.jpg",
+   "title": "Hard Drive",
+   "creator": "Tim Sullivan",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/hard-drive-GP4J9CBZUU",
+   "query": "hard drive"
+  },
+  "it-test-engineer.webp": {
+   "id": "1676ebd8-bd34-42f6-9863-585bafb7cb06",
+   "url": "https://images.rawpixel.com/editor_1024/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvZnJ0ZXJwdmVzYWxhaW5lbjAwMDQ3LWltYWdlLWt3dnd4OGZiLmpwZw.jpg",
+   "title": "Close checklist wooden surface",
+   "creator": null,
+   "license": "cc0 1.0",
+   "source": "rawpixel",
+   "page": "https://www.rawpixel.com/image/5917664/image-paper-public-domain-check",
+   "query": "checklist"
+  },
+  "it-ui-ux-designer.webp": {
+   "id": "c4faced2-e0a9-49ee-b093-9f096c32dfb0",
+   "url": "https://cdn.stocksnap.io/img-thumbs/960w/2QBWAOT5KL.jpg",
+   "title": "Wireframe Sketch",
+   "creator": "FOCA Stock",
+   "license": "cc0 1.0",
+   "source": "stocksnap",
+   "page": "https://stocksnap.io/photo/wireframe-sketch-2QBWAOT5KL",
+   "query": "wireframe sketch"
+  }
+ }
 }

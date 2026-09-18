@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { CardGrid } from "@/components/content/CardGrid";
-import { Reveal } from "@/components/ui/Reveal";
+import { Reveal, RevealFigure } from "@/components/ui/Reveal";
 import { cardsFor, type Block } from "@/lib/pages";
 import type { Locale } from "@/lib/i18n";
 
@@ -172,49 +172,54 @@ export function ContentBlocks({ blocks, locale }: { blocks: Block[]; locale: Loc
 
           case "split":
             return (
-              <Reveal key={u} className="mt-20 first:mt-0" y={28}>
-                <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-                  <div className={`${COLUMN} [&>*:first-child]:mt-0 ${unit.flip ? "lg:order-2" : ""}`}>
-                    {unit.blocks.map((block, i) => (
-                      <BlockView key={i} block={block} locale={locale} />
-                    ))}
-                  </div>
-                  <Figure
-                    image={unit.image}
-                    priority={eagerly[u]}
-                    sizes="(min-width: 64rem) 36rem, 100vw"
-                    className={unit.flip ? "lg:order-1" : ""}
-                  />
-                </div>
-              </Reveal>
+              <div key={u} className="mt-20 grid items-center gap-10 first:mt-0 lg:grid-cols-2 lg:gap-16">
+                <Reveal
+                  className={`${COLUMN} [&>*:first-child]:mt-0 ${unit.flip ? "lg:order-2" : ""}`}
+                  y={24}
+                >
+                  {unit.blocks.map((block, i) => (
+                    <BlockView key={i} block={block} locale={locale} />
+                  ))}
+                </Reveal>
+                {/* A beat behind the words, so the eye reads then looks. */}
+                <Figure
+                  image={unit.image}
+                  priority={eagerly[u]}
+                  delay={0.12}
+                  sizes="(min-width: 64rem) 36rem, 100vw"
+                  className={unit.flip ? "lg:order-1" : ""}
+                />
+              </div>
             );
 
           case "band":
             return (
-              <Reveal key={u} className="mt-16 first:mt-0" y={28}>
-                <Figure
-                  image={unit.image}
-                  priority={eagerly[u]}
-                  sizes="(min-width: 64rem) 56rem, 100vw"
-                  className="max-w-[56rem]"
-                />
-              </Reveal>
+              <Figure
+                key={u}
+                image={unit.image}
+                priority={eagerly[u]}
+                sizes="(min-width: 64rem) 56rem, 100vw"
+                className="mt-16 max-w-[56rem] first:mt-0"
+              />
             );
 
           case "gallery":
             return (
-              <Reveal key={u} className="mt-16 first:mt-0" y={28}>
-                <div className="grid gap-5 sm:grid-cols-2">
-                  {unit.images.map((image, i) => (
-                    <Figure
-                      key={i}
-                      image={image}
-                      priority={eagerly[u] && i === 0}
-                      sizes="(min-width: 40rem) 32rem, 100vw"
-                    />
-                  ))}
-                </div>
-              </Reveal>
+              <div key={u} className="mt-16 grid gap-5 first:mt-0 sm:grid-cols-2">
+                {unit.images.map((image, i) => (
+                  <Figure
+                    key={i}
+                    image={image}
+                    priority={eagerly[u] && i === 0}
+                    // Every tile to the same frame: the row is the reason
+                    // these are side by side, and a row of mismatched heights
+                    // is worse than either picture on its own.
+                    frame="16/10"
+                    delay={Math.min(i, 3) * 0.08}
+                    sizes="(min-width: 40rem) 32rem, 100vw"
+                  />
+                ))}
+              </div>
             );
         }
       })}
@@ -225,40 +230,62 @@ export function ContentBlocks({ blocks, locale }: { blocks: Block[]; locale: Loc
 /**
  * One picture.
  *
- * The migrated images arrive in every shape the CMS allowed - 410x410 next to
- * 1600x900 - so nothing is cropped to a house ratio: a diagram survives being
- * letterboxed far worse than a photograph survives being its own shape. What
- * is shared is the frame, the radius and the slow lift on hover, which is
- * what makes a page of mixed pictures look like one page.
+ * The migrated images arrive in every shape the CMS allowed - a 410x410
+ * portrait next to a 1600x900 landscape - and left at their own proportions
+ * they wreck a row: a headshot a column tall beside a screenshot a third of
+ * that, which is what the two-up bands looked like before this.
+ *
+ * So the extremes are cropped to a frame and the middle is left alone. Between
+ * 4:3 and 2:1 a picture keeps its own shape, because that is the range a
+ * diagram survives; a portrait or a panorama is cropped to the frame the
+ * layout needs, since letterboxing those does more damage than cropping them.
+ * In a two-up band every tile is cropped regardless - an even row is the whole
+ * point of putting them side by side.
  */
 function Figure({
   image,
   priority,
   sizes,
+  delay = 0,
+  frame,
   className = "",
 }: {
   image: ImageBlock;
   priority: boolean;
   sizes: string;
+  delay?: number;
+  /** Force the picture into this ratio, whatever shape it arrived in. */
+  frame?: "16/10" | "4/3";
   className?: string;
 }) {
+  const ratio = image.width / image.height;
+  const forced = frame ?? (ratio < 1.15 ? "4/3" : ratio > 2.1 ? "16/10" : undefined);
+
   return (
-    <figure className={className}>
-      <span className="block overflow-hidden rounded-3xl border border-we-line bg-we-paper">
-        <Image
-          src={image.src}
-          alt={image.alt}
-          width={image.width}
-          height={image.height}
-          sizes={sizes}
-          priority={priority}
-          className="h-auto w-full transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.03] motion-reduce:transition-none motion-reduce:hover:scale-100"
-        />
-      </span>
-      {image.alt ? (
-        <figcaption className="mt-3 text-xs leading-relaxed text-we-muted">{image.alt}</figcaption>
-      ) : null}
-    </figure>
+    <RevealFigure delay={delay} className={className}>
+      <figure>
+        <span
+          className={`block overflow-hidden rounded-3xl border border-we-line bg-we-paper ${
+            forced === "4/3" ? "aspect-[4/3]" : forced === "16/10" ? "aspect-[16/10]" : ""
+          }`}
+        >
+          <Image
+            src={image.src}
+            alt={image.alt}
+            width={image.width}
+            height={image.height}
+            sizes={sizes}
+            priority={priority}
+            className={`w-full transition-transform duration-[900ms] ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.03] motion-reduce:transition-none motion-reduce:hover:scale-100 ${
+              forced ? "h-full object-cover" : "h-auto"
+            }`}
+          />
+        </span>
+        {image.alt ? (
+          <figcaption className="mt-3 text-xs leading-relaxed text-we-muted">{image.alt}</figcaption>
+        ) : null}
+      </figure>
+    </RevealFigure>
   );
 }
 

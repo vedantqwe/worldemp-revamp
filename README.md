@@ -37,7 +37,7 @@ npx eslint src   # `next lint` was removed in Next 16
 | `src/components/` | One file per designed section; `ui/Reveal.tsx` has the shared motion primitives. |
 | `src/components/content/` | The templates every migrated page renders through. |
 | `src/components/brand/` | The logo, drawn as vectors. |
-| `public/roles/` | Generated. One illustration per role and per discipline, in place of the live site's stock photography. |
+| `public/roles/` | Generated. One picture per role and per discipline, CC0 from Openverse and duotoned, in place of the live site's staff photography. `manifest.json` holds the provenance. |
 | `src/app/[locale]/` | All routes. `/` redirects to `/en`. |
 | `tools/scraper/` | Crawlee + Playwright crawler and the content build. |
 | `tools/brand/` | Vectorises the logo master into `public/brand/*.svg` and path data. |
@@ -83,7 +83,8 @@ requests on either.
   wire `submit()` in `ContactForm.tsx` and `Newsletter.tsx` to a real endpoint.
 - **Some knowledge-base articles are Dutch under `/en`** — that is how the live
   site publishes them; the English edition exists but was never translated.
-- **The role illustrations are generated**, not commissioned. They are drawn
-  from the brand palette by `tools/brand/build-role-art.mjs`; drop a file into
-  `public/roles/` to replace any of them with real artwork and the build will
-  leave it alone.
+- **The role pictures are found, not commissioned.** They are public-domain
+  photographs chosen by keyword from Openverse and duotoned to the brand by
+  `tools/brand/build-role-art.mjs` — good enough to ship, not art-directed.
+  Drop a file into `public/roles/` to replace any of them and the build leaves
+  it alone.
