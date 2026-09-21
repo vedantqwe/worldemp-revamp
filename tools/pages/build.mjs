@@ -15,7 +15,7 @@
  * is the point - a Pages failure should be reproducible without pushing.
  */
 import { spawnSync } from "node:child_process";
-import { copyFileSync, readdirSync, writeFileSync } from "node:fs";
+import { copyFileSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join, relative, sep } from "node:path";
 
 const base = process.env.PAGES_BASE_PATH ?? "/worldemp-revamp";
@@ -101,6 +101,60 @@ writeFileSync(
 `,
 );
 writeFileSync(join(out, ".nojekyll"), "");
+
+/*
+ * llms.txt.
+ *
+ * The convention the answer engines are converging on: one plain-text map of
+ * the site, so a model reading it does not have to infer the shape of the
+ * place from whichever page it happened to land on. Generated from the same
+ * content the sitemap uses, so the two cannot disagree, and carrying each
+ * page's one-line description rather than its prose - enough to choose a
+ * page, not a copy of one.
+ */
+const site = (
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://vedantqwe.github.io/worldemp-revamp"
+).replace(/\/$/, "");
+
+const pages = JSON.parse(
+  readFileSync(join(process.cwd(), "src/content/pages.json"), "utf8"),
+);
+
+const section = (kind, heading) => {
+  const rows = pages
+    .filter((p) => p.kind === kind && p.en)
+    .sort((a, b) => a.route.localeCompare(b.route))
+    .map((p) => {
+      const summary = (p.en.description ?? "").replace(/\s+/g, " ").trim();
+      const line = `- [${p.en.title}](${site}/en${p.route})`;
+      return summary ? `${line}: ${summary}` : line;
+    });
+  return rows.length ? `\n## ${heading}\n\n${rows.join("\n")}\n` : "";
+};
+
+const llms = [
+  "# WorldEmp",
+  "",
+  "> WorldEmp connects European companies with dedicated remote professionals",
+  "> in India - engineering, data, finance and IT - who work as an integrated",
+  "> part of the client's own team. The client directs the work; WorldEmp",
+  "> handles local employment, payroll, HR and compliance.",
+  "",
+  "Both editions of every page exist: /en for English, /nl for Dutch. Replace",
+  "the prefix to switch language; the rest of the path is identical.",
+  "",
+  "- Contact: info@worldemp.com, +31 (0)88 - 400 29 00",
+  `- Sitemap: ${site}/sitemap.xml`,
+  section("service", "Services"),
+  section("sector", "Sectors"),
+  section("discipline", "Disciplines"),
+  section("role", "Roles"),
+  section("case", "Client stories"),
+  section("article", "Knowledge base"),
+  section("page", "About"),
+].join("\n");
+
+writeFileSync(join(out, "llms.txt"), llms);
 
 console.log(
   `\nout/ is ready for GitHub Pages (base path ${base}, ${copied} prefetch payloads flattened)`,

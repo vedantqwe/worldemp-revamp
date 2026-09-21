@@ -4,6 +4,7 @@ import { Specialisations } from "@/components/Specialisations";
 import { CtaBand } from "@/components/CtaBand";
 import { getContent } from "@/lib/content";
 import { isLocale } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -11,7 +12,12 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const { solutions } = getContent(locale).mastheads;
-  return { title: solutions.eyebrow, description: solutions.intro };
+  return pageMetadata({
+    locale,
+    path: "/solutions",
+    title: solutions.eyebrow,
+    description: solutions.intro,
+  });
 }
 
 export default async function SolutionsPage({ params }: PageProps<"/[locale]/solutions">) {

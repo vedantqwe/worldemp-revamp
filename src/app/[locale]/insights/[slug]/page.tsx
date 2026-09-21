@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { ContentPage } from "@/components/content/ContentPage";
 import { getContent } from "@/lib/content";
 import { isLocale, locales } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
+import { ArticleSchema, BreadcrumbSchema } from "@/components/seo/StructuredData";
 import { leadImage, relatedArticles, resolvePage, slugsOfKind } from "@/lib/pages";
 
 /** Every article, in both editions, prerendered at build time. */
@@ -21,16 +23,15 @@ export async function generateMetadata({
   if (!page) return {};
   const image = leadImage(page.edition);
 
-  return {
+  return pageMetadata({
+    locale,
+    path: `/insights/${slug}`,
     title: page.edition.title,
     description: page.edition.description,
-    openGraph: {
-      title: page.edition.title,
-      description: page.edition.description,
-      type: "article",
-      images: image ? [{ url: image.src, width: image.width, height: image.height }] : undefined,
-    },
-  };
+    image: image?.src,
+    published: page.edition.published,
+    type: "article",
+  });
 }
 
 export default async function ArticlePage({ params }: PageProps<"/[locale]/insights/[slug]">) {
@@ -44,6 +45,24 @@ export default async function ArticlePage({ params }: PageProps<"/[locale]/insig
   const { mastheads } = getContent(locale);
 
   return (
+    <>
+      {/* Read by crawlers and answer engines, rendered by nobody. */}
+      <ArticleSchema
+        locale={locale}
+        path={route}
+        headline={page.edition.title}
+        description={page.edition.description}
+        image={leadImage(page.edition)?.src}
+        published={page.edition.published}
+        section={mastheads.insights.eyebrow}
+      />
+      <BreadcrumbSchema
+        locale={locale}
+        trail={[
+          { name: mastheads.insights.eyebrow, path: "/insights" },
+          { name: page.edition.title, path: route },
+        ]}
+      />
     <ContentPage
       locale={locale}
       page={page}
@@ -51,5 +70,6 @@ export default async function ArticlePage({ params }: PageProps<"/[locale]/insig
       backTo={{ label: mastheads.insights.eyebrow, href: "/insights" }}
       related={relatedArticles(route, locale, 3)}
     />
+    </>
   );
 }

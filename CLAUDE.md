@@ -60,7 +60,7 @@ Everything else:
   `ContentPage` (the shell), `ContentBlocks` (the block renderer), `CardGrid`,
   `SectionRail`.
 - `src/components/brand/` — the logo. `logo-paths.ts` is generated.
-- `src/app/[locale]/` — routes. All static, all prerendered (277 pages). `/`
+- `src/app/[locale]/` — routes. All static, all prerendered (286 pages). `/`
   redirects to `/en` via `next.config.ts`.
 - `tools/scraper/` — the Crawlee + Playwright crawler and the content build.
 - `tools/brand/` — vectorises the logo master.
@@ -168,23 +168,39 @@ Things worth knowing about the migration:
 - **The knowledge-base index is the authority on which articles exist.** The
   crawl follows links, so it finds every address the CMS will serve, copies
   included: worldemp.com publishes the same article at `/vervolg-op-ons-iso-42001-traject`
-  and `-traject-1`, at `/kubo-80` and `/kubo-80-jaar`, and publishes some a
-  second time in the other language under their own slug. That is why the index
-  showed the same piece three times with three different photographs.
-  `tools/scraper/kennisbank.mjs` reads the paginated index (65 nl, 57 en) and
-  `src/content/kennisbank.json` becomes the record of what is listed and which
-  card image belongs to each. Four duplicate routes are dropped by the content
-  build: exact body matches by hash, and language twins by their signature -
-  one route whose English was translated here paired with another whose Dutch
-  was, under near-identical titles.
+  and `-traject-1`, and publishes some a second time in the other language
+  under their own slug. That is why the index showed the same piece three
+  times with three different photographs. `tools/scraper/kennisbank.mjs` reads
+  the paginated index (65 nl, 57 en) and `src/content/kennisbank.json` becomes
+  the record of what is listed and which card image belongs to each. Two
+  duplicate routes are dropped by the content build: exact body matches by
+  hash, and language twins by their signature - one route whose English was
+  translated here paired with another whose Dutch was, under near-identical
+  titles.
+- **Two runs of English URLs serve the wrong article.** `/en/.../kubo-80`
+  returns the Offshore Energy recap; the real KUBO anniversary piece sits one
+  slug further along, at `/en/.../kubo-80-jaar`. It is not a hreflang mixup -
+  the English *page itself* is the wrong one, so the crawl faithfully carries
+  the wrong body across. The hreflang alternates still point at the right
+  pair, though, and give the shift away: two Dutch articles end up pointing at
+  one English URL between them. Where that shows up, the route is named after
+  the Dutch slug rather than the shifted English one, so a page still reads as
+  the article it actually is.
 - **Several articles share a `<title>`** - seven were called "Digitale
   kennismigranten: buitenlandse accountants duurzaam inzetten", which on an
   index is seven identical cards. Where a title is not unique the article's own
   first heading is used, skipping bylines ("Door: Peter van Londen, COO
   WorldEmp" became the name of two pieces on the first attempt), and where that
-  still collides, the slug - the one name the CMS gives each page that is unique
-  by construction. Index titles are *not* used: the live English index shows
-  every title shifted a row, which is the same metadata mess by another route.
+  still collides, the slug - the one name the CMS gives each page that is
+  unique by construction. The index is then read for a better name still: it
+  carries the editor's full headline rather than a truncated `<title>`, unless
+  it repeats there too, or is in the wrong language for the edition - the live
+  English index is half native, half the Dutch headline left untranslated, and
+  taking those would put Dutch back on a page that already read correctly.
+- **The same placeholder sits in the meta description as often as the
+  `<title>`.** Where a description repeats across articles it is dropped for
+  the article's own opening paragraph instead - not an edited summary, but an
+  honest one.
 - **The card image comes from the index**, not from the article. An article's
   first in-body picture is as often a logo or a chart as a photograph.
 - The case pages set their figures as heading/paragraph pairs ("Start" /
@@ -305,7 +321,7 @@ being there, because the visitor spends a click finding out. So:
 - **The footer's social links** are the four the live site's own footer uses -
   two of them are not what you would guess from the brand name.
 - **`node tools/pages/check-links.mjs`** walks the built export and fails if
-  any internal link or asset does not resolve. 18k links across 278 pages, so
+  any internal link or asset does not resolve. 20k links across 284 pages, so
   the claim that nothing is dead is checked rather than asserted.
 
 Still open: the privacy statement, below.
@@ -337,18 +353,64 @@ translated or is language-neutral. Around fifty legitimately are - names, phone
 numbers, job titles Dutch uses unchanged - so that test reports rather than
 fails. Read it after a crawl.
 
-288 built pages, 287 in their own language.
+286 built pages, 285 in their own language.
 
 The one exception is **`/en/privacy`**, deliberately. Publishing our own
 English rendering of a privacy and cookie statement as the company's own is not
 a build step's decision, so the English reader gets the Dutch text and is told
 why. Translate it properly and drop it in when there is an approved version.
 
+## Findable - by search engines and by answer engines
+
+This layer only adds structure; it changes no pixel. Every page already had a
+`<title>` and a description - what follows makes both machine-readable in the
+ways a crawler and a language model each expect, without touching layout,
+copy shown on the page, or the palette.
+
+- **`src/lib/seo.ts`** is the one place that builds a page's `<head>` metadata.
+  `pageMetadata({ locale, path, title, description, image, published, type })`
+  returns canonical + hreflang (`en`, `nl`, and `x-default` pointing at `en`,
+  since the two editions are one route with two content sources, never two
+  different pages), Open Graph, and a Twitter card. All 19 `generateMetadata`
+  functions across `src/app/[locale]/**` call it rather than building their
+  own `Metadata` object, so a page cannot silently drift out of the pattern.
+- **Structured data lives in `src/components/seo/StructuredData.tsx`**, one
+  component per schema.org type actually justified by the content: an
+  `Organization`+`WebSite` graph in the locale layout (every page), `Article`
+  on insights and client stories, `Service` on the 33 role pages (`Service`,
+  not `JobPosting` - these describe a capability a client can buy, and listing
+  them as vacancies would put them in job search results under false
+  pretences), and `BreadcrumbList` wherever a page sits under a section. Each
+  renders a `<script type="application/ld+json">` that no visitor sees.
+  **`FaqSchema` exists but is not used anywhere** - the FAQ page's questions
+  were lost in extraction (two headings covering seventeen answers), and
+  inventing the missing structure would be fabricating content, not
+  describing it. Wire it up if the FAQ page is ever rebuilt with real Q/A
+  pairs.
+- **`src/app/robots.ts` and `src/app/sitemap.ts`** are generated, not static
+  files, so they can carry `alternates.languages` per URL. Both need
+  `export const dynamic = "force-static"` - the one Next 16 requirement that
+  is easy to miss under `output: "export"`. `allRoutes()` in `src/lib/pages.ts`
+  is the shared source both read.
+- **`out/llms.txt`**, written by `tools/pages/build.mjs` alongside the root
+  `index.html`, is the convention answer engines are converging on: a plain
+  one-line-per-page map of the site with its description, generated from the
+  same content the sitemap uses so the two cannot disagree.
+- **The preview is `noindex`** until it has a real domain.
+  `NEXT_PUBLIC_SITE_URL` defaults to the GitHub Pages URL; `indexable` in
+  `seo.ts` is false whenever the site URL is a `github.io`, `localhost` or
+  `127.0.0.1` address, which sets `robots: { index: false }` on every page and
+  `Disallow: /` in `robots.txt`. Set the env var to the real domain to flip it
+  on - nothing else changes.
+
+Nothing here invents copy: a title or description a page did not already have
+is not given one, and no schema is populated from a guess.
+
 ## Commands
 
 ```bash
 npm run dev       # http://localhost:3000
-npm run build     # all routes should prerender static (277 pages)
+npm run build     # all routes should prerender static (286 pages)
 npx eslint src tools   # next lint is gone in Next 16
 npm run build:pages    # static export for GitHub Pages -> out/
 node tools/pages/check-links.mjs      # every internal link in out/ resolves

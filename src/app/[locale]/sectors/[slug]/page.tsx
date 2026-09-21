@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import { ContentPage } from "@/components/content/ContentPage";
 import { getContent } from "@/lib/content";
 import { isLocale, locales } from "@/lib/i18n";
-import { resolvePage, slugsOfKind, summaries } from "@/lib/pages";
+import { pageMetadata } from "@/lib/seo";
+import { leadImage, resolvePage, slugsOfKind, summaries } from "@/lib/pages";
 
 export function generateStaticParams() {
   return locales.flatMap((locale) =>
@@ -18,7 +19,13 @@ export async function generateMetadata({
   if (!isLocale(locale)) return {};
   const page = resolvePage(`/sectors/${slug}`, locale);
   if (!page) return {};
-  return { title: page.edition.title, description: page.edition.description };
+  return pageMetadata({
+    locale,
+    path: `/sectors/${slug}`,
+    title: page.edition.title,
+    description: page.edition.description,
+    image: leadImage(page.edition)?.src,
+  });
 }
 
 export default async function SectorPage({ params }: PageProps<"/[locale]/sectors/[slug]">) {

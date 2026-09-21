@@ -4,6 +4,7 @@ import { ContentBlocks, headingsOf } from "@/components/content/ContentBlocks";
 import { PageAside } from "@/components/content/PageAside";
 import { getContent } from "@/lib/content";
 import { isLocale } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 import { resolvePage } from "@/lib/pages";
 
 export async function generateMetadata({
@@ -12,10 +13,12 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const page = resolvePage("/privacy", locale);
-  return {
+  return pageMetadata({
+    locale,
+    path: "/privacy",
     title: page?.edition.title ?? getContent(locale).pages.privacy.title,
     description: page?.edition.description,
-  };
+  });
 }
 
 /**

@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ContentPage } from "@/components/content/ContentPage";
 import { isLocale, locales } from "@/lib/i18n";
-import { childrenOf, pagesOfKind, resolvePage } from "@/lib/pages";
+import { pageMetadata } from "@/lib/seo";
+import { BreadcrumbSchema, ServiceSchema } from "@/components/seo/StructuredData";
+import { childrenOf, leadImage, pagesOfKind, resolvePage } from "@/lib/pages";
 
 export function generateStaticParams() {
   const roles = pagesOfKind("role").map((page) => {
@@ -19,7 +21,13 @@ export async function generateMetadata({
   if (!isLocale(locale)) return {};
   const page = resolvePage(`/solutions/${discipline}/${role}`, locale);
   if (!page) return {};
-  return { title: page.edition.title, description: page.edition.description };
+  return pageMetadata({
+    locale,
+    path: `/solutions/${discipline}/${role}`,
+    title: page.edition.title,
+    description: page.edition.description,
+    image: leadImage(page.edition)?.src,
+  });
 }
 
 export default async function RolePage({
@@ -35,6 +43,25 @@ export default async function RolePage({
   const parent = resolvePage(`/solutions/${discipline}`, locale);
 
   return (
+    <>
+      {/* Service, not JobPosting: these pages describe a capability a client
+          can buy, and listing them as vacancies would put them in job search
+          results under false pretences. */}
+      <ServiceSchema
+        locale={locale}
+        path={route}
+        name={page.edition.title}
+        description={page.edition.description}
+        category={parent?.edition.title ?? discipline}
+      />
+      <BreadcrumbSchema
+        locale={locale}
+        trail={[
+          { name: "Solutions", path: "/solutions" },
+          { name: parent?.edition.title ?? discipline, path: `/solutions/${discipline}` },
+          { name: page.edition.title, path: route },
+        ]}
+      />
     <ContentPage
       locale={locale}
       page={page}
@@ -48,5 +75,6 @@ export default async function RolePage({
         .slice(0, 3)}
       relatedHeading={parent?.edition.title ?? discipline}
     />
+    </>
   );
 }

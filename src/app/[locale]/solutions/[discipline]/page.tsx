@@ -9,6 +9,7 @@ import { PageAside } from "@/components/content/PageAside";
 import { Reveal, RevealFigure } from "@/components/ui/Reveal";
 import { getContent } from "@/lib/content";
 import { isLocale, locales, ui } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 import { childrenOf, leadImage, pullQuote, resolvePage, slugsOfKind } from "@/lib/pages";
 
 export function generateStaticParams() {
@@ -24,7 +25,13 @@ export async function generateMetadata({
   if (!isLocale(locale)) return {};
   const page = resolvePage(`/solutions/${discipline}`, locale);
   if (!page) return {};
-  return { title: page.edition.title, description: page.edition.description };
+  return pageMetadata({
+    locale,
+    path: `/solutions/${discipline}`,
+    title: page.edition.title,
+    description: page.edition.description,
+    image: leadImage(page.edition)?.src,
+  });
 }
 
 export default async function DisciplinePage({

@@ -5,6 +5,7 @@ import { CtaBand } from "@/components/CtaBand";
 import { Specialisations } from "@/components/Specialisations";
 import { getContent } from "@/lib/content";
 import { isLocale } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 import { summaries } from "@/lib/pages";
 
 export async function generateMetadata({
@@ -13,7 +14,12 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const { sectors } = getContent(locale).mastheads;
-  return { title: sectors.eyebrow, description: sectors.intro };
+  return pageMetadata({
+    locale,
+    path: "/sectors",
+    title: sectors.eyebrow,
+    description: sectors.intro,
+  });
 }
 
 export default async function SectorsPage({ params }: PageProps<"/[locale]/sectors">) {

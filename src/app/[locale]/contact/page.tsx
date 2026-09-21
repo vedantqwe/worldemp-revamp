@@ -4,6 +4,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { Reveal } from "@/components/ui/Reveal";
 import { getContent } from "@/lib/content";
 import { isLocale } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -11,7 +12,12 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const { contact } = getContent(locale).mastheads;
-  return { title: contact.eyebrow, description: contact.intro };
+  return pageMetadata({
+    locale,
+    path: "/contact",
+    title: contact.eyebrow,
+    description: contact.intro,
+  });
 }
 
 export default async function ContactPage({ params }: PageProps<"/[locale]/contact">) {

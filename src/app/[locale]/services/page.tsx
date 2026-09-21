@@ -5,6 +5,7 @@ import { CtaBand } from "@/components/CtaBand";
 import { ServiceGrid } from "@/components/ServiceGrid";
 import { getContent } from "@/lib/content";
 import { isLocale } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -12,7 +13,12 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const { services } = getContent(locale).mastheads;
-  return { title: services.eyebrow, description: services.intro };
+  return pageMetadata({
+    locale,
+    path: "/services",
+    title: services.eyebrow,
+    description: services.intro,
+  });
 }
 
 export default async function ServicesPage({ params }: PageProps<"/[locale]/services">) {

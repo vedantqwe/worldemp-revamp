@@ -95,6 +95,42 @@ export function resolvePage(route: string, locale: Locale): ResolvedPage | null 
   return { entry, edition: fallback, fallbackFrom: other };
 }
 
+/**
+ * The designed routes - the ones with a template rather than a migrated page
+ * behind them. Listed by hand because that is what they are: a decision, not
+ * data, and a sitemap that silently loses one is worse than one that has to
+ * be edited when a section is added.
+ */
+const DESIGNED_ROUTES = [
+  "/",
+  "/about",
+  "/solutions",
+  "/services",
+  "/sectors",
+  "/method",
+  "/cases",
+  "/insights",
+  "/contact",
+  "/sitemap",
+];
+
+/** Every route the site serves, for the sitemap. Locale-less paths. */
+export function allRoutes(): { path: string; published: string | null }[] {
+  const seen = new Set(DESIGNED_ROUTES);
+  const out = DESIGNED_ROUTES.map((path) => ({ path, published: null as string | null }));
+
+  for (const page of pages) {
+    if (page.kind === "index" || seen.has(page.route)) continue;
+    seen.add(page.route);
+    out.push({
+      path: page.route,
+      published: page.en?.published ?? page.nl?.published ?? null,
+    });
+  }
+
+  return out;
+}
+
 export function pagesOfKind(kind: PageKind): PageEntry[] {
   return pages.filter((page) => page.kind === kind);
 }
@@ -245,4 +281,3 @@ export function relatedArticles(route: string, locale: Locale, count = 3): CardS
     .slice(0, count);
 }
 
-export const allRoutes = pages.map((page) => page.route);

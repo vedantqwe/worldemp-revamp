@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { getContent } from "@/lib/content";
 import { isLocale, localeHref, ui } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 import { summaries, type PageKind } from "@/lib/pages";
 
 export async function generateMetadata({
@@ -10,7 +11,11 @@ export async function generateMetadata({
 }: PageProps<"/[locale]/sitemap">): Promise<Metadata> {
   const { locale } = await params;
   if (!isLocale(locale)) return {};
-  return { title: getContent(locale).pages.sitemap.title };
+  return pageMetadata({
+    locale,
+    path: "/sitemap",
+    title: getContent(locale).pages.sitemap.title,
+  });
 }
 
 export default async function SitemapPage({ params }: PageProps<"/[locale]/sitemap">) {

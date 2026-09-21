@@ -356,6 +356,62 @@ async function main() {
   const labelsByPath = collectLabels(records);
   console.log(`collected labels for ${labelsByPath.size} paths`);
 
+  /*
+   * Over two runs of the knowledge base, the English URLs are shifted by one
+   * row against the articles they serve: /en/.../kubo-80 returns the Offshore
+   * Energy piece, and the real KUBO anniversary article sits one slug further
+   * along at /en/.../kubo-80-jaar. The hreflang alternates follow the content
+   * rather than the names, so they pair each article correctly and are worth
+   * keeping; it is the English slug that cannot be trusted.
+   *
+   * That matters because a route here is named after the English slug, which
+   * put the energy-transition article at /insights/van-seo-naar-geo. Where the
+   * shift is detectable the Dutch slug names the route instead - Dutch is the
+   * live site's primary language and its slugs do match their articles.
+   *
+   * The shift gives itself away: the alternate points at an English page whose
+   * own slug already exists in Dutch, so two Dutch articles lay claim to one
+   * English URL. A page whose English slug another article has claimed is in
+   * the same run, and is renamed with it.
+   */
+  const KB_NL = '/nl/over-ons/kennisbank/';
+  const KB_EN = '/en/about-us/knowledge-base/';
+  const englishPaths = new Set(
+    records.filter((r) => r.locale === 'en').map((r) => r.path),
+  );
+
+  /** a path on either side of a shifted pair -> the route both belong on */
+  const routeOverride = new Map();
+  {
+    const dutch = records.filter(
+      (r) => r.locale === 'nl' && r.path.startsWith(KB_NL),
+    );
+    const dutchSlugs = new Set(dutch.map((r) => r.path.slice(KB_NL.length)));
+    /** English slugs some *other* Dutch article points its alternate at. */
+    const claimed = new Map();
+    for (const r of dutch) {
+      const alt = r.alternates?.en;
+      if (!alt?.startsWith(KB_EN)) continue;
+      claimed.set(alt.slice(KB_EN.length), r.path);
+    }
+    for (const r of dutch) {
+      const slug = r.path.slice(KB_NL.length);
+      if (!englishPaths.has(KB_EN + slug)) continue;
+      const alt = r.alternates?.en;
+      if (!alt || alt === KB_EN + slug) continue;
+      const target = alt.startsWith(KB_EN) ? alt.slice(KB_EN.length) : null;
+      const twoClaimants = target && dutchSlugs.has(target);
+      const claimedByAnother = claimed.has(slug) && claimed.get(slug) !== r.path;
+      if (!twoClaimants && !claimedByAnother) continue;
+      const route = `/insights/${slug}`;
+      routeOverride.set(r.path, route);
+      routeOverride.set(alt, route);
+    }
+    console.log(
+      `knowledge base: ${routeOverride.size / 2} articles renamed off their Dutch slug`,
+    );
+  }
+
   /** route -> { kind, en, nl } */
   const pages = new Map();
   let translationsApplied = 0;
@@ -377,10 +433,14 @@ async function main() {
     const mapped =
       (enPath ? toRoute(enPath) : null) ??
       (record.locale === 'nl' ? toRouteNl(record.path) : null);
-    const route = mapped?.route ?? NL_ONLY_SECTORS[record.path] ?? null;
+    const route =
+      routeOverride.get(record.path) ??
+      mapped?.route ??
+      NL_ONLY_SECTORS[record.path] ??
+      null;
     if (!route) continue;
 
-    const kind = mapped?.kind ?? 'sector';
+    const kind = mapped?.kind ?? (routeOverride.has(record.path) ? 'article' : 'sector');
     if (!pages.has(route)) pages.set(route, { route, kind, en: null, nl: null });
     const entry = pages.get(route);
 
@@ -662,6 +722,159 @@ async function main() {
       for (const entry of entries.slice(1)) entry[locale].title = titleFromSlug(entry.route);
     }
   }
+
+  /*
+   * The same placeholder runs through the meta description as well as the
+   * <title> - "Slimme en duurzame manier om internationale accountants in te
+   * zetten..." sits on the Offshore Energy recap, the KUBO anniversary piece
+   * and three others, none of which are about accountants. Unlike the title,
+   * nothing in the index can replace it, so where a description repeats
+   * across articles it is dropped in favour of the article's own opening
+   * paragraph - not as good as an edited summary, but honest about what the
+   * piece actually says, which the placeholder is not.
+   */
+  for (const locale of ['en', 'nl']) {
+    const byDescription = new Map();
+    for (const entry of pages.values()) {
+      if (entry.kind !== 'article' || !entry[locale]?.description) continue;
+      const list = byDescription.get(entry[locale].description) ?? [];
+      list.push(entry);
+      byDescription.set(entry[locale].description, list);
+    }
+    for (const entries of byDescription.values()) {
+      if (entries.length < 2) continue;
+      for (const entry of entries) {
+        const own = firstParagraph(entry[locale].blocks).slice(0, 180).trim();
+        if (own) entry[locale].description = own;
+      }
+    }
+  }
+
+  /*
+   * Last word on names: the index knows what each article is called.
+   *
+   * The <title> the CMS serves on the article itself is truncated as often as
+   * not, and on a run of articles it belongs to a different piece altogether.
+   * The index names each card inside that card's own link, so a title read
+   * there cannot drift onto its neighbour, and it is the name the editors
+   * actually chose - the full "Peter van Wessel over tankopslag: 'De brandstof
+   * van de toekomst is mensen'" rather than a clipped version of it.
+   *
+   * Two things the index gets wrong, so two guards:
+   *
+   *   - Where one name sits on several cards it is a placeholder, not a name.
+   *     Only the card whose slug is about that title keeps it.
+   *   - The English index is half-written in Dutch, and taking those names
+   *     would put Dutch headlines back on English pages that already read
+   *     correctly. A name in the wrong language for the edition is ignored.
+   */
+  const NL_ONLY = new Set(
+    'de het een van en voor met naar bij uit dat die zijn worden wordt niet maar ook deze hun nog wel onze ons jij wij waarom hoe wat waar tot door over als om te zich veel meer zo'.split(' '),
+  );
+  const EN_ONLY = new Set(
+    'the of and for with from that this these are was be by as it its your you our their what why where than into about which have has been'.split(' '),
+  );
+
+  /** 'nl', 'en', or null where the words do not say. */
+  const languageOf = (text) => {
+    const words = String(text).toLowerCase().match(/[a-zà-ÿ']+/g) ?? [];
+    let nl = 0;
+    let en = 0;
+    for (const w of words) {
+      if (NL_ONLY.has(w)) nl += 1;
+      if (EN_ONLY.has(w)) en += 1;
+    }
+    if (nl >= 2 && nl > en) return 'nl';
+    if (en >= 2 && en > nl) return 'en';
+    return null;
+  };
+
+  /** How much of a slug's vocabulary a title accounts for, 0 to 1. */
+  const fitOf = (slug, title) => {
+    const words = new Set(slug.split('-').filter((w) => w.length > 3));
+    if (!words.size) return 1;
+    const said = new Set(String(title).toLowerCase().match(/[a-zà-ÿ]{4,}/g) ?? []);
+    let shared = 0;
+    for (const w of words) if (said.has(w)) shared += 1;
+    return shared / words.size;
+  };
+
+  /** source path -> the name the index gives it */
+  const indexTitles = new Map();
+  for (const locale of ['nl', 'en']) {
+    const byTitle = new Map();
+    for (const card of KENNISBANK[locale] ?? []) {
+      if (!card.title) continue;
+      const list = byTitle.get(card.title) ?? [];
+      list.push(card);
+      byTitle.set(card.title, list);
+    }
+    for (const [title, cards] of byTitle) {
+      if (cards.length === 1) {
+        indexTitles.set(cards[0].path, title);
+        continue;
+      }
+      const slugOf = (c) => c.path.split('/').pop();
+      const best = cards.reduce((x, y) =>
+        fitOf(slugOf(y), title) > fitOf(slugOf(x), title) ? y : x,
+      );
+      if (fitOf(slugOf(best), title) > 0) indexTitles.set(best.path, title);
+    }
+  }
+
+  let renamed = 0;
+  for (const entry of pages.values()) {
+    if (entry.kind !== 'article') continue;
+    for (const locale of ['en', 'nl']) {
+      const edition = entry[locale];
+      const title = edition && indexTitles.get(edition.sourcePath);
+      if (!title || title === edition.title) continue;
+      const said = languageOf(title);
+      if (said && said !== locale) continue;
+      edition.title = title;
+      renamed += 1;
+    }
+  }
+  console.log(`articles named from the index: ${renamed} editions`);
+
+  /*
+   * The shift runs through the English <title>s themselves: the English
+   * edition of "Talent op afstand" is served as "Van SEO naar GEO", which is
+   * the article next to it in the index. Those pieces were never translated,
+   * so the English index has no name for them either and the borrowed title
+   * is all the page has.
+   *
+   * Positive evidence is required before touching one: the title has to say
+   * nothing about the slug it sits on, and to be a good description of some
+   * other article's slug. That is what separates a title that wandered from
+   * one that is simply worded differently - "India Changed Me" shares no word
+   * with /jaspers-experience either, but it does not belong anywhere else, so
+   * it stays.
+   */
+  const articleSlugs = [...pages.values()]
+    .filter((p) => p.kind === 'article')
+    .map((p) => p.route.split('/').pop());
+
+  let unstolen = 0;
+  for (const entry of pages.values()) {
+    if (entry.kind !== 'article' || !entry.en || !entry.nl) continue;
+    const slug = entry.route.split('/').pop();
+    if (fitOf(slug, entry.en.title) > 0) continue;
+    // Either the title describes some other article, or it describes no
+    // article at all while the Dutch name describes this one - a section
+    // heading that was promoted to a title when the real one went missing.
+    const elsewhere = articleSlugs.some(
+      (other) => other !== slug && fitOf(other, entry.en.title) >= 0.6,
+    );
+    if (!elsewhere && fitOf(slug, entry.nl.title) < 0.5) continue;
+    if (entry.en.title === entry.nl.title) continue;
+    entry.en.title = entry.nl.title;
+    unstolen += 1;
+  }
+  if (unstolen) {
+    console.log(`English titles that belonged to another article: ${unstolen} replaced`);
+  }
+
 
   /*
    * Second, it publishes the same article at more than one address - a CMS

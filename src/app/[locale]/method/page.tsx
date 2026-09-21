@@ -6,6 +6,7 @@ import { CtaBand } from "@/components/CtaBand";
 import { SectionRail } from "@/components/content/SectionRail";
 import { getContent } from "@/lib/content";
 import { isLocale, ui } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 import { childrenOf } from "@/lib/pages";
 
 export async function generateMetadata({
@@ -14,7 +15,12 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const { method } = getContent(locale).mastheads;
-  return { title: method.eyebrow, description: method.intro };
+  return pageMetadata({
+    locale,
+    path: "/method",
+    title: method.eyebrow,
+    description: method.intro,
+  });
 }
 
 export default async function MethodPage({ params }: PageProps<"/[locale]/method">) {

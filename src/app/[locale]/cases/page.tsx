@@ -4,6 +4,7 @@ import { CardGrid } from "@/components/content/CardGrid";
 import { CtaBand } from "@/components/CtaBand";
 import { getContent } from "@/lib/content";
 import { isLocale } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/seo";
 import { summaries } from "@/lib/pages";
 
 export async function generateMetadata({
@@ -12,7 +13,12 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isLocale(locale)) return {};
   const { cases } = getContent(locale).mastheads;
-  return { title: cases.eyebrow, description: cases.intro };
+  return pageMetadata({
+    locale,
+    path: "/cases",
+    title: cases.eyebrow,
+    description: cases.intro,
+  });
 }
 
 export default async function CasesPage({ params }: PageProps<"/[locale]/cases">) {

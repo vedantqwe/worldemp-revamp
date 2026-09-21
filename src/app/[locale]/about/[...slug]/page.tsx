@@ -6,7 +6,9 @@ import { CtaBand } from "@/components/CtaBand";
 import { ContentPage } from "@/components/content/ContentPage";
 import { getContent } from "@/lib/content";
 import { isLocale, locales } from "@/lib/i18n";
-import { childrenOf, pagesOfKind, resolvePage } from "@/lib/pages";
+import { pageMetadata } from "@/lib/seo";
+import { BreadcrumbSchema } from "@/components/seo/StructuredData";
+import { childrenOf, leadImage, pagesOfKind, resolvePage } from "@/lib/pages";
 
 /**
  * Everything under /about that came from the CMS: the company, the team, the
@@ -34,8 +36,19 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   if (!isLocale(locale)) return {};
   const page = resolvePage(`/about/${slug.join("/")}`, locale);
-  if (page) return { title: page.edition.title, description: page.edition.description };
-  if (slug.join("/") === "compliance") return { title: "Compliance" };
+  const path = `/about/${slug.join("/")}`;
+  if (page) {
+    return pageMetadata({
+      locale,
+      path,
+      title: page.edition.title,
+      description: page.edition.description,
+      image: leadImage(page.edition)?.src,
+    });
+  }
+  if (slug.join("/") === "compliance") {
+    return pageMetadata({ locale, path, title: "Compliance" });
+  }
   return {};
 }
 
@@ -71,6 +84,14 @@ export default async function AboutDetailPage({
   }
 
   return (
+    <>
+      <BreadcrumbSchema
+        locale={locale}
+        trail={[
+          { name: mastheads.about.eyebrow, path: "/about" },
+          { name: page.edition.title, path: route },
+        ]}
+      />
     <ContentPage
       locale={locale}
       page={page}
@@ -79,5 +100,6 @@ export default async function AboutDetailPage({
       related={childrenOf("/about", locale).filter((c) => c.route !== route).slice(0, 3)}
       relatedHeading={mastheads.about.eyebrow}
     />
+    </>
   );
 }

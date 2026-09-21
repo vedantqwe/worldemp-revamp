@@ -9,7 +9,7 @@ theme, and the typefaces (Poppins, Maven Pro) are the ones the live site loads.
 See [CLAUDE.md](CLAUDE.md) for the palette table and the design decisions.
 
 The site is bilingual (`/en`, `/nl`) and carries the live site's full public
-content: 125 migrated pages, including 58 knowledge-base articles, six client
+content: 129 migrated pages, including 61 knowledge-base articles, six client
 stories, 33 role pages and the images that go with them.
 
 ## Running it
@@ -20,7 +20,7 @@ npm run dev      # http://localhost:3000
 ```
 
 ```bash
-npm run build    # every route prerenders static (277 pages)
+npm run build    # every route prerenders static (286 pages)
 npx eslint src   # `next lint` was removed in Next 16
 ```
 
@@ -92,3 +92,8 @@ requests on either.
   `tools/brand/build-role-art.mjs` — good enough to ship, not art-directed.
   Drop a file into `public/roles/` to replace any of them and the build leaves
   it alone.
+- **Every page is `noindex` until `NEXT_PUBLIC_SITE_URL` points at a real
+  domain.** Canonical URLs, hreflang, sitemap, robots.txt and llms.txt (see
+  [CLAUDE.md](CLAUDE.md#findable---by-search-engines-and-by-answer-engines))
+  are all in place, but the preview should not compete with worldemp.com in
+  search while it is still a preview. Set the env var and it flips on.

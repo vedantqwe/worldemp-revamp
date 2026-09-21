@@ -7,6 +7,8 @@ import { Newsletter } from "@/components/Newsletter";
 import { getContent } from "@/lib/content";
 import { ContentProvider } from "@/lib/content-context";
 import { isLocale, locales, ui } from "@/lib/i18n";
+import { absolute, indexable, siteUrl } from "@/lib/seo";
+import { OrganizationSchema } from "@/components/seo/StructuredData";
 import "../globals.css";
 
 /**
@@ -45,23 +47,40 @@ export async function generateMetadata({
   const { site } = getContent(locale);
 
   return {
-    metadataBase: new URL("https://worldemp.com"),
+    // Absolute URLs everywhere downstream: relative Open Graph images are a
+    // common way for a card to break once it leaves the site.
+    metadataBase: new URL(siteUrl),
     title: {
       default: `${site.name} | ${site.tagline}`,
       template: `%s | ${site.name}`,
     },
     description: site.mission,
+    applicationName: site.name,
+    authors: [{ name: site.name, url: siteUrl }],
+    creator: site.name,
+    publisher: site.name,
     alternates: {
-      canonical: `/${locale}`,
-      languages: { en: "/en", nl: "/nl" },
+      canonical: absolute(locale),
+      languages: {
+        en: absolute("en"),
+        nl: absolute("nl"),
+        "x-default": absolute("en"),
+      },
     },
+    robots: indexable
+      ? { index: true, follow: true }
+      : { index: false, follow: true, googleBot: { index: false, follow: true } },
     openGraph: {
       title: `${site.name} | ${site.tagline}`,
       description: site.mission,
       type: "website",
+      url: absolute(locale),
       siteName: site.name,
       locale: locale === "nl" ? "nl_NL" : "en_GB",
+      alternateLocale: locale === "nl" ? "en_GB" : "nl_NL",
     },
+    twitter: { card: "summary_large_image", title: site.name, description: site.mission },
+    formatDetection: { telephone: false },
   };
 }
 
@@ -80,6 +99,8 @@ export default async function LocaleLayout({
       className={`${poppins.variable} ${maven.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-white">
+        {/* Who publishes this site, once per page. Nothing renders. */}
+        <OrganizationSchema locale={locale} />
         {/* Word-reveal headings are server-rendered at opacity 0 by
             framer-motion. Without JS they would never animate in, leaving the
             H1 blank, so force them visible in that case. */}
