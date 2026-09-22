@@ -388,7 +388,10 @@ copy shown on the page, or the palette.
   describing it. Wire it up if the FAQ page is ever rebuilt with real Q/A
   pairs.
 - **`src/app/robots.ts` and `src/app/sitemap.ts`** are generated, not static
-  files, so they can carry `alternates.languages` per URL. Both need
+  files, so they can carry `alternates.languages` per URL - the same set
+  `pageMetadata` puts in the page head, en/nl/x-default, via the one
+  `languageAlternates()` both read, so the sitemap cannot list a thinner set
+  of alternates than the page itself claims. Both need
   `export const dynamic = "force-static"` - the one Next 16 requirement that
   is easy to miss under `output: "export"`. `allRoutes()` in `src/lib/pages.ts`
   is the shared source both read.

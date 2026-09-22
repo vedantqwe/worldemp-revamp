@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { absolute } from "@/lib/seo";
+import { absolute, languageAlternates } from "@/lib/seo";
 import { locales } from "@/lib/i18n";
 import { allRoutes } from "@/lib/pages";
 
@@ -28,11 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: published ? new Date(published) : undefined,
         changeFrequency: depth === 0 ? "weekly" : "monthly",
         priority: depth === 0 ? 1 : depth === 1 ? 0.8 : 0.6,
-        alternates: {
-          languages: Object.fromEntries(
-            locales.map((other) => [other, absolute(other, path)]),
-          ),
-        },
+        alternates: { languages: languageAlternates(path) },
       });
     }
   }

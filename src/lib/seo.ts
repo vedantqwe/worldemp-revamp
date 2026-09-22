@@ -43,9 +43,12 @@ export function absolute(locale: Locale, path = ""): string {
  *
  * The revamp keeps one slug per page behind a locale prefix, so the alternate
  * of any page is the same path under the other prefix - no lookup table, and
- * nothing to fall out of step when a route is added.
+ * nothing to fall out of step when a route is added. Exported so the sitemap
+ * can carry the same alternates as the page head rather than a thinner set
+ * that only lists en/nl - a crawler that reads x-default from one and not the
+ * other has no reason to trust either.
  */
-function languageAlternates(path: string): Record<string, string> {
+export function languageAlternates(path: string): Record<string, string> {
   const languages: Record<string, string> = {};
   for (const locale of locales) languages[locale] = absolute(locale, path);
   // English is the edition served to anyone whose language we do not publish.
