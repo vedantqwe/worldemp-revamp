@@ -36,6 +36,15 @@ jobs:
 
       - run: npm ci
 
+      # Runs before the build, and is allowed to stop it. The CMS commits
+      # straight to main, so this is the only thing standing between a typo in
+      # an override and a deploy that silently changes nothing - the route
+      # simply never matches, the page keeps its old title, and the person who
+      # made the edit has no way to tell. A red tick and the previous site is
+      # the better outcome.
+      - name: Check the CMS config and overrides
+        run: npm run cms:check
+
       - name: Build the static export
         run: npm run build:pages
         env:

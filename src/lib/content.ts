@@ -11,7 +11,9 @@
  * Keeping it in one typed module means the revamp can be re-skinned without
  * touching wording, and copy can be edited without going near React.
  */
+import overrides from "../../content/copy.json";
 import type { Locale } from "./i18n";
+import { keyBy, merge } from "./overrides";
 
 export type NavItem = {
   label: string;
@@ -1147,7 +1149,33 @@ const nl: SiteContent = {
   },
 };
 
-export const content: Record<Locale, SiteContent> = { en, nl };
+const defaults: Record<Locale, SiteContent> = { en, nl };
+
+/**
+ * The copy above is the default. `content/copy.json` is whatever someone has
+ * since changed through the CMS, and it wins.
+ *
+ * Mastheads arrive as a list rather than the record this module wants, because
+ * eight fixed sections are eight identical blocks of CMS config and eight
+ * identical forms on screen, where a list is one "add an override" button.
+ */
+function withOverrides(locale: Locale): SiteContent {
+  const base = defaults[locale];
+  const raw = (overrides as Record<string, unknown>)[locale];
+  if (!raw || typeof raw !== "object") return base;
+
+  const { mastheads, ...rest } = raw as Record<string, unknown>;
+  const shaped = Array.isArray(mastheads)
+    ? { ...rest, mastheads: keyBy(mastheads as Record<string, unknown>[], "section") }
+    : rest;
+
+  return merge(base, shaped);
+}
+
+export const content: Record<Locale, SiteContent> = {
+  en: withOverrides("en"),
+  nl: withOverrides("nl"),
+};
 
 export function getContent(locale: Locale): SiteContent {
   return content[locale];

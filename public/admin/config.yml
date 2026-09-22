@@ -1,0 +1,279 @@
+#
+# Sveltia CMS - https://sveltiacms.app
+#
+# This file is public, and deliberately holds nothing secret. Editing is
+# authorised by GitHub: a person can only save what their GitHub account is
+# allowed to push to this repository. There is no password here to leak,
+# because there is no password.
+#
+# The schema is Decap CMS compatible. If Sveltia ever stalls - it is pre-1.0
+# and has one maintainer - swapping the script tag in index.html for Decap's
+# keeps this file working as it is. The content it writes is plain JSON in
+# git either way, so there is nothing to export and nobody to ask.
+#
+# Everything here is an OVERRIDE. The site ships with complete copy in
+# src/lib/content.ts and complete migrated pages in src/content/pages.json;
+# these fields lie on top. That is why nothing is `required` - a blank field
+# means "leave the default alone", not "make it empty". See src/lib/overrides.ts.
+#
+
+backend:
+  name: github
+  repo: vedantqwe/worldemp-revamp
+  branch: main
+  commit_messages:
+    update: 'Content: {{collection}} edited in the CMS'
+    openAuthoring: 'Content: {{collection}} edited in the CMS'
+
+# Save straight to main. The site rebuilds and redeploys itself on push
+# (.github/workflows/pages.yml), so a save is live in about a minute.
+# Change to `editorial_workflow` to route edits through pull requests instead.
+publish_mode: simple
+
+# Where uploads land in the repo, and the URL they are served from. The base
+# path for GitHub Pages is added at render time by tools/pages/image-loader.ts,
+# so it must not be baked in here.
+media_folder: public/media
+public_folder: /media
+
+collections:
+  # ---------------------------------------------------------------- copy ----
+  - name: copy
+    label: Site copy
+    label_singular: Site copy
+    description: >-
+      The words in the designed sections - the homepage, the section headers,
+      the contact details. Anything left blank keeps the wording the site
+      already ships with.
+    files:
+      - name: copy
+        label: Site copy
+        file: content/copy.json
+        description: English and Dutch, side by side.
+        fields:
+          - label: English
+            name: en
+            widget: object
+            required: false
+            collapsed: false
+            fields:
+              - label: Organisation
+                name: site
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - { label: Name, name: name, widget: string, required: false }
+                  - { label: Tagline, name: tagline, widget: string, required: false }
+                  - { label: Mission, name: mission, widget: text, required: false }
+                  - { label: Phone, name: phone, widget: string, required: false }
+                  - label: Phone link
+                    name: phoneHref
+                    widget: string
+                    required: false
+                    hint: "The tel: URL behind the number, e.g. tel:+31884002900"
+                  - { label: Email, name: email, widget: string, required: false }
+              - label: Homepage hero
+                name: hero
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+                  - { label: Heading, name: heading, widget: text, required: false }
+                  - { label: Body, name: body, widget: text, required: false }
+                  - label: Figures
+                    name: stats
+                    widget: list
+                    required: false
+                    hint: Replaces the whole row. Leave empty to keep the current figures.
+                    fields:
+                      - { label: Value, name: value, widget: string, required: false }
+                      - { label: Unit, name: unit, widget: string, required: false }
+                      - { label: Label, name: label, widget: string, required: false }
+              - label: Founder quote
+                name: founderQuote
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - { label: Quote, name: quote, widget: text, required: false }
+                  - { label: Name, name: name, widget: string, required: false }
+                  - { label: Role, name: role, widget: string, required: false }
+                  - { label: Email, name: email, widget: string, required: false }
+              - label: Closing call to action
+                name: ctaBand
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - { label: Heading, name: heading, widget: text, required: false }
+                  - { label: Body, name: body, widget: text, required: false }
+                  - { label: Button, name: primary, widget: string, required: false }
+              - label: Section headers
+                name: mastheads
+                widget: list
+                required: false
+                label_singular: section header
+                summary: '{{fields.section}} - {{fields.title}}'
+                hint: >-
+                  The eyebrow, title and intro at the top of a section. Add only
+                  the sections you want to change.
+                fields:
+                  - label: Section
+                    name: section
+                    widget: select
+                    required: true
+                    options:
+                      - solutions
+                      - services
+                      - sectors
+                      - method
+                      - about
+                      - insights
+                      - cases
+                      - contact
+                  - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+                  - { label: Title, name: title, widget: text, required: false }
+                  - { label: Intro, name: intro, widget: text, required: false }
+
+          - label: Dutch
+            name: nl
+            widget: object
+            required: false
+            collapsed: false
+            fields:
+              - label: Organisatie
+                name: site
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - { label: Naam, name: name, widget: string, required: false }
+                  - { label: Tagline, name: tagline, widget: string, required: false }
+                  - { label: Missie, name: mission, widget: text, required: false }
+                  - { label: Telefoon, name: phone, widget: string, required: false }
+                  - label: Telefoonlink
+                    name: phoneHref
+                    widget: string
+                    required: false
+                    hint: De tel:-URL achter het nummer, bijv. tel:+31884002900
+                  - { label: E-mail, name: email, widget: string, required: false }
+              - label: Homepage hero
+                name: hero
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+                  - { label: Kop, name: heading, widget: text, required: false }
+                  - { label: Tekst, name: body, widget: text, required: false }
+                  - label: Cijfers
+                    name: stats
+                    widget: list
+                    required: false
+                    hint: Vervangt de hele rij. Laat leeg om de huidige cijfers te behouden.
+                    fields:
+                      - { label: Waarde, name: value, widget: string, required: false }
+                      - { label: Eenheid, name: unit, widget: string, required: false }
+                      - { label: Label, name: label, widget: string, required: false }
+              - label: Quote oprichter
+                name: founderQuote
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - { label: Quote, name: quote, widget: text, required: false }
+                  - { label: Naam, name: name, widget: string, required: false }
+                  - { label: Functie, name: role, widget: string, required: false }
+                  - { label: E-mail, name: email, widget: string, required: false }
+              - label: Afsluitende call to action
+                name: ctaBand
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - { label: Kop, name: heading, widget: text, required: false }
+                  - { label: Tekst, name: body, widget: text, required: false }
+                  - { label: Knop, name: primary, widget: string, required: false }
+              - label: Sectiekoppen
+                name: mastheads
+                widget: list
+                required: false
+                label_singular: sectiekop
+                summary: '{{fields.section}} - {{fields.title}}'
+                hint: >-
+                  De eyebrow, titel en intro bovenaan een sectie. Voeg alleen de
+                  secties toe die je wilt wijzigen.
+                fields:
+                  - label: Sectie
+                    name: section
+                    widget: select
+                    required: true
+                    options:
+                      - solutions
+                      - services
+                      - sectors
+                      - method
+                      - about
+                      - insights
+                      - cases
+                      - contact
+                  - { label: Eyebrow, name: eyebrow, widget: string, required: false }
+                  - { label: Titel, name: title, widget: text, required: false }
+                  - { label: Intro, name: intro, widget: text, required: false }
+
+  # --------------------------------------------------------------- pages ----
+  - name: pages
+    label: Page overrides
+    label_singular: Page overrides
+    description: >-
+      Corrections to the migrated pages. The body copy is not editable here on
+      purpose - it is crawled from worldemp.com and refreshed on every sync, so
+      a rewrite typed here would quietly drift from the live site. Titles and
+      descriptions are what the cards, the page header and the search result
+      show, and those can be fixed.
+    files:
+      - name: pages
+        label: Page overrides
+        file: content/pages.json
+        fields:
+          - label: Overrides
+            name: overrides
+            widget: list
+            required: false
+            label_singular: page
+            summary: '{{fields.route}}'
+            fields:
+              - label: Route
+                name: route
+                widget: string
+                required: true
+                hint: >-
+                  The path without the language prefix, starting with a slash -
+                  e.g. /insights/kubo-80. Checked by
+                  `node tools/cms/check-overrides.mjs`.
+              - label: English
+                name: en
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - { label: Title, name: title, widget: text, required: false }
+                  - label: Description
+                    name: description
+                    widget: text
+                    required: false
+                    hint: Shown on cards and in search results. Around 155 characters.
+              - label: Dutch
+                name: nl
+                widget: object
+                required: false
+                collapsed: true
+                fields:
+                  - { label: Titel, name: title, widget: text, required: false }
+                  - label: Omschrijving
+                    name: description
+                    widget: text
+                    required: false
+                    hint: Te zien op kaarten en in zoekresultaten. Ongeveer 155 tekens.

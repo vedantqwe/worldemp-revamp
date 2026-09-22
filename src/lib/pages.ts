@@ -8,7 +8,9 @@
  * would ship the whole site's copy to the browser.
  */
 import raw from "@/content/pages.json";
+import pageOverrides from "../../content/pages.json";
 import type { Locale } from "./i18n";
+import { keyBy, merge } from "./overrides";
 
 export type Block =
   | { type: "heading"; level: number; text: string }
@@ -66,7 +68,41 @@ export type PageEntry = {
   nl: Edition | null;
 };
 
-const pages = raw as unknown as PageEntry[];
+/**
+ * The crawled editions, with anything the CMS has since corrected laid on top.
+ *
+ * The scraper rewrites pages.json on every sync, so a fix typed into it would
+ * last until the next crawl. content/pages.json holds those fixes separately
+ * and is applied here, once, as the file is read - so every caller below sees
+ * the corrected copy and none of them has to remember this exists.
+ *
+ * Only the fields worth correcting by hand are overridable: the title and the
+ * description, which are what the cards, the masthead and the search result
+ * show. The blocks are not - prose belongs in the source the crawl reads, and
+ * a body rewritten here would quietly diverge from the live site forever.
+ */
+function withOverrides(entries: PageEntry[]): PageEntry[] {
+  const byRoute = keyBy(
+    pageOverrides.overrides as Record<string, unknown>[],
+    "route",
+  );
+  if (!Object.keys(byRoute).length) return entries;
+
+  return entries.map((entry) => {
+    const override = byRoute[entry.route];
+    if (!override) return entry;
+
+    const next = { ...entry };
+    for (const locale of ["en", "nl"] as const) {
+      const edition = next[locale];
+      const patch = (override as Record<string, unknown>)[locale];
+      if (edition && patch) next[locale] = merge(edition, patch);
+    }
+    return next;
+  });
+}
+
+const pages = withOverrides(raw as unknown as PageEntry[]);
 
 const byRoute = new Map(pages.map((page) => [page.route, page]));
 

@@ -409,6 +409,87 @@ copy shown on the page, or the palette.
 Nothing here invents copy: a title or description a page did not already have
 is not given one, and no schema is populated from a guess.
 
+## Editing without a developer
+
+There is a CMS at `/admin`. **Sveltia CMS**, chosen mostly by elimination: the
+Pages build is `output: "export"` on a plain file host, so anything needing a
+Node runtime at request time is out - Strapi, Directus, Payload, Keystone, and
+also the ones that look Next-native but are not static-compatible (Keystatic
+and Outstatic both need API routes; TinaCMS needs its own backend). What is
+left is the git-based kind: an admin that is a client-side SPA and commits
+through the GitHub API. Of those, Decap is in maintenance mode with an
+unpatched XSS, and Pages CMS routes editing through a third-party service. So:
+Sveltia, which is actively developed, sanitises with DOMPurify, has
+first-class i18n, and is a fifth of Decap's size.
+
+It is pre-1.0 with one maintainer, which is the real risk. Two things make
+that survivable: the config is **Decap-compatible**, so replacing it is a
+one-line change to the script tag, and it writes plain JSON into git, so there
+is nothing to export and nobody to ask for the data back.
+
+### The CMS edits overrides, never sources
+
+This matters more than which CMS it is. `src/content/` is generated -
+`npm run sync` rewrites `pages.json` wholesale - so a CMS pointed at it would
+lose its work at the next crawl, and CLAUDE.md's rule against hand-editing it
+would be broken once a week by design.
+
+So there are two content trees, and the CMS only writes the second:
+
+| Tree | Written by | Wins |
+| --- | --- | --- |
+| `src/content/`, `src/lib/content.ts` | the scraper, and us | - |
+| `content/` | a person, via `/admin` | yes |
+
+`src/lib/overrides.ts` merges the second over the first: `copy.json` over the
+defaults in `content.ts`, `pages.json` over the crawled editions. A re-crawl
+refreshes the copy underneath and the overrides survive on top, which is the
+only arrangement where "re-scrape the live site" and "fix this headline" can
+both be allowed.
+
+The merge has one rule worth knowing, because everything else follows from it:
+**a blank field means "leave the default alone", not "set this to empty".**
+Sveltia writes every field in the schema, including untouched ones, so an
+override file arrives full of empty strings; treating those as values would
+mean overriding one headline blanked every string beside it, and the site
+would empty itself out one save at a time. The cost is that the CMS cannot
+deliberately blank a field - do that in source, where it belongs.
+
+Page bodies are deliberately **not** editable. They are crawled prose, refreshed
+on every sync; a rewrite typed into the CMS would drift from the live site
+silently and forever. Titles and descriptions are editable, because those are
+what the cards, the masthead and the search result show.
+
+### Getting in
+
+- **Locally, with no credentials at all.** `npm run dev`, open
+  `/admin`, and pick the local repository option - Sveltia uses the File
+  System Access API to write straight to the working copy, with no token, no
+  proxy server and nothing exposed. Chromium-only, and the safest way to edit.
+- **Remotely**, at `<site>/admin/`. Sign in with GitHub. Authorisation is
+  GitHub's: a person can save exactly what their account may push to this
+  repo, and there is no separate password to leak or rotate. A save commits to
+  `main` and the Pages workflow redeploys, so it is live in about a minute.
+
+Security is why it is set up this way rather than more conveniently:
+
+- The admin page is `noindex, nofollow`, and `config.yml` is deliberately
+  secret-free. It has to be - it is a public file on a static host.
+- The CMS bundle is pinned **by version and by SHA-384**, with
+  `crossorigin="anonymous"`. It is third-party code with write access to the
+  repo, loaded from a CDN; `integrity` means the browser refuses to run it if
+  the bytes are not the ones we checked. `npm run cms:verify` re-checks that
+  against the CDN and prints the hash to paste when upgrading deliberately.
+- Prefer signing in with GitHub over a personal access token. The OAuth token
+  expires in 8 hours; a PAT does not, and every git-based CMS keeps it in
+  `localStorage` unencrypted. If a PAT is unavoidable, make it fine-grained,
+  scoped to this one repository, `Contents: read and write` only.
+- `npm run cms:check` validates `config.yml` and the override files, and runs
+  in CI **before** the build, where it can stop a deploy. It is there because
+  all of this fails quietly: a typo'd route just never matches, and a
+  malformed `config.yml` produces a blank admin page that nothing else
+  notices. The first version of `config.yml` here had exactly that bug.
+
 ## Commands
 
 ```bash
@@ -418,6 +499,8 @@ npx eslint src tools   # next lint is gone in Next 16
 npm run build:pages    # static export for GitHub Pages -> out/
 node tools/pages/check-links.mjs      # every internal link in out/ resolves
 node tools/scraper/check-language.mjs # no edition carries the other language
+npm run cms:check      # the CMS config parses and its overrides point at real pages
+npm run cms:verify     # the pinned CMS bundle is the one the CDN serves
 
 cd tools/scraper && npm run sync        # re-migrate content from the live site
 cd tools/brand   && npm run build-logo      # re-vectorise the logo

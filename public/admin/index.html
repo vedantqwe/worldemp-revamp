@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--
+      This page must never be indexed. It holds no secrets - the config beside
+      it is deliberately secret-free, and nothing here can be done without a
+      GitHub credential the page does not have - but an editing screen in a
+      search result invites people to try, and there is no reason to.
+
+      robots.txt already disallows everything while the preview is unindexed;
+      this stays correct once the site points at a real domain and that flips.
+    -->
+    <meta name="robots" content="noindex, nofollow" />
+    <title>WorldEmp content</title>
+    <link rel="icon" href="data:," />
+    <style>
+      /* Shown only until the CMS boots, and if it never does. */
+      body {
+        margin: 0;
+        font:
+          16px/1.6 system-ui,
+          sans-serif;
+        color: #14191f;
+        background: #f9fafb;
+      }
+      noscript {
+        display: block;
+        max-width: 34rem;
+        margin: 4rem auto;
+        padding: 0 1.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      The content editor needs JavaScript. Content can also be edited directly
+      in the repository: the files are <code>content/copy.json</code> and
+      <code>content/pages.json</code>.
+    </noscript>
+    <!--
+      Pinned twice over, on purpose.
+
+      By version, because Sveltia is pre-1.0 and ships breaking changes: a CMS
+      that changes under an editor mid-sentence is worse than one a version
+      behind. Bump it deliberately, having read the release notes, and
+      recompute the hash below - `npm run cms:verify` prints it.
+
+      By hash, because this is third-party code with write access to the
+      repository, loaded from a CDN. `integrity` means the browser refuses to
+      run it unless the bytes are exactly the ones checked here, so a
+      compromised or hijacked CDN cannot put its own script in an editing
+      session. `crossorigin` is what makes the check possible.
+    -->
+    <script
+      src="https://unpkg.com/@sveltia/cms@0.217.0/dist/sveltia-cms.js"
+      integrity="sha384-ilMRxtwasCFY1uM5k5h7fziHx/qDDrUbh1zhuiHTLNJwuweLvHxI1IDLqO8vbueW"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "build:pages": "node tools/pages/build.mjs"
+    "build:pages": "node tools/pages/build.mjs",
+    "cms:check": "node tools/cms/check-overrides.mjs",
+    "cms:verify": "node tools/cms/verify-bundle.mjs"
   },
   "dependencies": {
     "framer-motion": "^13.4.0",
@@ -17,11 +19,13 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "@types/js-yaml": "^4.0.9",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.5",
+    "js-yaml": "^5.4.2",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
