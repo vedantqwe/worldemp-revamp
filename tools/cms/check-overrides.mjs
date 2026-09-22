@@ -89,6 +89,18 @@ if (config) {
     problems.push('config.yml: backend.repo should look like "owner/name"');
   }
 
+  // Not a problem, but worth saying out loud every time, because the symptom
+  // is bewildering: with no base_url, Sveltia sends "Sign in with GitHub" to
+  // Netlify's gateway, which serves only Netlify-hosted sites. On any other
+  // host the popup shows a bare "Not Found" and nothing explains why.
+  if (config.backend?.name === "github") {
+    notes.push(
+      config.backend.base_url
+        ? `sign-in: OAuth via ${config.backend.base_url}, or a token`
+        : 'sign-in: token only - "Sign in with GitHub" needs backend.base_url',
+    );
+  }
+
   notes.push(
     `CMS config: ${collections.length} collection(s), backend ${config.backend?.name ?? "?"}`,
   );

@@ -21,6 +21,26 @@ backend:
   name: github
   repo: vedantqwe/worldemp-revamp
   branch: main
+
+  # Two ways in, and the difference matters.
+  #
+  # "Sign In with Token" works right now and needs nothing deployed. It wants
+  # a fine-grained personal access token, scoped to this repository, with
+  # Contents: read and write - and nothing else.
+  #
+  # "Sign in with GitHub" is the nicer one, and it needs `base_url` below.
+  # OAuth exchanges the login code for a token using a client secret, and a
+  # secret cannot live in a browser, so that exchange has to happen somewhere
+  # with a server. With `base_url` unset Sveltia falls back to Netlify's
+  # gateway, which only serves sites hosted on Netlify - on GitHub Pages that
+  # returns a bare "Not Found", which is exactly what it looks like.
+  #
+  # To turn it on: deploy sveltia-cms-auth to Cloudflare Workers (free, about
+  # ten minutes - the steps are in CLAUDE.md under "Turning on Sign in with
+  # GitHub"), then uncomment this with your worker's URL.
+  #
+  # base_url: https://sveltia-cms-auth.<your-subdomain>.workers.dev
+
   commit_messages:
     update: 'Content: {{collection}} edited in the CMS'
     openAuthoring: 'Content: {{collection}} edited in the CMS'

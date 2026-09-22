@@ -466,10 +466,45 @@ what the cards, the masthead and the search result show.
   `/admin`, and pick the local repository option - Sveltia uses the File
   System Access API to write straight to the working copy, with no token, no
   proxy server and nothing exposed. Chromium-only, and the safest way to edit.
-- **Remotely**, at `<site>/admin/`. Sign in with GitHub. Authorisation is
-  GitHub's: a person can save exactly what their account may push to this
-  repo, and there is no separate password to leak or rotate. A save commits to
-  `main` and the Pages workflow redeploys, so it is live in about a minute.
+- **Remotely**, at `<site>/admin/`, with **Sign In with Token**. It wants a
+  fine-grained personal access token scoped to this repository with
+  `Contents: read and write` and nothing else. A save commits to `main` and
+  the Pages workflow redeploys, so it is live in about a minute.
+
+Either way authorisation is GitHub's: a person can save exactly what their
+account may push to this repo, and there is no separate password to leak.
+
+**"Sign in with GitHub" does not work until an OAuth client is deployed**, and
+the failure is bewildering rather than obvious. OAuth exchanges the login code
+for a token using a client secret; a secret cannot live in a browser, so that
+exchange needs a server. With `backend.base_url` unset, Sveltia falls back to
+Netlify's gateway, which only serves Netlify-hosted sites - on GitHub Pages the
+popup shows a bare `Not Found` from `api.netlify.com/auth`. Backendless PKCE
+would remove the need for any of this, and Sveltia is ready for it, but GitHub
+has put that work on hold.
+
+### Turning on "Sign in with GitHub"
+
+Worth doing if anyone other than a developer will edit: the OAuth token expires
+in 8 hours, where a PAT does not, and nobody has to generate one. About ten
+minutes, once.
+
+1. Deploy [sveltia-cms-auth](https://github.com/sveltia/sveltia-cms-auth) to
+   Cloudflare Workers - it is a free tier and the repo has a one-click deploy.
+   Note the URL: `https://sveltia-cms-auth.<subdomain>.workers.dev`.
+2. Register a GitHub OAuth app at
+   [github.com/settings/applications/new](https://github.com/settings/applications/new)
+   with the callback URL set to **`<worker-url>/callback`** exactly.
+3. Put the app's credentials in the worker's environment as
+   `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` (encrypt the secret), and set
+   **`ALLOWED_DOMAINS`** to this site's host. That last one is not optional in
+   spirit: without it, anyone who finds the worker can use it to mint tokens
+   through your OAuth app.
+4. Uncomment `base_url` in `public/admin/config.yml` and point it at the
+   worker. `npm run cms:check` will confirm it is picked up.
+
+Nothing secret goes in the repo at any point - the client secret lives only in
+the worker.
 
 Security is why it is set up this way rather than more conveniently:
 
@@ -480,10 +515,11 @@ Security is why it is set up this way rather than more conveniently:
   repo, loaded from a CDN; `integrity` means the browser refuses to run it if
   the bytes are not the ones we checked. `npm run cms:verify` re-checks that
   against the CDN and prints the hash to paste when upgrading deliberately.
-- Prefer signing in with GitHub over a personal access token. The OAuth token
-  expires in 8 hours; a PAT does not, and every git-based CMS keeps it in
-  `localStorage` unencrypted. If a PAT is unavoidable, make it fine-grained,
-  scoped to this one repository, `Contents: read and write` only.
+- A personal access token is the weaker of the two sign-ins and is what works
+  today: it does not expire, and every git-based CMS keeps it in
+  `localStorage` unencrypted. So keep it fine-grained, scoped to this one
+  repository, `Contents: read and write` only, and give it a short expiry.
+  Deploying the OAuth client above replaces it with an 8-hour token.
 - `npm run cms:check` validates `config.yml` and the override files, and runs
   in CI **before** the build, where it can stop a deploy. It is there because
   all of this fails quietly: a typo'd route just never matches, and a
